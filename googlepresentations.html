@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Recenzja Google Presentations (Slides) w 2026: AI i Pełna Automatyzacja | Yaroslav Ostapenko</title>
+    <meta name="description" content="Kompleksowa recenzja Prezentacji Google (Google Slides) w 2026 roku. Sprawdź, jak sztuczna inteligencja Gemini, Google Apps Script i Python API automatyzują tworzenie slajdów.">
+    <meta name="keywords" content="yaroslav ostapenko, google presentations, google slides, prezentacje google, recenzja, google workspace, google apps script, google slides api, gemini ai, automatyzacja slajdów">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- EXACT CANONICAL URL AS REQUESTED -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/googlepresentations.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/googlepresentations.html">
+    <meta property="og:title" content="Recenzja Google Presentations (Slides) w 2026">
+    <meta property="og:description" content="Jak Google Slides stało się najpotężniejszym narzędziem dla analityków i inżynierów. Przewodnik po API i Google Apps Script.">
+    <meta property="article:published_time" content="2026-04-22T08:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="Google Workspace">
+    <meta property="article:tag" content="Google Slides">
+    <meta property="article:tag" content="Automatyzacja">
+    <meta property="article:tag" content="Prezentacje">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/googlepresentations.html">
+    <meta property="twitter:title" content="Recenzja Google Presentations w 2026">
+    <meta property="twitter:description" content="Poradnik inżynieryjny: Jak automatycznie generować tysiące slajdów używając Google Slides API i Pythona.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/googlepresentations.html"
+      },
+      "headline": "Recenzja Google Presentations (Slides) w 2026: AI i Pełna Automatyzacja",
+      "description": "Dogłębna analiza techniczna Google Presentations (Slides) w 2026 roku. Poradnik obejmujący integrację z Gemini AI oraz automatyzację przez Google Apps Script i Python API.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/google-slides-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-04-22T08:00:00+02:00",
+      "dateModified": "2026-04-22T09:30:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja Google Presentations",
+        "item": "https://ostapenkoblog.mqttwebs.com/googlepresentations.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy Google Slides jest w pełni darmowe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, podstawowa wersja Prezentacji Google jest całkowicie darmowa dla każdego posiadacza konta Gmail. Wersje dla firm w ramach Google Workspace oferują dodatkowe funkcje, takie jak integracja z Gemini AI, zaawansowane uprawnienia udostępniania i nielimitowane wywołania API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak zautomatyzować generowanie slajdów?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Slajdy można zautomatyzować na dwa główne sposoby: za pomocą wewnętrznego języka Google Apps Script (idealnego do masowego generowania PDF-ów na podstawie Google Sheets) oraz poprzez Google Slides API (REST), które pozwala na zewnętrzną manipulację prezentacjami np. z poziomu Pythona lub Node.js."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym różni się Google Slides od Microsoft PowerPoint w 2026 roku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PowerPoint wciąż dominuje w kwestii zaawansowanych animacji, morfoz (Morph transition) i renderowania wideo offline. Google Slides wygrywa absolutnie w obszarze pracy grupowej na żywo (real-time collaboration), integracji danych z siecią (Smart Canvas) i łatwości oskryptowania w chmurze bez używania makr VBA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy sztuczna inteligencja (Gemini) może stworzyć całą prezentację od zera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "W 2026 roku asystent Gemini wbudowany w Google Slides potrafi wygenerować kompletny szkielet prezentacji (np. 'Zrób 10-slajdową ofertę sprzedażową dla firmy IT') wraz ze strukturą tekstu, wygenerowanymi grafikami wektorowymi i notatkami dla prelegenta. Nadal jednak wymaga merytorycznej weryfikacji i ostatecznego ludzkiego szlifu."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES (Zoptymalizowane, ze zmienioną paletą na kolory Google Slides - Amber/Gold) -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES (Google Slides Yellow/Amber Theme)
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables - Google Slides Amber Theme */
+            /* Używamy nieco ciemniejszego żółtego/bursztynowego dla lepszej czytelności tekstu */
+            --color-primary: #b45309; 
+            --color-primary-dark: #92400e;
+            --color-primary-light: #fef3c7;
+            --color-secondary: #0f172a;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-background: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            
+            /* Additional System Colors */
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            
+            /* Article Specific */
+            --color-code-bg: #1e293b; /* Ciemnogranatowe tło dla kodu (Dracula-like) */
+            --color-code-text: #f8f8f2;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #e2e8f0;
+            
+            /* Typography */
+            --font-family-base: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */[data-theme="dark"] {
+            --color-primary: #fbbf24; /* Jasny bursztynowy dla trybu ciemnego */
+            --color-primary-dark: #f59e0b;
+            --color-primary-light: #78350f;
+            --color-secondary: #f8fafc;
+            --color-text-main: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-border: #334155;
+            
+            --color-code-bg: #0f172a; /* Głębsza czerń dla bloków kodu */
+            --color-code-text: #e8eaed;
+            --color-toc-bg: #1e293b;
+            --color-toc-border: #334155;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }[data-theme="dark"] .navbar {
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        [data-theme="dark"] .article-category {
+            background-color: rgba(251, 191, 36, 0.15); /* Amber with opacity */
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }
+        
+        [data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(251, 191, 36, 0.15);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+            font-weight: 600;
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code, 
+        .article-content li code,
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }[data-theme="dark"] .article-content p code,
+        [data-theme="dark"] .article-content li code,
+        [data-theme="dark"] .article-content td code {
+            background-color: rgba(251, 191, 36, 0.15);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+        
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }[data-theme="dark"] .article-content th {
+            background-color: rgba(251, 191, 36, 0.15);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Google Presentations (Slides) w 2026: Sztuczna Inteligencja i Pełna Automatyzacja</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-04-22">22 Kwietnia 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 26 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image -> Google Slides Theme -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <path d="M8 13h8"></path>
+                        <path d="M8 17h5"></path>
+                        <!-- Play/Presentation icon inside -->
+                        <polygon points="10 13 15 15.5 10 18 10 13" fill="currentColor" stroke="none" opacity="0.3"></polygon>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Nazywam się <strong>Yaroslav Ostapenko</strong> i witam Cię w moim najnowszym przewodniku inżynieryjnym. Kiedyś tworzenie prezentacji polegało na ręcznym kopiowaniu tekstów z Worda i wklejaniu rozmazanych zrzutów ekranu do PowerPointa. Dzisiaj, w 2026 roku, świat poszedł do przodu, a aplikacja <strong>Prezentacje Google (Google Slides)</strong> jest w absolutnej awangardzie tej rewolucji.</p>
+
+                <p>Niezależnie od tego, czy tworzysz cotygodniowy raport sprzedażowy (tzw. "Deck"), czy przygotowujesz spersonalizowane oferty handlowe dla 500 różnych klientów, nie musisz już przesuwać obiektów myszką. Dzięki niesamowitej integracji z modelami <strong>Gemini AI</strong> oraz dostępności do potężnych środowisk <strong>Google Apps Script</strong> i <strong>REST API</strong>, Twoje slajdy mogą generować się same. Zapraszam na głęboką, techniczną podróż po Google Slides w 2026 roku.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "Najdroższym zasobem w korporacji w 2026 roku jest czas analityka. Tracenie czterech godzin na ręczną aktualizację słupków na 20 slajdach to zbrodnia przeciwko produktywności. Google Slides to dziś nie tyle płótno malarskie, co końcówka (endpoint) do renderowania danych." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="ai-w-slides">1. Era Generatywna: Gemini AI w Prezentacjach</h2>
+                
+                <p>Sztuczna Inteligencja wbudowana bezpośrednio w obszar roboczy Google Workspace (znana jako <em>Gemini for Workspace</em>) całkowicie zmienia cykl życia dokumentu. W panelu bocznym Google Slides znajdziemy inteligentnego asystenta, który potrafi "czytać" i "rozumieć" kontekst całej firmy.</p>
+
+                <p>Jak wykorzystujemy Gemini AI w tworzeniu prezentacji?</p>
+                <ul>
+                    <li><strong>Generowanie szkieletów (Outlines):</strong> Wystarczy wpisać prompt: *"Stwórz 8-slajdową ofertę inwestycyjną dla startupu z branży FinTech, opierając się na danych z tego pliku Google Docs @BiznesPlan"*. AI automatycznie wygeneruje slajd tytułowy, agendę, slajdy z punktami oraz podsumowanie, idealnie rozmieszczając tekst.</li>
+                    <li><strong>Generowanie Grafik z tekstu (Text-to-Image):</strong> Zapomnij o szukaniu darmowych zdjęć na stockach. Używając zintegrowanego modelu Imagen 4, prosisz: *"Wygeneruj obraz tła przedstawiający serwerownię w niebieskich odcieniach, styl cyberpunk, wysoka jakość"*, a po sekundzie wektorowa grafika trafia na slajd.</li>
+                    <li><strong>Inteligentne notatki (Speaker Notes):</strong> Masz już gotowe slajdy? Gemini potrafi przeanalizować ich treść i wygenerować płynny, gotowy do wygłoszenia skrypt dla prelegenta (Speaker notes) dla każdego z nich z osobna.</li>
+                </ul>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Uważaj na "Halucynacje"
+                    </div>
+                    <p style="margin:0;">Nawet w 2026 roku modele LLM cierpią na zjawisko halucynacji. Nigdy nie wysyłaj prezentacji wygenerowanej przez AI bezpośrednio do klienta lub zarządu bez ręcznej weryfikacji faktów (szczególnie liczb, wskaźników finansowych i skomplikowanych nazwisk). Traktuj AI jako wybitnego asystenta (Draft-makera), a nie ostatecznego redaktora.</p>
+                </div>
+
+                <h2 id="smart-canvas">2. Smart Canvas: Dane połączone żywą tkanką</h2>
+                
+                <p>Dawniej, jeśli chciałeś pokazać tabelę z Excelem na slajdzie, robiłeś zrzut ekranu (Screen). Gdy dane w pliku się zmieniały, zrzut był nieaktualny, a na spotkaniu wybuchała panika. W ekosystemie Google wprowadzono <strong>Smart Canvas</strong>.</p>
+
+                <p>Dzięki funkcji osadzania (Linking) możesz zaznaczyć ogromny wykres w Google Sheets, wkleić go na slajd Google Slides i zaznaczyć opcję "Link to spreadsheet" (Połącz z arkuszem). Gdy analityk zaktualizuje dane w Excelu, na Twojej prezentacji pojawi się przycisk <strong>UPDATE (Aktualizuj)</strong>. Jedno kliknięcie, a słupki i liczby na slajdzie same układają się do najnowszych, prawdziwych danych.</p>
+
+                <p>W 2026 roku działa to jeszcze lepiej z narzędziami takimi jak <strong>Looker Studio</strong> oraz z bezpośrednim osadzaniem pytań Q&A i ankiet (Live Polling), co zamienia martwą prezentację w dwukierunkowe narzędzie komunikacji z publicznością w czasie rzeczywistym.</p>
+
+                <h2 id="apps-script-automatyzacja">3. Potęga Automatyzacji: Google Apps Script w Akcji</h2>
+                
+                <p>Jako inżynier, najczęściej używam Google Slides do masowego tworzenia powtarzalnych dokumentów – np. generowania unikalnych dyplomów (certyfikatów) z uczestnictwa w szkoleniu dla 500 osób, albo wysyłania do każdego z klientów indywidualnej prezentacji z jego logo i wyliczeniami z arkusza.</p>
+                
+                <p>Platformą do takich działań wewnątrz chmury jest <strong>Google Apps Script (GAS)</strong>. Mechanika polega na: (1) Utworzeniu wzorcowej prezentacji (Szablonu) z tagami takimi jak <code>{{NAZWA_FIRMY}}</code>. (2) Napisaniu kodu, który iteruje po liście i na żywo powiela ten szablon, wstrzykując do niego poprawne dane.</p>
+
+                <h3>Skrypt: Automatyczny Generator Prezentacji Sprzedażowych</h3>
+                <p>Zamiast tracić dnie na kopiuj-wklej, otwórz edytor GAS w swoim Arkuszu bazy klientów i użyj poniższego kodu z mojego repozytorium.</p>
+
+<pre><code class="language-javascript">/**
+ * YAROSLAV OSTAPENKO - SCRIPT MIGRACYJNY 2026
+ * Cel: Generowanie spersonalizowanych Prezentacji (Decków) w Google Slides
+ * na podstawie szablonu i wierszy z Google Sheets.
+ */
+
+// Zmienne Konfiguracyjne (Stałe identyfikatory plików z URL Google Drive)
+const TEMPLATE_ID = "1A2B3c4d5E_twoj_id_szablonu_prezentacji_Google_Slides";
+const EXPORT_FOLDER_ID = "0B1c2D3e4F_twoj_id_folderu_na_dysku";
+
+function generujSpersonalizowanePrezentacje() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("BazaKlientow");
+  
+  // Pobieramy całe dane z tabeli (pomijamy wiersz 1, gdzie są nagłówki)
+  // Zakładamy strukturę: [0] ID, [1] Nazwa Firmy, [2] Przychód, [3] Adres URL Logo
+  const lastRow = sheet.getLastRow();
+  
+  if (lastRow < 2) {
+    Logger.log("Brak danych do przetworzenia.");
+    return;
+  }
+  
+  const data = sheet.getRange(2, 1, lastRow - 1, 4).getValues();
+  const folderDocelowy = DriveApp.getFolderById(EXPORT_FOLDER_ID);
+  
+  Logger.log(`Rozpoczynam generowanie prezentacji dla ${data.length} klientów...`);
+
+  data.forEach((row, index) => {
+    try {
+      const nazwaFirmy = row[1];
+      const przychod = row[2];
+      const logoUrl = row[3];
+      
+      // Krok 1: Fizyczna kopia szablonu w tle na Dysku Google
+      const skopiowanyPlik = DriveApp.getFileById(TEMPLATE_ID).makeCopy(
+        `Prezentacja_Oferta_2026_${nazwaFirmy}`, 
+        folderDocelowy
+      );
+      
+      const nowyPlikId = skopiowanyPlik.getId();
+      
+      // Krok 2: Otwieramy nowy obiekt Prezentacji poprzez SlidesApp
+      const presentation = SlidesApp.openById(nowyPlikId);
+      const slajdy = presentation.getSlides();
+      
+      // Krok 3: Masowe wstrzykiwanie tekstu (Znajdź i Zamień)
+      presentation.replaceAllText("{{NAZWA_FIRMY}}", nazwaFirmy);
+      presentation.replaceAllText("{{PRZYCHOD}}", `${przychod} PLN`);
+      
+      // Krok 4: (Opcjonalnie) Zaawansowana podmiana obrazu (Logo Klienta na 1 slajdzie)
+      // Wymaga, aby w szablonie obraz logo miał tzw. "Alt Text" ustawiony na "LOGO_ZMIEN"
+      if (logoUrl && logoUrl !== "") {
+        const pierwszySlajd = slajdy[0];
+        const obrazy = pierwszySlajd.getImages();
+        
+        obrazy.forEach(obraz => {
+          if (obraz.getTitle() === "LOGO_ZMIEN") {
+            const logoBlob = UrlFetchApp.fetch(logoUrl).getBlob();
+            obraz.replace(logoBlob);
+          }
+        });
+      }
+      
+      // Krok 5: Zapisz zmiany w pamięci i zamknij plik, zwalniając bufor serwera
+      presentation.saveAndClose();
+      
+      Logger.log(`[SUKCES] Wygenerowano plik dla: ${nazwaFirmy}`);
+      
+    } catch(e) {
+      Logger.log(`[BŁĄD] Problem przy wierszu ${index + 2}: ${e.message}`);
+    }
+  });
+  
+  Logger.log("Proces generowania zakończony!");
+}
+</code></pre>
+
+                <p>Tak stworzone prezentacje są w pełni edytowalne (to czyste Google Slides), więc jeśli handlowiec musi coś w nich ręcznie dopieścić przed spotkaniem, ma taką możliwość. Ten skrypt potrafi skrócić czas przygotowań do kampanii B2B o 95%!</p>
+
+                <h2 id="python-rest-api">4. Architektura API: Obsługa Google Slides przez Python</h2>
+                
+                <p>Google Apps Script świetnie sprawdza się do "lekkich" zadań iteracyjnych wewnątrz samego ekosystemu G-Suite. Co jednak, jeśli budujemy aplikację backendową w Django, zaawansowany klaster w Kubernetes na GCP, albo odpytujemy zewnętrzną chmurę obliczeniową (np. Snowflake), a wynikiem działania programu ma być zbudowanie nowej prezentacji dla zarządu od zera?</p>
+                
+                <p>W takich wypadkach sięgamy po architekturę REST i <strong>Google Slides API</strong>. W 2026 roku manipulacja slajdami poprzez JSON Payload stała się standardem inżynieryjnym.</p>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Logika "Batch Updates" w API
+                    </div>
+                    <p style="margin:0;">Zarządzanie slajdami po API różni się od innych bibliotek. Nie wywołujesz funkcji <code>add_text()</code>. Zamiast tego budujesz potężną tablicę (Array) zapytań obiektowych nazywanych <strong>Requests</strong>, a następnie wysyłasz je w jednym, ogromnym strzale sieciowym używając metody <code>batchUpdate</code>. Pozwala to zachować integralność i nie "zapychać" limitów sieciowych (Quota Limits).</p>
+                </div>
+
+                <h3>Skrypt w Pythonie: Budowa dynamicznego slajdu od zera</h3>
+                <p>Poniższy kod ilustruje uwierzytelnienie, utworzenie nowej prezentacji, dodanie w niej pustego slajdu, narysowanie pola tekstowego z formatowaniem oraz wstawienie kształtu używając <code>google-api-python-client</code>.</p>
+
+<pre><code class="language-python"># YAROSLAV OSTAPENKO - GOOGLE SLIDES API BATCH SCRIPT
+import os.path
+import uuid
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+# Zdefiniowanie uprawnień do edycji prezentacji i dysku
+SCOPES = ['https://www.googleapis.com/auth/presentations']
+
+def main():
+    creds = None
+    # Mechanizm autoryzacji z wykorzystaniem wygenerowanego token.json
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+
+    try:
+        # 1. Inicjalizacja serwisu Slides
+        service = build('slides', 'v1', credentials=creds)
+
+        # 2. Utworzenie zupełnie nowej pustej Prezentacji
+        presentation = service.presentations().create(body={'title': 'Raport API 2026'}).execute()
+        presentation_id = presentation.get('presentationId')
+        print(f"Utworzono Prezentację. ID: {presentation_id}")
+
+        # 3. Generowanie unikalnych ID obiektów, aby móc się do nich odnosić (bardzo ważne w API Google!)
+        slide_id = str(uuid.uuid4())
+        textbox_id = str(uuid.uuid4())
+
+        # 4. Konstrukcja potężnego ładunku (JSON Payload) do instrukcji batchUpdate
+        requests =[
+            # A) Utwórz nowy, pusty slajd
+            {
+                'createSlide': {
+                    'objectId': slide_id,
+                    'slideLayoutReference': {'predefinedLayout': 'BLANK'}
+                }
+            },
+            # B) Stwórz nowe pole tekstowe (TextBox) na nowym slajdzie
+            {
+                'createShape': {
+                    'objectId': textbox_id,
+                    'shapeType': 'TEXT_BOX',
+                    'elementProperties': {
+                        'pageObjectId': slide_id,
+                        'size': {
+                            'height': {'magnitude': 100, 'unit': 'PT'},
+                            'width': {'magnitude': 400, 'unit': 'PT'}
+                        },
+                        'transform': {
+                            'scaleX': 1, 'scaleY': 1,
+                            'translateX': 150, 'translateY': 100,
+                            'unit': 'PT'
+                        }
+                    }
+                }
+            },
+            # C) Wstrzyknij właściwy łańcuch tekstowy (String) do TextBoxa
+            {
+                'insertText': {
+                    'objectId': textbox_id,
+                    'text': 'Dane wygenerowane za pomocą skryptu Python w 2026 r.',
+                    'insertionIndex': 0
+                }
+            },
+            # D) Sformatuj ten tekst (Zmień czcionkę na 24pt i pogrub)
+            {
+                'updateTextStyle': {
+                    'objectId': textbox_id,
+                    'textRange': {'type': 'ALL'},
+                    'style': {
+                        'bold': True,
+                        'fontSize': {'magnitude': 24, 'unit': 'PT'},
+                        'foregroundColor': {
+                            'opaqueColor': {'rgbColor': {'red': 0.1, 'green': 0.4, 'blue': 0.8}}
+                        }
+                    },
+                    'fields': 'bold,fontSize,foregroundColor'
+                }
+            }
+        ]
+
+        # 5. Odpalenie instrukcji do serwerów Google Cloud (Wysłanie całego pakietu naraz)
+        body = {'requests': requests}
+        response = service.presentations().batchUpdate(
+            presentationId=presentation_id, body=body).execute()
+            
+        print(f"Pomyślnie zaktualizowano obiekty. Wykonano {len(response.get('replies'))} instrukcji.")
+
+    except HttpError as error:
+        print(f"Krytyczny błąd połączenia z API: {error}")
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+                <p>Dzięki takiej architekturze, nasz backend w Pythonie potrafi w kilka sekund przeliczyć statystyki (np. używając biblioteki Pandas), stworzyć zestawienie wizualne i natychmiast odesłać gotową prezentację do zarządu.</p>
+
+                <h2 id="google-vs-powerpoint">5. Google Slides vs Microsoft PowerPoint (Starcie Gigantów)</h2>
+                
+                <p>Niezależnie od moich sympatii do środowiska Google Workspace, musimy zachować obiektywizm inżyniera. Rynek dzieli się pomiędzy dwa ogromne rozwiązania. Zobaczmy, w jakich obszarach dane narzędzie dominuje.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Funkcjonalność</th>
+                            <th>Google Presentations (Slides)</th>
+                            <th>Microsoft PowerPoint (Desktop)</th>
+                            <th>Werdykt na 2026 rok</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Praca Gupowa (Collab)</strong></td>
+                            <td>Perfekcyjna, błyskawiczna synchronizacja. Niezawodna historia wersji.</td>
+                            <td>Dobra w chmurze 365, bywa kapryśna podczas pracy na plikach lokalnych/SharePoint.</td>
+                            <td>Google Slides w 100% dla rozproszonych zespołów i agencji kreatywnych.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Animacje i Płynność</strong></td>
+                            <td>Bardzo podstawowe, płaskie przejścia.</td>
+                            <td>Fenomenalne narzędzie <em>Morph (Płynne przejście)</em> oraz silnik do renderowania 3D.</td>
+                            <td>PowerPoint deklasuje rywala, jeśli budujesz zapierające dech "kinowe" pokazy slajdów.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automatyzacja API i Skrypty</strong></td>
+                            <td>Doskonały Google Apps Script (Cloud) i API JSON REST.</td>
+                            <td>Stare, ciężkie VBA (Legacy) oraz nowsze, lecz wciąż uboższe w kontekście sieciowym Office Scripts.</td>
+                            <td>Zdecydowana wygrana Google dla inżynierów szukających masowych generatorów w tle.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Praca w trybie Offline</strong></td>
+                            <td>Rozszerzenie Chrome działa uciążliwie i często z błędami synchronizacji.</td>
+                            <td>Zainstalowany gruby klient. Żadnych problemów w samolocie czy w tunelu.</td>
+                            <td>Microsoft wygrywa tam, gdzie nie dociera zasięg internetu.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dostęp do asystenta AI</strong></td>
+                            <td>Model Gemini wbudowany natywnie w pasek boczny. Wspaniałe rozumienie kontekstu dysku Google.</td>
+                            <td>Microsoft Copilot (oparty o GPT-4o), głęboka integracja z korporacyjnymi danymi.</td>
+                            <td>Remis. Obie platformy to potwory pod kątem możliwości generowania tekstu w locie.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="skroty-klawiszowe">6. Złote Skróty Klawiszowe (Power User)</h2>
+                
+                <p>Prawdziwi mistrzowie edycji minimalizują ruchy myszką. Poniższa tabela zawiera bezcenne skróty klawiszowe, które znacznie przyspieszą Twoją pracę na płótnie slajdu w Google Slides.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skrót Windows / ChromeOS</th>
+                            <th>Skrót macOS</th>
+                            <th>Zastosowanie w Google Slides</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Ctrl + M</code></td>
+                            <td><code>Cmd + M</code></td>
+                            <td>Wstawienie nowego slajdu o układzie podobnym do poprzedniego.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + D</code></td>
+                            <td><code>Cmd + D</code></td>
+                            <td>Zduplikowanie aktualnie wybranego obiektu (kształtu, zdjęcia, wiersza tekstu).</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + Shift + Strzałka (Góra/Dół)</code></td>
+                            <td><code>Cmd + Shift + Strzałka</code></td>
+                            <td>Przesunięcie zaznaczonego obiektu na sam wierzch lub na sam spód (Z-Index warstw).</td>
+                        </tr>
+                        <tr>
+                            <td><code>Alt + Shift + F</code></td>
+                            <td><code>Option + Shift + F</code></td>
+                            <td>Szybki skok do wyszukiwania po menusach (Search the menus - "Lupa").</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + K</code></td>
+                            <td><code>Cmd + K</code></td>
+                            <td>Wstawianie Hiperłącza do tekstu (Smart Canvas).</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + Enter</code></td>
+                            <td><code>Cmd + Enter</code></td>
+                            <td>Przejście do trybu Prezentacji (Full Screen Play) bezpośrednio z edytora.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="podsumowanie">7. Podsumowanie Wniosków</h2>
+                
+                <p>Zamykając naszą technologiczną podróż po możliwościach Google Slides w 2026 roku, muszę przyznać jedno – oprogramowanie w chmurze osiągnęło etap dojrzałości. Przeglądarkowy silnik jest w stanie utrzymać setki stron wektorowych kształtów, inteligentnych tabel oraz grafik bez przycięcia i wylania pamięci (Memory Leak).</p>
+                
+                <p>Niezależnie od tego, czy używasz tego programu do szybkiego zaprezentowania statusu swojego projektu inżynieryjnego, czy jako programista włączasz do pipeline'u CI/CD masowe generowanie kart produktowych PDF dla sklepu E-commerce (poprzez Google Apps Script / Python API) – Prezentacje Google oferują niezrównaną bezstratność i elastyczność integracyjną.</p>
+
+                <p>Przestańcie traktować slajdy jako zbiór statycznych obrazków. Traktujcie je jako "View" we wzorcu MVC (Model-View-Controller), gdzie dane przesyłane są dynamicznie. Zrewolucjonizuje to zarządzanie informacją w Waszej korporacji!</p>
+                <p>— <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">8. Najczęściej Zadawane Pytania (Wielkie FAQ 2026)</h2>
+                
+                <div class="info-box">
+                    <h3>Czy Google Slides jest w pełni darmowe?</h3>
+                    <p>Tak, w swojej absolutnej podstawie Prezentacje Google (Google Slides) są całkowicie darmowe dla każdego użytkownika posiadającego konto domeny `@gmail.com`. Możesz swobodnie eksportować pliki, używać skryptów i udostępniać. Ograniczenia i dodatkowe koszty pojawiają się przy edycjach biznesowych (Google Workspace Enterprise), w których użytkownicy otrzymują potężne narzędzia zabezpieczania własności (Data Loss Prevention), rozszerzone pule wywołań limitów dla API oraz asystenta AI Gemini.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Jak łatwo zautomatyzować generowanie ogromnej ilości slajdów na podstawie Exceala/Sheets?</h3>
+                    <p>Slajdy najłatwiej zautomatyzować pisząc kod w środowisku Google Apps Script (widocznym w sekcji Narzędzia). Metodyka ta opiera się na stworzeniu "master" szablonu (zawierającego "Tagi" z nawiasami wąsatymi, np. `{{DANE}}`), do którego wygenerowany z Google Sheets skrypt ładuje pętlą informacje o kolejnych osobach. Pamiętaj, aby zapisywać wyniki do formatu `.pdf`, by zablokować edycję dokumentu u ostatecznego czytelnika.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czym ostatecznie różni się Google Slides od potężnego Microsoft PowerPoint w 2026 roku?</h3>
+                    <p>Google Slides wygrywa absolutnie w obszarach "chmurowych" – zintegrowana, symultaniczna edycja dokumentów w chmurze bez konfliktów plików, bardzo prosta i stabilna możliwość pisania kodów API oraz darmowy hosting tych skryptów z wyzwalaczami na serwerach Google. Z kolei MS PowerPoint totalnie deklasuje oprogramowanie z Mountain View, jeśli pragniesz uzyskać kinową jakość animacji (potężny silnik "Morphing Transitions"), wstawiać rotujące i animowane modele 3D (.obj / .glb) czy renderować efekty graficzne bezpośrednio bez połączenia internetowego w głuszy.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy sztuczna inteligencja (Gemini AI) zbuduje za mnie moją prezentację od zera do końca?</h3>
+                    <p>Bądźmy realistami w 2026 roku – asystent Gemini wbudowany jako pasek boczny w Google Slides może drastycznie przyspieszyć proces tworzenia "szkieletu". Poprosiwszy "wygeneruj agendę i plan prezentacji inwestycyjnej o sztucznej inteligencji", system zrzuci 10 gotowych slajdów, z wstawionymi placeholderami obrazów i napisanym zarysem wiedzy, z którego przeczytasz tekst (Speaker notes). ZAWSZE jednak to na tobie leży proces uzupełnienia pustych i fałszywych wskaźników merytorycznych własnymi firmowymi danymi finansowymi, tak by uniknąć katastrofalnej wtopy wizerunkowej przed klientem z powodu halucynacji LLM.</p>
+                </div>
+
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Inżynier Architektury Chmury i programista automatyzacji. Z powodzeniem przekuwam setki godzin nudnej pracy w zespołach analitycznych w asynchroniczne skrypty wykonujące się ułamkach sekund. Pasjonat ekosystemu Google Workspace, języka JavaScript, nowoczesnego DevOps oraz edukacji na temat efektywności kosztowej w procesach IT.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#ai-w-slides">1. Generatywne AI: Gemini w Prezentacjach</a></li>
+                    <li><a href="#smart-canvas">2. Smart Canvas: Połączenia na żywo</a></li>
+                    <li><a href="#apps-script-automatyzacja">3. Skrypt GAS: Automatyczne Szablony</a></li>
+                    <li><a href="#python-rest-api">4. Architektura API w języku Python</a></li>
+                    <li><a href="#google-vs-powerpoint">5. Google Slides vs Microsoft PowerPoint</a></li>
+                    <li><a href="#skroty-klawiszowe">6. Najlepsze Skróty Klawiszowe</a></li>
+                    <li><a href="#podsumowanie">7. Podsumowanie Wniosków</a></li>
+                    <li><a href="#faq">8. Najczęściej Zadawane Pytania (FAQ)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Wizytówka i blog inżynieryjny. Programuję architekturę Cloud, optymalizuję środowiska narzędziowe w Google Workspace oraz dzielę się twardą, inżynierską wiedzą zdobytą na polach walki korporacyjnego IT.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Szybka Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna Witryny</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">Informacje o Mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Artykuły na Blogu</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zrealizowane Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt Biznesowy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Bezpośredni Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774 (Linia Projektowa)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Moje Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub Repository">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter Feed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko Blog. Wszelkie prawa autorskie zastrzeżone. Projekt strony oparty o standard HTML5/CSS3 w roku 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wygodny Przycisk przewijania na sam szczyt strony (Scroll to Top) -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Zabierz mnie do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC (Interaktywność Strony, Śledzenie, Tryb Ciemny i Menu)
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMICZNA AKTUALIZACJA ROKU W STOPCE
+            // Rozwiązuje problem dezaktualizacji praw autorskich (Copyright) po Sylwestrze
+            const yearElement = document.getElementById('currentYear');
+            if(yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // 2. FUNKCJONALNOŚĆ MENU MOBILNEGO (Hamburger Menu dla telefonów RWD)
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            if(hamburger && navbarNav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navbarNav.classList.toggle('active');
+                });
+            }
+
+            // Elementy UX (User Experience) - Ukryj panel gdy zostanie kliknięty link sekcyjny
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbarNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // 3. OBSŁUGA MOTYWÓW (Wybór między Dark / Light Theme)
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Odbudowanie sesji użytkownika na podstawie pamięci LocalStorage
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                // Jeśli pamięci brak, spróbuj pobrać preferencje predefiniowane na poziomie Systemu Operacyjnego (macOS, Windows 11)
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            if(themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    const currentTheme = htmlElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    htmlElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('ostapenkoblog-theme', newTheme);
+                    updateThemeIcon(newTheme);
+                });
+            }
+
+            // Zmiana graficznej reprezentacji piktogramu trybu dnia i nocy
+            function updateThemeIcon(theme) {
+                if(!themeIcon) return;
+                
+                if (theme === 'dark') {
+                    // Tryb Ciemny - wygeneruj wektor SVG przedstawiający gwiazdę/księżyc
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Tryb Jasny - wygeneruj wektor SVG przedstawiający rozżarzone słońce z promieniami
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. PRZYCISK SCROLL-TO-TOP & MECHANIKA PASKA CZYTANIA (READING BAR)
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const progressBar = document.getElementById('readingProgressBar');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const headings = document.querySelectorAll('.article-content h2');
+            
+            // Debouncing timeout służący redukcji masowego marnowania mocy procesora podczas scrollowania
+            let scrollTimeout;
+            
+            window.addEventListener('scroll', () => {
+                if(scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = window.requestAnimationFrame(() => {
+                    // A) Mechanizm ukrywania i ukazywania przycisku na dole rogu w zależności od pozycji Y okna.
+                    if (scrollTopBtn) {
+                        if (window.scrollY > 300) {
+                            scrollTopBtn.classList.add('visible');
+                        } else {
+                            scrollTopBtn.classList.remove('visible');
+                        }
+                    }
+                    
+                    // B) Dynamiczny zielony pasek ładowania treści umieszczony tuż pod Menu Navbarem
+                    if (progressBar) {
+                        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        
+                        if(height > 0) {
+                            const scrolled = (winScroll / height) * 100;
+                            progressBar.style.width = scrolled + "%";
+                        }
+                    }
+                    
+                    // C) Spy-Scrolling w bocznym module "Spis Treści". Analizuje on gdzie znajduje się środek ekranu.
+                    if(headings.length > 0 && tocLinks.length > 0) {
+                        let currentHeadingId = '';
+                        // 150px to tzw. bezpieczny margines błędu (Navbar Fixed Offset)
+                        const scrollPosition = window.scrollY + 150; 
+
+                        headings.forEach(heading => {
+                            const top = heading.offsetTop;
+                            if (scrollPosition >= top) {
+                                currentHeadingId = heading.getAttribute('id');
+                            }
+                        });
+
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (currentHeadingId && link.getAttribute('href') === `#${currentHeadingId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Reakcja natywnego API na naciśnięcie przycisku unoszącego
+            if(scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // 5. OBSŁUGA ZAKŁADEK W SPISIE TREŚCI - SMOOTH SCROLL BEHAVIOR
+            // Zastępuje archaiczne, rwane mechanizmy 'a name=' lub 'a href='#xyz'' 
+            const internalLinks = document.querySelectorAll('.toc-list a[href^="#"]');
+            
+            internalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Zablokowanie domyślnej reakcji kliknięcia URL HTML-a
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Offset by nie zasłonić nagłówka (Header <H2>) przez lepki Pasek Nawigacji na górze (Fixed Navbar)
+                        const fixedNavbarHeight = 100;
+                        const offsetTop = targetElement.offsetTop - fixedNavbarHeight;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth' // Kluczowa interpolacja CSS (odpowiada za powolny przejazd, nie szarpnięcie)
+                        });
+                        
+                        // Zapisanie wyboru do historii przeglądarki, by kliknięcie przycisku "WSTECZ" na myszce prawidłowo zadziałało (HTML5 History API)
+                        if(history.pushState) {
+                            history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>

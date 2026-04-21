@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Recenzja Google Docs w 2026: Jak AI i Skrypty Zmieniły Edytor Tekstu | Yaroslav Ostapenko</title>
+    <meta name="description" content="Kompleksowa recenzja Dokumentów Google w 2026 roku. Zobacz, jak wykorzystać Gemini AI, Smart Canvas, Google Apps Script oraz Google Docs API w automatyzacji.">
+    <meta name="keywords" content="yaroslav ostapenko, google docs, dokumenty google, recenzja, google workspace, google apps script, google docs api, gemini ai, smart canvas, automatyzacja umów">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- EXACT CANONICAL URL AS REQUESTED -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/googledocuments.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/googledocuments.html">
+    <meta property="og:title" content="Recenzja Google Docs w 2026: Jak AI i Skrypty Zmieniły Edytor Tekstu">
+    <meta property="og:description" content="Od zwykłego edytora do centrum dowodzenia. Przeczytaj przewodnik po automatyzacji Google Docs za pomocą Google Apps Script i Pythona.">
+    <meta property="article:published_time" content="2026-04-21T22:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="Google Workspace">
+    <meta property="article:tag" content="Google Docs">
+    <meta property="article:tag" content="Automatyzacja">
+    <meta property="article:tag" content="Sztuczna Inteligencja">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/googledocuments.html">
+    <meta property="twitter:title" content="Recenzja Google Docs w 2026: Jak AI i Skrypty Zmieniły Edytor Tekstu">
+    <meta property="twitter:description" content="Od zwykłego edytora do centrum dowodzenia. Przeczytaj przewodnik po automatyzacji Google Docs za pomocą Google Apps Script i Pythona.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/googledocuments.html"
+      },
+      "headline": "Recenzja Google Docs w 2026: Jak AI i Skrypty Zmieniły Edytor Tekstu",
+      "description": "Dogłębna analiza techniczna Google Documents w 2026 roku. Poradnik obejmujący integrację z Gemini AI, format Pageless oraz automatyzację przez Google Apps Script i Python API.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/google-docs-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-04-21T22:00:00+02:00",
+      "dateModified": "2026-04-21T22:30:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja Google Documents",
+        "item": "https://ostapenkoblog.mqttwebs.com/googledocuments.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy Google Docs obsługuje formatowanie Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak! W nowszych wersjach Google Docs wprowadzono natywne wsparcie dla formatowania Markdown. Możesz włączyć je w menu Narzędzia -> Ustawienia i używać znaków takich jak **pogrubienie**, # nagłówki czy [] listy zadań w locie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym jest format Pageless (Bezkartkowy) w Dokumentach Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pageless to tryb widoku, który usuwa fizyczne granice strony A4. Dokument staje się nieskończonym płótnem (canvas), co ułatwia pracę z szerokimi tabelami, dużymi obrazami i kodem, idealnie dostosowując się do rozmiaru Twojego ekranu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak zautomatyzować generowanie umów w Google Docs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Najlepszym sposobem na masowe generowanie dokumentów jest użycie języka Google Apps Script (GAS). Tworzysz szablon dokumentu ze znacznikami np. {{IMIE}}, a skrypt pobiera dane z Arkusza (Sheets), podmienia tagi i zapisuje wynik jako plik PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy Google Docs posiada sztuczną inteligencję (AI)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, w ramach pakietu Google Workspace zaimplementowano modele z rodziny Gemini. Opcja 'Pomóż mi pisać' (Help me write) pozwala na generowanie szkiców, podsumowywanie długich tekstów i automatyczną zmianę tonu wypowiedzi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Google Docs vs Microsoft Word – co wybrać w 2026 roku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Docs wygrywa w obszarze kolaboracji w czasie rzeczywistym, łatwości integracji przez Smart Chips i pisania skryptów w chmurze (GAS). Word pozostaje liderem w zaawansowanym DTP, skomplikowanym formatowaniu wydruków oraz pracy offline."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES (Zoptymalizowane, ze zmienioną paletą na kolory Google Workspace Blue) -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES (Google Workspace Docs Theme)
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables - Google Docs Blue Theme */
+            --color-primary: #1a73e8; /* Google Blue */
+            --color-primary-dark: #1557a0;
+            --color-primary-light: #e8f0fe;
+            --color-secondary: #202124;
+            --color-text-main: #3c4043;
+            --color-text-muted: #5f6368;
+            --color-background: #f8f9fa;
+            --color-surface: #ffffff;
+            --color-border: #dadce0;
+            
+            /* Additional Google Colors */
+            --color-google-red: #ea4335;
+            --color-google-yellow: #fbbc04;
+            --color-google-green: #34a853;
+
+            /* Utility colors */
+            --color-success: #34a853;
+            --color-danger: #ea4335;
+            --color-warning: #fbbc04;
+            
+            /* Article Specific */
+            --color-code-bg: #282a36; /* Dracula Theme like dark background for code */
+            --color-code-text: #f8f8f2;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #dadce0;
+            
+            /* Typography */
+            --font-family-base: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --shadow-lg: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --color-primary: #8ab4f8;
+            --color-primary-dark: #aecbfa;
+            --color-primary-light: #174ea6;
+            --color-secondary: #e8eaed;
+            --color-text-main: #bdc1c6;
+            --color-text-muted: #9aa0a6;
+            --color-background: #202124;
+            --color-surface: #292a2d;
+            --color-border: #3c4043;
+            
+            --color-code-bg: #1e1e1e;
+            --color-code-text: #e8eaed;
+            --color-toc-bg: #292a2d;
+            --color-toc-border: #3c4043;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500; /* Google style typography uses medium weight */
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }
+        
+        [data-theme="dark"] .navbar {
+            background-color: rgba(32, 33, 36, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        [data-theme="dark"] .article-category {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }
+        
+        [data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(138, 180, 248, 0.1);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code, 
+        .article-content li code,
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+
+        [data-theme="dark"] .article-content p code,
+        [data-theme="dark"] .article-content li code,
+        [data-theme="dark"] .article-content td code {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+        
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        [data-theme="dark"] .article-content th {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #202124;
+            color: #f8f9fa;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #9aa0a6;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #9aa0a6;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #3c4043;
+            color: #f8f9fa;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #3c4043;
+            color: #5f6368;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Google Docs w 2026: Jak AI i Skrypty Zmieniły Zwykły Edytor w Potężne Narzędzie</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-04-21">21 Kwietnia 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 22 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image -> Google Docs style -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                        <!-- AI Sparkle element -->
+                        <path d="M18 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"></path>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Z tej strony <strong>Yaroslav Ostapenko</strong>. Jeśli wciąż traktujesz Dokumenty Google (Google Docs) jedynie jako darmową, uboższą alternatywę dla Microsoft Worda służącą do pisania wypracowań szkolnych – czas na pobudkę. Mamy rok 2026, a środowisko Google Workspace przeszło monumentalną transformację.</p>
+
+                <p>Google Docs przestało być po prostu edytorem tekstu. Stało się interaktywnym płótnem (Smart Canvas), zintegrowanym z potężnymi modelami sztucznej inteligencji (Gemini AI), a co dla nas inżynierów najważniejsze – doskonałym fundamentem do tworzenia zautomatyzowanych procesów biznesowych poprzez <strong>Google Apps Script (GAS)</strong> oraz API. W tej recenzji rozbiorę to narzędzie na czynniki pierwsze.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "Największą siłą Google Docs w 2026 roku nie jest to, jak pięknie potrafi sformatować tekst na stronie A4, ale to, że pozwala nam tej strony A4 w ogóle nie używać. Format Pageless, w połączeniu ze skryptami i AI, zmienia dokument w centrum dowodzenia." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="nowa-era-formatowania">1. Nowa Era Tworzenia: Format Pageless i Markdown</h2>
+                
+                <p>Przez dziesięciolecia oprogramowanie zmuszało nas do formatowania myśli na wirtualnych kartkach A4, nawet jeśli dokument nigdy nie miał trafić do fizycznej drukarki. Google zerwało z tym anachronizmem, wprowadzając jako standard widok <strong>Pageless (Format bez podziału na strony)</strong>.</p>
+
+                <p>Włączając widok Pageless (Plik -> Ustawienia strony -> Bezkartkowy), dokument staje się ciągłym płótnem. Zdjęcia mogą być tak szerokie, jak Twój monitor ultrawide, tabele nie urywają się w połowie wiersza, a bloki kodu (o których za chwilę) renderują się perfekcyjnie bez brzydkich podziałów wymuszonych marginesami drukarki. To rewolucja dla osób tworzących dokumentacje techniczne i bazy wiedzy.</p>
+
+                <div class="info-box success">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Natywne Wsparcie dla Markdown
+                    </div>
+                    <p style="margin:0;">Jako programista na pewno ucieszy Cię fakt, że Google Docs w 2026 w pełni rozumie składnię <strong>Markdown</strong>. Wpisanie <code># Tekst</code> tworzy Nagłówek 1, <code>*tekst*</code> robi kursywę, a <code>[]</code> natychmiast generuje interaktywną listę zadań (Checkbox). Nie musisz odrywać rąk od klawiatury, by sięgać po myszkę.</p>
+                </div>
+
+                <h2 id="smart-canvas">2. Smart Canvas: Znak "@" to Nowe Menu</h2>
+                
+                <p>Koncepcja <em>Smart Canvas</em> całkowicie przedefiniowała sposób, w jaki łączymy dane. Wpisanie symbolu <strong>@</strong> w dowolnym miejscu dokumentu otwiera potężne menu kontekstowe wyciągające informacje z całego Twojego ekosystemu Google Workspace.</p>
+
+                <ul>
+                    <li><strong>Ludzie:</strong> Wpisz <code>@JanKowalski</code>. Zamiast zwykłego tekstu powstanie "Smart Chip" (Inteligentny element). Najechanie na niego myszką ukaże stanowisko Jana, jego status dostępności, czas lokalny oraz przyciski do szybkiego zaplanowania spotkania.</li>
+                    <li><strong>Pliki:</strong> Wpisz <code>@Budżet2026</code>. Dokument zaciągnie interaktywny link do Arkusza Google bez brzydkiego, długiego adresu URL. W locie podglądniesz jego zawartość.</li>
+                    <li><strong>Zadania i Daty:</strong> Wpisz <code>@Zadanie</code>, przypisz je do pracownika. Automatycznie pojawi się ono w jego osobistym Google Tasks oraz w Google Calendar.</li>
+                </ul>
+
+                <h2 id="gemini-ai">3. Gemini AI w Google Docs: Twój Copilot</h2>
+                
+                <p>W 2026 roku sztuczna inteligencja nie jest już tylko opcjonalną wtyczką; jest wbudowana w rdzeń edytora. Funkcja potocznie nazywana <em>"Pomóż mi pisać" (Help me write)</em> opiera się na modelach LLM z rodziny <strong>Google Gemini</strong>.</p>
+
+                <p>Wystarczy kliknąć błyszczącą ikonę ołówka na marginesie i wprowadzić Prompt (polecenie). Co AI potrafi zrobić najlepiej w kontekście pracy z dokumentem?</p>
+                
+                <ol>
+                    <li><strong>Drafting:</strong> Generowanie pierwszych szkiców trudnych maili, postów na bloga czy umów NDA na podstawie krótkiego opisu sytuacji.</li>
+                    <li><strong>Błyskawiczne streszczenia:</strong> Wklejasz 40-stronicowy raport od klienta i prosisz: "Zrób mi z tego 5 punktów Executive Summary z naciskiem na ryzyka techniczne".</li>
+                    <li><strong>Zmiana tonu:</strong> Zaznaczasz akapit, który napisałeś w gniewie i wybierasz opcję "Zmień ton na bardziej formalny i profesjonalny". Gemini przebuduje zdania tak, by brzmiały uprzejmie, nie tracąc sensu.</li>
+                </ol>
+
+                <h2 id="automatyzacja-gas">4. Potęga Inżyniera: Google Apps Script (GAS)</h2>
+                
+                <p>To tutaj zaczyna się prawdziwa magia dla czytelników mojego bloga. Google Docs posiada wbudowane środowisko programistyczne oparte na języku JavaScript. Zamiast ręcznie uzupełniać dane na umowach czy fakturach dla 100 klientów, możemy napisać skrypt, który połączy Google Sheets z Google Docs i wygeneruje nam gotowe pliki PDF na Dysku Google.</p>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Przygotowanie Szablonu
+                    </div>
+                    <p style="margin:0;">Zanim odpalisz skrypt, stwórz w Google Docs dokument bazowy (np. Umowa). W miejscach, gdzie mają wpaść dane, użyj tagów: <code>{{IMIE}}</code>, <code>{{KWOTA}}</code>, <code>{{DATA}}</code>. Zapisz ID tego pliku z paska URL.</p>
+                </div>
+
+                <h3>Skrypt: Automatyczny Generator Umów (PDF) z Szablonu</h3>
+                <p>Otwórz Edytor Skryptów (Rozszerzenia -> Apps Script) i wklej poniższy, solidnie zoptymalizowany kod.</p>
+
+<pre><code class="language-javascript">/**
+ * YAROSLAV OSTAPENKO - 2026
+ * SKRYPT: Masowe generowanie umów PDF na podstawie szablonu Google Docs
+ * Wykorzystuje silnik DocumentApp oraz DriveApp.
+ */
+
+// Globalne zmienne - ID plików
+const TEMPLATE_DOC_ID = 'podaj_id_dokumentu_szablonu_tutaj';
+const TARGET_FOLDER_ID = 'podaj_id_folderu_docelowego_drive_tutaj';
+
+function generujUmowyDlaKlientow() {
+  // Przykładowe dane (W rzeczywistości pobralibyśmy je z SpreadsheetApp z Arkuszy)
+  const klienci =[
+    { imie: "Jan", nazwisko: "Kowalski", kwota: "1500 PLN", data: "2026-05-01" },
+    { imie: "Anna", nazwisko: "Nowak", kwota: "3200 PLN", data: "2026-05-02" },
+    { imie: "Piotr", nazwisko: "Zieliński", kwota: "450 PLN", data: "2026-05-03" }
+  ];
+
+  const targetFolder = DriveApp.getFolderById(TARGET_FOLDER_ID);
+  
+  klienci.forEach(klient => {
+    try {
+      // 1. Robimy fizyczną kopię szablonu w tle na Dysku
+      const tempFile = DriveApp.getFileById(TEMPLATE_DOC_ID).makeCopy(targetFolder);
+      const tempDocId = tempFile.getId();
+      
+      // 2. Otwieramy skopiowany dokument i dobieramy się do struktury DOM dokumentu
+      const doc = DocumentApp.openById(tempDocId);
+      const body = doc.getBody();
+      
+      // 3. Wymiana tagów na żywe dane (Replace text)
+      body.replaceText('{{IMIE}}', klient.imie);
+      body.replaceText('{{NAZWISKO}}', klient.nazwisko);
+      body.replaceText('{{KWOTA}}', klient.kwota);
+      body.replaceText('{{DATA}}', klient.data);
+      
+      // 4. Ważne! Musimy zapisać i zamknąć plik Docs, aby zmiany trafiły na serwer, zanim wygenerujemy PDF
+      doc.saveAndClose();
+      
+      // 5. Konwersja na bezpieczny plik PDF
+      const pdfBlob = tempFile.getAs(MimeType.PDF);
+      pdfBlob.setName(`Umowa_${klient.nazwisko}_${klient.data}.pdf`);
+      targetFolder.createFile(pdfBlob);
+      
+      // 6. Usunięcie pliku tymczasowego (Google Docs), zostawiamy tylko sam, czysty PDF
+      tempFile.setTrashed(true);
+      
+      Logger.log(`Wygenerowano i zapisano PDF dla: ${klient.imie} ${klient.nazwisko}`);
+      
+    } catch(e) {
+      Logger.log(`Błąd przetwarzania klienta ${klient.nazwisko}: ${e.message}`);
+    }
+  });
+}
+</code></pre>
+                <p>Powyższy kod zaoszczędzi Ci setki godzin pracy. Skrypt ten możesz podłączyć pod czasowy wyzwalacz (Time-driven Trigger) i generować raporty cyklicznie co miesiąc, w pełni bezobsługowo.</p>
+
+                <h2 id="python-api">5. Python i Google Docs API (Integracja Zewnętrzna)</h2>
+                
+                <p>Google Apps Script świetnie sprawdza się w małych projektach wewnętrznych. Co jednak, jeśli budujemy aplikację w Django, system w AWS lub zaawansowane skrypty maszynowe na serwerze i musimy napisać coś do Dokumentów Google z zewnątrz? Wtedy używamy potężnego <strong>Google Docs API (REST)</strong> poprzez środowisko Python.</p>
+
+                <p>Google Docs API w przeciwieństwie do prostego modyfikowania plików tekstowych (.txt) używa skomplikowanego, zagnieżdżonego formatu JSON do określania struktury dokumentu (Indexy, Paragrafy, Style). Poniższy skrypt pokazuje, jak poprawnie zaktualizować istniejący dokument za pomocą Pythona.</p>
+
+<pre><code class="language-python"># YAROSLAV OSTAPENKO - AKTUALIZACJA DOKUMENTU Z UŻYCIEM PYTHON DOCS API
+import os.path
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+# Scope deklarujący pełne prawo do modyfikacji dokumentów
+SCOPES = ['https://www.googleapis.com/auth/documents']
+
+# ID dokumentu, który chcemy zmodyfikować z zewnątrz
+DOCUMENT_ID = 'twoje_dlugie_id_dokumentu_docs'
+
+def update_google_doc():
+    creds = None
+    # Ładowanie zapisanego tokenu uwierzytelniającego
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+
+    try:
+        # Inicjalizacja klienta serwisu Docs v1
+        service = build('docs', 'v1', credentials=creds)
+
+        # Definicja Payloadu: Obiekt 'requests' (Zlecenie wstawienia tekstu)
+        # Wymaga podania dokładnego miejsca (Location) w dokumencie
+        requests =[
+            {
+                'insertText': {
+                    'location': {
+                        'index': 1, # Wstawienie tekstu na samej górze dokumentu (Indeks 1)
+                    },
+                    'text': 'Automatycznie wygenerowany raport analityczny (Python)\n'
+                }
+            },
+            {
+                'updateTextStyle': {
+                    'range': {
+                        'startIndex': 1,
+                        'endIndex': 55 # Pogrubiamy wpisany przed chwilą tekst
+                    },
+                    'textStyle': {
+                        'bold': True,
+                        'fontSize': {
+                            'magnitude': 14,
+                            'unit': 'PT'
+                        }
+                    },
+                    'fields': 'bold,fontSize'
+                }
+            }
+        ]
+
+        # Wykonanie zapytania batchUpdate
+        result = service.documents().batchUpdate(
+            documentId=DOCUMENT_ID, body={'requests': requests}).execute()
+            
+        print(f"Sukces! Dokument zaktualizowany. Zastosowano rewizji: {result.get('replies')}")
+
+    except HttpError as err:
+        print(f"Wystąpił krytyczny błąd API: {err}")
+
+if __name__ == '__main__':
+    update_google_doc()
+</code></pre>
+                <p>Zauważ jak precyzyjne jest to API. Musisz podawać exact <code>startIndex</code> oraz <code>endIndex</code>. Budowanie skomplikowanych tabel w ten sposób jest wyzwaniem inżynieryjnym, ale otwiera absolutnie nieograniczone możliwości integracji systemów ERP z generatorami raportów tekstowych w środowisku Google.</p>
+
+                <h2 id="google-vs-microsoft">6. Google Docs vs Microsoft Word w 2026</h2>
+                
+                <p>Niezależnie od moich zachwytów nad rozwiązaniami Google, musimy być obiektywni. Czy Google Docs jest w stanie całkowicie wyeliminować Worda z korporacji? Zestawienie analityczne wygląda następująco:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kategoria</th>
+                            <th>Google Docs</th>
+                            <th>Microsoft Word (Desktop)</th>
+                            <th>Werdykt Yaroslava</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kolaboracja (Real-time)</strong></td>
+                            <td>Wybitna. Błyskawiczna synchronizacja.</td>
+                            <td>Dobra, ale zdarzają się konflikty blokowania plików na SharePoincie.</td>
+                            <td>Google Docs to wciąż niekwestionowany król pracy zespołowej na żywo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Formatowanie (DTP)</strong></td>
+                            <td>Podstawowe i elastyczne (Pageless).</td>
+                            <td>Bezwzględnie potężne, kontrola wdów/sierot, idealne style.</td>
+                            <td>Word wygrywa, jeśli tworzysz książkę, skomplikowaną pracę naukową do druku lub PDF o ścisłym layoutcie.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automatyzacja Skryptowa</strong></td>
+                            <td>Google Apps Script (Cloud JS).</td>
+                            <td>VBA (Legacy) oraz nowsze Office Scripts (TS).</td>
+                            <td>GAS jest prostszy do uruchamiania asynchronicznego na serwerach jako wyzwalacz internetowy (Web Trigger).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sztuczna Inteligencja</strong></td>
+                            <td>Gemini AI wbudowane głęboko w UI.</td>
+                            <td>Copilot w Microsoft 365.</td>
+                            <td>Remis. Obie korporacje zintegrowały najpotężniejsze modele LLM w podobny, użyteczny sposób.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Praca Offline</strong></td>
+                            <td>Wymaga wtyczki, ograniczona stabilność.</td>
+                            <td>Natywna, idealna w pociągu bez Wi-Fi.</td>
+                            <td>Zdecydowana wygrana Microsoftu. Desktopowy gruby klient zawsze wygra z aplikacją przeglądarkową (Web App).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="podsumowanie">7. Podsumowanie: Czy Warto Wdrażać Google Docs?</h2>
+                
+                <p>Google Docs w 2026 roku nie służy już tylko do pisania. Stało się interaktywnym, połączonym centrum zarządzania wiedzą dla nowoczesnych firm. Dzięki elementom takim jak Smart Canvas, Markdown oraz potężnej wsparciu ze strony sztucznej inteligencji Gemini, proces "przelewania myśli" na wirtualny papier nigdy nie był tak płynny.</p>
+                
+                <p>Z kolei dla nas, specjalistów technicznych i programistów, otwarte API, zoptymalizowany Google Apps Script i możliwość konstruowania wtyczek dają niesamowite narzędzia do optymalizacji i obniżania kosztów w biznesie. Porzućmy fizyczne marginesy na rzecz formatu Pageless i automatyzujmy naszą pracę!</p>
+
+                <p>Jeśli macie jakiekolwiek problemy z odpaleniem skryptów lub z autoryzacją Oauth2 dla Pythona, zerknijcie do oficjalnej dokumentacji Google Cloud lub piszcie przez formularz. Czystego kodu i bezkonfliktowych rewizji w dokumentach!</p>
+                <p>— <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">8. Najczęściej Zadawane Pytania (FAQ)</h2>
+                
+                <div class="info-box">
+                    <h3>Czy Google Docs obsługuje formatowanie Markdown?</h3>
+                    <p>Tak! W nowszych wersjach Google Docs wprowadzono potężne, natywne wsparcie dla uwielbianego przez programistów formatowania Markdown. Możesz włączyć je w menu Narzędzia -> Ustawienia i używać znaków takich jak **pogrubienie**, # nagłówki czy[] (checkboxy) do błyskawicznego tworzenia list zadań bez używania myszki i wstążki menu.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czym jest format Pageless (Bezkartkowy) w Dokumentach Google?</h3>
+                    <p>Pageless to absolutnie rewolucyjny tryb widoku, który usuwa archaiczne, fizyczne granice strony A4. Twój dokument staje się nieskończonym, płynnym płótnem (canvas), co ułatwia pracę z szerokimi, kilkudziesięcio-kolumnowymi tabelami, dużymi obrazami i wklejonym kodem programistycznym. Dokument idealnie dostosowuje się i zawija (wrap) względem rozmiaru i proporcji Twojego ekranu, niezależnie czy pracujesz na małym laptopie czy 34-calowym monitorze.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Jak zautomatyzować generowanie umów i faktur w Google Docs?</h3>
+                    <p>Najlepszym i najbardziej optymalnym sposobem na masowe generowanie dokumentów jest użycie wbudowanego środowiska języka Google Apps Script (GAS) bazującego na składni JavaScript. Tworzysz jeden szablon dokumentu ze specjalnymi znacznikami np. <code>{{IMIE}}</code>, a Twój skrypt iteruje po wierszach z tabeli w Google Sheets, podmienia tagi na żywe dane dla setek rekordów i zapisuje gotowy, spłaszczony wynik bezpośrednio jako pliki .PDF na Twoim Dysku Google.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy Google Docs posiada sztuczną inteligencję (AI)?</h3>
+                    <p>Tak, w ramach pakietu biznesowego Google Workspace zaimplementowano zaawansowane modele z rodziny Gemini. Opcja oznaczona ikoną ołówka 'Pomóż mi pisać' (Help me write) pozwala m.in. na wygenerowanie pierwszego szkicu e-maila, podsumowywanie długich, nudnych raportów technologicznych w formie punktów (bullets) i automatyczną zmianę emocjonalnego tonu wypowiedzi z potocznej na w pełni formalną, z zachowaniem oryginalnego znaczenia kontekstowego.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Google Docs vs Microsoft Word – co wybrać w firmie w 2026 roku?</h3>
+                    <p>Wybór zależy stricte od profilu działalności Twojej firmy. Google Docs bezwzględnie wygrywa w obszarze płynnej kolaboracji wielu użytkowników w czasie rzeczywistym, łatwości wewnętrznych integracji przez Smart Chips (@) i pisania bezserwerowych skryptów (GAS). Microsoft Word (szczególnie jako aplikacja instalowana na dysku tzw. Desktop) pozostaje absolutnym, niedoścignionym liderem w potężnym formatowaniu wydruków, zaawansowanym DTP (książki, skomplikowane prace z przypisami), pracy na wielkich plikach przy braku połączenia z siecią (Offline) oraz przy budowaniu makr wspierających starsze systemy w oparciu o obiektowy model COM i język VBA.</p>
+                </div>
+
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Certyfikowany Inżynier Google Cloud Platform (GCP) oraz deweloper rozwiązań w środowisku Google Workspace. Pasjonat bezkompromisowej optymalizacji korporacyjnej poprzez środowiska No-Code i automatyzacje używające języków JavaScript (Apps Script) oraz Python. Od lat dzielę się wiedzą o architekturze systemów chmurowych na tym blogu.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#nowa-era-formatowania">1. Format Pageless i Markdown</a></li>
+                    <li><a href="#smart-canvas">2. Smart Canvas: Znak "@"</a></li>
+                    <li><a href="#gemini-ai">3. Gemini AI: Twój Copilot</a></li>
+                    <li><a href="#automatyzacja-gas">4. Automatyzacja (Google Apps Script)</a></li>
+                    <li><a href="#python-api">5. Python i Google Docs API</a></li>
+                    <li><a href="#google-vs-microsoft">6. Google Docs vs Microsoft Word</a></li>
+                    <li><a href="#podsumowanie">7. Podsumowanie i Wnioski</a></li>
+                    <li><a href="#faq">8. Najczęściej Zadawane Pytania (FAQ)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Wizytówka i blog inżynieryjny. Programuję architekturę Cloud, optymalizuję środowiska narzędziowe Workspace i dzielę się pasją do innowacji. Prawdziwa wiedza, poparta latami praktyki w branży IT.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Szybka Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna Witryny</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">Informacje o Mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Artykuły na Blogu</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zrealizowane Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt Biznesowy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Bezpośredni Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774 (Biuro)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Moje Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub Repository">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter Feed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko Blog. Wszelkie prawa zastrzeżone. Optymalizacja kodu w standardach 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wygodny Przycisk przewijania na sam szczyt strony (Scroll to Top) -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Zabierz mnie do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC (Interaktywność Strony, Śledzenie, Tryb Ciemny)
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMICZNA AKTUALIZACJA ROKU W STOPCE
+            const yearElement = document.getElementById('currentYear');
+            if(yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // 2. FUNKCJONALNOŚĆ MENU MOBILNEGO (Hamburger Menu)
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            if(hamburger && navbarNav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navbarNav.classList.toggle('active');
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbarNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // 3. OBSŁUGA MOTYWÓW (Dark / Light Theme)
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            if(themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    const currentTheme = htmlElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    htmlElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('ostapenkoblog-theme', newTheme);
+                    updateThemeIcon(newTheme);
+                });
+            }
+
+            function updateThemeIcon(theme) {
+                if(!themeIcon) return;
+                
+                if (theme === 'dark') {
+                    // Księżyc
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Słońce
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. PRZYCISK POWROTU NA GÓRĘ & PASEK CZYTANIA
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const progressBar = document.getElementById('readingProgressBar');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const headings = document.querySelectorAll('.article-content h2');
+            
+            let scrollTimeout;
+            
+            window.addEventListener('scroll', () => {
+                if(scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = window.requestAnimationFrame(() => {
+                    // Przycisk Scroll To Top
+                    if (scrollTopBtn) {
+                        if (window.scrollY > 300) {
+                            scrollTopBtn.classList.add('visible');
+                        } else {
+                            scrollTopBtn.classList.remove('visible');
+                        }
+                    }
+                    
+                    // Pasek Postępu
+                    if (progressBar) {
+                        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        
+                        if(height > 0) {
+                            const scrolled = (winScroll / height) * 100;
+                            progressBar.style.width = scrolled + "%";
+                        }
+                    }
+                    
+                    // TOC Spy (Aktywne menu)
+                    if(headings.length > 0 && tocLinks.length > 0) {
+                        let currentHeadingId = '';
+                        const scrollPosition = window.scrollY + 150; 
+
+                        headings.forEach(heading => {
+                            const top = heading.offsetTop;
+                            if (scrollPosition >= top) {
+                                currentHeadingId = heading.getAttribute('id');
+                            }
+                        });
+
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (currentHeadingId && link.getAttribute('href') === `#${currentHeadingId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            if(scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // 5. PŁYNNE PRZEWIJANIE (ANCHORS)
+            const internalLinks = document.querySelectorAll('.toc-list a[href^="#"]');
+            
+            internalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const fixedNavbarHeight = 100;
+                        const offsetTop = targetElement.offsetTop - fixedNavbarHeight;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        if(history.pushState) {
+                            history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>
