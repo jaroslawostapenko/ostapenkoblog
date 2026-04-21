@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>OstapenkoBlog - O mnie | Yaroslav Ostapenko</title>
+    <meta name="description" content="Oficjalny blog i strona o mnie. Yaroslav Ostapenko - programista, twórca stron internetowych, pasjonat IT. Sprawdź moje artykuły i portfolio.">
+    <meta name="keywords" content="yaroslav ostapenko, ostapenkoblog, programowanie, web development, blog it, portfolio, frontend, backend">
+    <meta name="author" content="Yaroslav Ostapenko">
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/">
+    <meta property="og:title" content="OstapenkoBlog - Yaroslav Ostapenko">
+    <meta property="og:description" content="Oficjalny blog i strona o mnie. Yaroslav Ostapenko - programista, twórca stron internetowych.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/">
+    <meta property="twitter:title" content="OstapenkoBlog - Yaroslav Ostapenko">
+    <meta property="twitter:description" content="Oficjalny blog i strona o mnie. Yaroslav Ostapenko - programista, twórca stron internetowych.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yaroslav Ostapenko",
+      "url": "https://ostapenkoblog.mqttwebs.com/",
+      "sameAs":[
+        "https://jaroslawostapenko.mqttwebs.com/"
+      ],
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Ostapenkoblog",
+      "url": "https://ostapenkoblog.mqttwebs.com/",
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko"
+      }
+    }
+    </script>
+
+    <!-- CSS STYLES -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables */
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-primary-light: #dbeafe;
+            --color-secondary: #0f172a;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-background: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            
+            /* Typography */
+            --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --section-padding: 5rem 0;
+            --container-max-width: 1200px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+            --transition-slow: 0.5s ease-in-out;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --color-primary: #3b82f6;
+            --color-primary-dark: #60a5fa;
+            --color-primary-light: #1e3a8a;
+            --color-secondary: #f8fafc;
+            --color-text-main: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-border: #334155;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* ==========================================================================
+           3. UTILITY CLASSES
+           ========================================================================== */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mt-5 { margin-top: var(--spacing-xxl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+        .mb-5 { margin-bottom: var(--spacing-xxl); }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-fast);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius-full);
+        }
+
+        .section-header p {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: var(--spacing-md) auto 0;
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           4. NAVIGATION
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }[data-theme="dark"] .navbar {
+            background-color: rgba(30, 41, 59, 0.9);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .nav-item a:hover {
+            color: var(--color-primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* ==========================================================================
+           5. HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px; /* offset for navbar */
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 var(--spacing-xl);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-secondary);
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .typewriter {
+            display: inline-block;
+            border-right: 3px solid var(--color-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blinkCursor 0.75s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--color-primary); }
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+
+        /* ==========================================================================
+           6. ABOUT SECTION
+           ========================================================================== */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--color-surface);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xxl);
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image::before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+
+        .about-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--spacing-xl);
+        }
+
+        .about-image-overlay h3 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .skills-container {
+            margin-top: var(--spacing-xl);
+        }
+
+        .skill-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background-color: var(--color-border);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--color-primary);
+            border-radius: var(--radius-full);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* ==========================================================================
+           7. PORTFOLIO SECTION (Link to external portfolio)
+           ========================================================================== */
+        .portfolio-cta {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .portfolio-cta h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .portfolio-cta p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .portfolio-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+            color: var(--color-text-main);
+            transform: translateY(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        /* ==========================================================================
+           8. BLOG SECTION (Articles Grid)
+           ========================================================================== */
+        .blog {
+            padding: var(--section-padding);
+            background-color: var(--color-background);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .blog-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-border);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary-light);
+        }
+
+        .blog-image {
+            position: relative;
+            height: 200px;
+            background-color: var(--color-border);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+        }
+
+        .blog-image svg {
+            width: 64px;
+            height: 64px;
+            opacity: 0.5;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .seo-keyword-badge {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: var(--spacing-sm);
+            /* This ensures Yaroslav Ostapenko is the first keyword visually and structurally in the article */
+        }
+
+        [data-theme="dark"] .seo-keyword-badge {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-secondary);
+        }
+
+        .blog-title a {
+            color: inherit;
+        }
+
+        .blog-title a:hover {
+            color: var(--color-primary);
+        }
+
+        .blog-excerpt {
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-lg);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--spacing-md);
+            margin-top: auto;
+        }
+
+        .read-more {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .read-more svg {
+            width: 16px;
+            height: 16px;
+            transition: transform var(--transition-fast);
+        }
+
+        .read-more:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ==========================================================================
+           9. CONTACT SECTION
+           ========================================================================== */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--color-surface);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-xxl);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }[data-theme="dark"] .contact-icon {
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .contact-text h4 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.125rem;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        .contact-form {
+            background-color: var(--color-background);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--color-secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background-color: var(--color-surface);
+            color: var(--color-text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-submit {
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           10. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           11. MEDIA QUERIES (RWD)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-cta h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="#home" class="active">Strona Główna</a></li>
+                <li class="nav-item"><a href="#about">O mnie</a></li>
+                <li class="nav-item"><a href="#blog">Blog</a></li>
+                <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <!-- Sun Icon (Default) -->
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <header id="home" class="hero">
+        <canvas id="particles-js"></canvas>
+        <div class="hero-content reveal">
+            <div class="hero-subtitle">Witaj na moim blogu</div>
+            <h1 class="hero-title">
+                Cześć, jestem <span class="text-primary">Yaroslav Ostapenko</span><br>
+                <span class="typewriter" id="typewriter"></span>
+            </h1>
+            <p class="hero-description">
+                Dzielę się wiedzą na temat programowania, web developmentu oraz nowinek ze świata IT. Projektuję nowoczesne i responsywne strony internetowe z zachowaniem najlepszych standardów SEO.
+            </p>
+            <div class="hero-actions">
+                <a href="#blog" class="btn btn-primary">Czytaj artykuły</a>
+                <a href="#portfolio" class="btn btn-outline">Zobacz portfolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>O mnie</h2>
+                <p>Poznaj moją historię, umiejętności i pasję do tworzenia niesamowitych projektów internetowych.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <!-- Placeholder using solid color and text to avoid broken external links -->
+                    <div style="width: 100%; height: 100%; position: absolute; background: var(--color-primary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="about-image-overlay">
+                        <h3>Yaroslav Ostapenko</h3>
+                    </div>
+                </div>
+
+                <div class="about-text reveal">
+                    <h3>Pasjonat technologii, Web Developer</h3>
+                    <p>Nazywam się <strong>Yaroslav Ostapenko</strong> i od lat zajmuję się tworzeniem nowoczesnych stron internetowych. Moim celem jest dostarczanie produktów, które nie tylko świetnie wyglądają, ale są także wydajne, bezpieczne i zoptymalizowane pod kątem wyszukiwarek (SEO).</p>
+                    <p>Prowadzę ten blog (ostapenkoblog), aby dzielić się swoimi przemyśleniami, tutorialami oraz analizami najnowszych trendów w świecie front-end oraz back-end developmentu.</p>
+                    
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML5 / CSS3 / RWD</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript / TypeScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SEO & Optymalizacja Webowa</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         BLOG SECTION (SEO Constraints applied: First keyword is Yaroslav Ostapenko)
+         ========================================================================== -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Najnowsze wpisy na blogu</h2>
+                <p>Sprawdź moje najnowsze artykuły ze świata IT, poradniki programistyczne i przemyślenia na temat technologii.</p>
+            </div>
+
+            <div class="blog-grid">
+                
+                <!-- Article 1 -->
+                <article class="blog-card reveal">
+                    <!-- SEO Constraint: "yaroslav ostapenko" as the first keyword -->
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Wprowadzenie do nowoczesnego RWD</a></h3>
+                        <p class="blog-excerpt">Tworzenie stron responsywnych (Responsive Web Design) to absolutna podstawa. W tym artykule omawiam techniki CSS Grid i Flexbox, które ułatwiają budowę płynnych layoutów.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                20 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card reveal">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <!-- SEO Constraint -->
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Optymalizacja SEO w 2026 roku</a></h3>
+                        <p class="blog-excerpt">Jak poprawnie ustawić kanoniczne adresy URL, wykorzystać meta tagi i JSON-LD, aby strona znalazła się na pierwszym miejscu w wyszukiwarce Google.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                18 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card reveal">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <div class="blog-content">
+                        <!-- SEO Constraint -->
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Single Page Application w czystym HTML i JS</a></h3>
+                        <p class="blog-excerpt">Czy da się napisać zaawansowaną stronę w jednym pliku HTML? Oczywiście. Pokazuję architekturę, organizację stylów i logiki JS na przykładzie mojego bloga.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                15 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card reveal">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path><path d="M10 2c1 .5 2 2 2 5"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <!-- SEO Constraint -->
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Ciemny motyw: UI/UX dla programistów</a></h3>
+                        <p class="blog-excerpt">Jak poprawnie zaimplementować Dark Mode używając CSS Custom Properties (Zmienne CSS) i zapisywać preferencje użytkownika w LocalStorage.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                10 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card reveal">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <div class="blog-content">
+                        <!-- SEO Constraint -->
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Przyszłość JavaScript i TypeScript</a></h3>
+                        <p class="blog-excerpt">Ewolucja języka, nowe standardy ECMAScript i dlaczego silne typowanie w TypeScript to konieczność przy dużych projektach biznesowych.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                05 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="blog-card reveal">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <div class="blog-content">
+                        <!-- SEO Constraint -->
+                        <span class="seo-keyword-badge">Yaroslav Ostapenko</span>
+                        <h3 class="blog-title"><a href="#">Architektura CSS: BEM vs Tailwind</a></h3>
+                        <p class="blog-excerpt">Rozwiązania utility-first podbijają rynek, jednak tradycyjne metodologie jak BEM wciąż mają się świetnie. Co wybrać do kolejnego projektu w 2026?</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                01 Kwietnia 2026
+                            </div>
+                            <a href="#" class="read-more text-primary">Czytaj <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PORTFOLIO SECTION
+         ========================================================================== -->
+    <section id="portfolio" class="portfolio-cta">
+        <div class="container reveal">
+            <h2>Chcesz zobaczyć więcej moich prac?</h2>
+            <p>Odwiedź moją główną stronę z portfolio, gdzie prezentuję kompletne projekty komercyjne, aplikacje webowe oraz realizacje dla klientów.</p>
+            
+            <div class="portfolio-card mt-4">
+                <div class="portfolio-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3 style="color: var(--color-secondary); margin-bottom: 10px;">Oficjalne Portfolio</h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 20px;">Przejdź na domenę z moimi realizacjami i poznaj technologie, z którymi pracuję na co dzień.</p>
+                <!-- REQUIRED PORTFOLIO LINK -->
+                <a href="https://jaroslawostapenko.mqttwebs.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Odwiedź jaroslawostapenko.mqttwebs.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Skontaktuj się ze mną</h2>
+                <p>Masz pytanie, propozycję współpracy lub po prostu chcesz porozmawiać o technologii? Napisz do mnie!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:kontakt@ostapenkoblog.mqttwebs.com">kontakt@ostapenkoblog.mqttwebs.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telefon</h4>
+                            <p>+48 000 000 000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Lokalizacja</h4>
+                            <p>Polska</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form reveal">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Imię i nazwisko</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Jan Kowalski">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Adres e-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="jan@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Temat</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="W czym mogę pomóc?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Wiadomość</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="Twoja wiadomość..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">Wyślij wiadomość</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Oficjalny blog i wizytówka. Tworzę, programuję, optymalizuję. Poznaj świat technologii moimi oczami.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="#home">Strona Główna</a></li>
+                        <li><a href="#about">O mnie</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko. Wszelkie prawa zastrzeżone. Blog zrealizowany jako Single-Page HTML.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Przewiń do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMIC CURRENT YEAR
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 2. MOBILE MENU TOGGLE
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navbarNav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navbarNav.classList.remove('active');
+                });
+            });
+
+            // 3. DARK MODE THEME TOGGLE
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Check for saved theme
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                // Check system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('ostapenkoblog-theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    // Moon Icon
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Sun Icon
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. SCROLL TO TOP & STICKY NAV OPACITY
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 5. ACTIVE NAV LINK ON SCROLL
+            const sections = document.querySelectorAll('section, header');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // 6. INTERSECTION OBSERVER FOR REVEAL ANIMATIONS & SKILL BARS
+            const revealElements = document.querySelectorAll('.reveal');
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // If revealing skills, trigger progress bar animation
+                        if (entry.target.classList.contains('about-text')) {
+                            skillBars.forEach(bar => {
+                                const progress = bar.getAttribute('data-progress');
+                                bar.style.width = progress;
+                            });
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // 7. TYPEWRITER EFFECT IN HERO SECTION
+            const typewriterEl = document.getElementById('typewriter');
+            const words =['Web Developer.', 'Blogger.', 'Tech Enthusiast.', 'SEO Specialist.'];
+            let wordIndex = 0;
+            let letterIndex = 0;
+            let isDeleting = false;
+            let typeSpeed = 100;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    typewriterEl.textContent = currentWord.substring(0, letterIndex - 1);
+                    letterIndex--;
+                    typeSpeed = 50;
+                } else {
+                    typewriterEl.textContent = currentWord.substring(0, letterIndex + 1);
+                    letterIndex++;
+                    typeSpeed = 150;
+                }
+
+                if (!isDeleting && letterIndex === currentWord.length) {
+                    isDeleting = true;
+                    typeSpeed = 1500; // Pause at end of word
+                } else if (isDeleting && letterIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeSpeed = 500; // Pause before new word
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+
+            // Start typing effect
+            setTimeout(type, 1000);
+
+            // 8. CONTACT FORM SUBMISSION MOCK
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('button');
+                const originalText = btn.textContent;
+                
+                btn.textContent = 'Wysyłanie...';
+                btn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    btn.textContent = 'Wiadomość wysłana!';
+                    btn.style.backgroundColor = 'var(--color-success)';
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            });
+
+            // 9. CUSTOM PARTICLE SYSTEM FOR HERO BACKGROUND
+            // This adds an elegant interactive background specifically crafted for this index page
+            class ParticleSystem {
+                constructor(canvasId) {
+                    this.canvas = document.getElementById(canvasId);
+                    this.ctx = this.canvas.getContext('2d');
+                    this.particles =[];
+                    this.numberOfParticles = 60;
+                    this.resize();
+                    this.init();
+
+                    window.addEventListener('resize', () => {
+                        this.resize();
+                        this.init();
+                    });
+
+                    this.animate();
+                }
+
+                resize() {
+                    this.canvas.width = this.canvas.parentElement.offsetWidth;
+                    this.canvas.height = this.canvas.parentElement.offsetHeight;
+                }
+
+                init() {
+                    this.particles =[];
+                    for (let i = 0; i < this.numberOfParticles; i++) {
+                        const x = Math.random() * this.canvas.width;
+                        const y = Math.random() * this.canvas.height;
+                        const size = Math.random() * 2 + 1;
+                        const speedX = Math.random() * 1 - 0.5;
+                        const speedY = Math.random() * 1 - 0.5;
+                        this.particles.push({ x, y, size, speedX, speedY });
+                    }
+                }
+
+                animate() {
+                    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                    
+                    const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+                    this.ctx.fillStyle = isDarkTheme ? 'rgba(59, 130, 246, 0.5)' : 'rgba(37, 99, 235, 0.2)';
+                    this.ctx.strokeStyle = isDarkTheme ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.1)';
+
+                    for (let i = 0; i < this.particles.length; i++) {
+                        const p = this.particles[i];
+                        
+                        p.x += p.speedX;
+                        p.y += p.speedY;
+
+                        if (p.x > this.canvas.width) p.x = 0;
+                        else if (p.x < 0) p.x = this.canvas.width;
+                        
+                        if (p.y > this.canvas.height) p.y = 0;
+                        else if (p.y < 0) p.y = this.canvas.height;
+
+                        this.ctx.beginPath();
+                        this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        this.ctx.fill();
+
+                        // Connect particles
+                        for (let j = i; j < this.particles.length; j++) {
+                            const dx = p.x - this.particles[j].x;
+                            const dy = p.y - this.particles[j].y;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+
+                            if (distance < 120) {
+                                this.ctx.beginPath();
+                                this.ctx.lineWidth = 1 - (distance / 120);
+                                this.ctx.moveTo(p.x, p.y);
+                                this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                                this.ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(() => this.animate());
+                }
+            }
+
+            // Initialize Background Particles
+            new ParticleSystem('particles-js');
+
+        });
+    </script>
+</body>
+</html>
