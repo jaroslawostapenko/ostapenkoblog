@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Kompletna Recenzja i Poradnik VirtualBox w 2026 Roku | Yaroslav Ostapenko</title>
+    <meta name="description" content="Czy Oracle VM VirtualBox to nadal król darmowej wirtualizacji w 2026 roku? Sprawdź moją dogłębną recenzję, poradnik konfiguracji sieci, optymalizacji i VBoxManage.">
+    <meta name="keywords" content="yaroslav ostapenko, virtualbox recenzja, virtualbox poradnik, wirtualizacja, hyper-v, vmware, vboxmanage, linux wirtualizacja, vagrant">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- REQUIRED CANONICAL URL -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/virtualbox.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/virtualbox.html">
+    <meta property="og:title" content="Kompletna Recenzja i Poradnik VirtualBox w 2026 Roku">
+    <meta property="og:description" content="Czy Oracle VM VirtualBox to nadal król darmowej wirtualizacji? Recenzja, poradnik konfiguracji, VBoxManage i optymalizacja.">
+    <meta property="article:published_time" content="2026-04-22T08:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="VirtualBox">
+    <meta property="article:tag" content="Wirtualizacja">
+    <meta property="article:tag" content="SysOps">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/virtualbox.html">
+    <meta property="twitter:title" content="Kompletna Recenzja i Poradnik VirtualBox w 2026 Roku">
+    <meta property="twitter:description" content="Dogłębna recenzja Oracle VM VirtualBox. Konfiguracja, VBoxManage i porównanie z Hyper-V oraz VMware.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/virtualbox.html"
+      },
+      "headline": "Kompletna Recenzja i Poradnik VirtualBox w 2026 Roku",
+      "description": "Dogłębna analiza oprogramowania do wirtualizacji Oracle VM VirtualBox. Poradnik konfiguracji, tryby sieciowe i VBoxManage.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/virtualbox-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-04-22T08:00:00+02:00",
+      "dateModified": "2026-04-22T09:00:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja VirtualBox",
+        "item": "https://ostapenkoblog.mqttwebs.com/virtualbox.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy VirtualBox jest całkowicie darmowy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, bazowa wersja VirtualBox jest w 100% darmowa i otwartoźródłowa (GPLv2). Płatny (do zastosowań komercyjnych) jest jedynie dodatek Extension Pack, który oferuje zaawansowane funkcje np. wsparcie dla USB 3.0 czy szyfrowanie dysków."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "VirtualBox czy Hyper-V - co wybrać w 2026 roku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jeśli używasz Windows 10/11 Pro i potrzebujesz natywnej wydajności bez zbędnych interfejsów, Hyper-V działa szybciej. Jeśli jednak pracujesz na wielu systemach (Linux, macOS, Windows Home) i zależy Ci na GUI oraz portowalności maszyn wirtualnych, VirtualBox jest lepszym wyborem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak włączyć wsparcie wirtualizacji w BIOS/UEFI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aby VirtualBox działał w trybie 64-bitowym, musisz wejść do BIOS/UEFI komputera (zazwyczaj klawisz DEL, F2, F10 podczas startu) i włączyć opcję Intel VT-x lub AMD-V (czasami nazywaną SVM Mode)."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES (Zgodne ze stylem z optymalizacjaseo.html) -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables */
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-primary-light: #dbeafe;
+            --color-secondary: #0f172a;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-background: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            
+            /* Article Specific */
+            --color-code-bg: #1e293b;
+            --color-code-text: #e2e8f0;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #e2e8f0;
+            
+            /* Typography */
+            --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --color-primary: #3b82f6;
+            --color-primary-dark: #60a5fa;
+            --color-primary-light: #1e3a8a;
+            --color-secondary: #f8fafc;
+            --color-text-main: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-border: #334155;
+            
+            --color-code-bg: #0f172a;
+            --color-code-text: #f8fafc;
+            --color-toc-bg: #1e293b;
+            --color-toc-border: #334155;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }[data-theme="dark"] .navbar {
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }[data-theme="dark"] .article-category {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }
+
+        [data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code, 
+        .article-content li code,
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+
+        [data-theme="dark"] .article-content p code,
+        [data-theme="dark"] .article-content li code,[data-theme="dark"] .article-content td code {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-content th {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] .article-content th {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <!-- SEO Keyword implementation -->
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Kompletna Recenzja i Poradnik VirtualBox w 2026 Roku</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-04-22">22 Kwietnia 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 25 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                        <path d="M10 8h4"></path>
+                        <path d="M12 12v-4"></path>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Z tej strony <strong>Yaroslav Ostapenko</strong>. Wirtualizacja to absolutny fundament dzisiejszego środowiska IT – od lokalnego testowania oprogramowania po potężne klastry chmurowe. Mimo że rynek w 2026 roku zdominowany jest przez konteneryzację (Docker, Kubernetes) i natywne rozwiązania wbudowane w systemy (np. WSL2 na Windows czy Hyper-V), klasyczne hypervisory drugiego poziomu (Type-2) wciąż mają się świetnie.</p>
+
+                <p>Bohaterem dzisiejszego poradnika jest weteran tej kategorii: <strong>Oracle VM VirtualBox</strong>. Pamiętam czasy, gdy była to jedyna rozsądna, darmowa alternatywa dla drogiego VMware Workstation. Dzisiaj przyjrzymy się, czy VirtualBox nadal jest królem darmowej wirtualizacji, w jaki sposób zoptymalizować go do pracy programistycznej, jak używać jego interfejsu wiersza poleceń (VBoxManage) i w jakich sytuacjach warto (lub nie warto) po niego sięgać.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "Największą siłą VirtualBox nie jest wcale jego wydajność, ale uniwersalność. Jako Web Developer mogę zapisać maszynę wirtualną na dysku w systemie macOS i uruchomić ją godzinę później u klienta na starym laptopie z systemem Linux, nie zmieniając ani jednej linijki konfiguracji." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="wirtualizacja-podstawy">1. Czym w ogóle jest wirtualizacja i VirtualBox?</h2>
+                
+                <p>Zanim przejdziemy do konfiguracji i wiersza poleceń, uporządkujmy podstawy. Wirtualizacja sprzętowa pozwala na uruchomienie wielu odizolowanych od siebie systemów operacyjnych (nazywanych <em>Gośćmi</em> - Guests) na jednym fizycznym komputerze (nazywanym <em>Gospodarzem</em> - Host). Za zarządzanie zasobami (CPU, RAM, dysk, sieć) i ich przydzielanie maszynom wirtualnym odpowiada specjalne oprogramowanie – Hypervisor.</p>
+
+                <p>Wyróżniamy dwa główne typy hypervisorów:</p>
+                <ul>
+                    <li><strong>Type-1 (Bare-metal):</strong> Działa bezpośrednio na sprzęcie, bez pośrednictwa systemu operacyjnego (np. VMware ESXi, Proxmox VE, Microsoft Hyper-V w wersji Server). Zapewnia najwyższą wydajność, stosowany głównie w centrach danych.</li>
+                    <li><strong>Type-2 (Hosted):</strong> Instalowany jako zwykły program w systemie operacyjnym (np. Windows, Linux, macOS). I tutaj właśnie plasuje się <strong>VirtualBox</strong>, obok VMware Workstation Player i Parallels Desktop.</li>
+                </ul>
+
+                <p>VirtualBox, rozwijany obecnie przez firmę Oracle (wcześniej przez Sun Microsystems i Innotek), to potężne narzędzie oferujące wsparcie dla procesorów x86 i AMD64/Intel64. Oznacza to, że zainstalujesz go niemal na każdym standardowym komputerze PC lub Macu opartym na procesorach Intela.</p>
+
+                <h2 id="zalety-wady">2. Główne zalety i wady VirtualBox w 2026 roku</h2>
+
+                <p>Wraz z pojawieniem się narzędzi takich jak WSL2 (Windows Subsystem for Linux), Docker oraz zaawansowanych środowisk programistycznych w chmurze (np. GitHub Codespaces), rola oprogramowania takiego jak VirtualBox uległa zmianie. Niemniej jednak, posiada on unikalne cechy, które sprawiają, że dla wielu specjalistów IT jest niezastąpiony.</p>
+
+                <h3>Dlaczego nadal kochamy VirtualBox? (Zalety)</h3>
+                <ul>
+                    <li><strong>Darmowy i Open Source:</strong> Baza programu jest udostępniana na licencji GPLv2. Możesz z niej korzystać bez opłat. Jedynie rozszerzenie <em>Extension Pack</em> wymaga licencji w zastosowaniach ściśle komercyjnych.</li>
+                    <li><strong>Wieloplatformowość (Cross-platform):</strong> Działa pod kontrolą Windows, macOS, Linux, a nawet Solaris.</li>
+                    <li><strong>Migracja (Portowalność):</strong> Eksportowanie maszyny do formatu OVA/OVF to zaledwie kilka kliknięć. Możesz stworzyć idealne środowisko na komputerze domowym, zapisać je na pendrive i odpalić na komputerze firmowym.</li>
+                    <li><strong>Migawki (Snapshots):</strong> Fenomenalne narzędzie. Możesz zapisać stan maszyny wirtualnej, wprowadzić ryzykowne zmiany (np. testowanie złośliwego oprogramowania, aktualizacja jądra Linuxa), a następnie jednym kliknięciem przywrócić system do stanu początkowego.</li>
+                    <li><strong>Zarządzanie z linii komend:</strong> Narzędzie <code>VBoxManage</code> pozwala na oskryptowanie dosłownie każdego aspektu działania wirtualnej maszyny. Współpracuje genialnie z narzędziami takimi jak Vagrant.</li>
+                </ul>
+
+                <h3>Gdzie VirtualBox kuleje? (Wady)</h3>
+                <ul>
+                    <li><strong>Wydajność względem Type-1:</strong> Jako Type-2 zawsze wprowadza pewien narzut wydajnościowy. Maszyny działają wolniej niż w przypadku KVM na Linuxie czy Hyper-V na Windowsie.</li>
+                    <li><strong>Wsparcie 3D i akceleracja graficzna:</strong> Chociaż VirtualBox posiada wsparcie dla 3D, jest ono stosunkowo ograniczone. Uruchamianie zaawansowanych gier czy oprogramowania do renderowania wideo na maszynie wirtualnej w VirtualBoxie to kiepski pomysł.</li>
+                    <li><strong>Konflikty z Hyper-V:</strong> Jeśli na Windows masz aktywne wsparcie wirtualizacji opartej na zabezpieczeniach (VBS) lub Hyper-V, VirtualBox musi korzystać z API Hyper-V, co potrafi drastycznie zmniejszyć jego wydajność (tzw. zielony żółw - ikona wolnego działania).</li>
+                </ul>
+
+                <h2 id="instalacja">3. Wymagania sprzętowe i Proces Instalacji</h2>
+                
+                <p>W 2026 roku standardy sprzętowe są wysokie. Aby w pełni cieszyć się wirtualizacją bez "zacięć" systemu bazowego, musisz spełnić określone warunki.</p>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Wymóg Krytyczny: Wsparcie sprzętowe (Hardware Virtualization)
+                    </div>
+                    <p style="margin:0;">Zanim w ogóle zaczniesz pobierać instalator, wejdź do BIOS/UEFI swojej płyty głównej i upewnij się, że opcje <strong>Intel VT-x</strong>, <strong>Intel Virtualization Technology</strong>, lub w przypadku procesorów AMD - <strong>AMD-V</strong> (czasem oznaczane jako SVM), są <strong>włączone (Enabled)</strong>. Bez tego uruchomisz wyłącznie przestarzałe systemy 32-bitowe i maszyna wirtualna będzie działać w trybie emulacji programowej, co jest katastrofalnie wolne.</p>
+                </div>
+
+                <h4>Moje rekomendowane wymagania sprzętowe:</h4>
+                <ul>
+                    <li><strong>Procesor (CPU):</strong> Minimum 4 rdzenie, zalecane 8 rdzeni (np. AMD Ryzen 5/7 lub Intel Core i5/i7). Jeśli wirtualizujesz Windows 11, powinieneś przeznaczyć dla niego minimum 2 rdzenie.</li>
+                    <li><strong>Pamięć RAM:</strong> Absolutne minimum to 8 GB dla maszyny typu host. Aby komfortowo pracować, polecam 16 GB, a idealnie 32 GB RAM. Windows 11 jako Guest potrzebuje do płynnej pracy około 4-6 GB RAM.</li>
+                    <li><strong>Dysk:</strong> Wyłącznie SSD (najlepiej NVMe). Tradycyjne dyski talerzowe (HDD) kompletnie nie radzą sobie z operacjami wejścia/wyjścia (I/O) maszyn wirtualnych i system operacyjny wewnątrz będzie "zamrażał".</li>
+                </ul>
+
+                <h3>3.1 Instalacja na Windows (Windows 10/11)</h3>
+                <ol>
+                    <li>Przejdź na oficjalną stronę <a href="https://www.virtualbox.org" target="_blank">virtualbox.org</a>.</li>
+                    <li>Pobierz instalator oznaczony jako "Windows hosts".</li>
+                    <li>Pobierz również plik "VirtualBox Extension Pack".</li>
+                    <li>Uruchom pobrany plik <code>.exe</code>. Podczas instalacji kreator poprosi o zgodę na zresetowanie interfejsów sieciowych (stracisz na moment połączenie z internetem). Wynika to z faktu instalacji wirtualnych sterowników kart sieciowych.</li>
+                    <li>Po zakończeniu, uruchom plik Extension Pack (z rozszerzeniem <code>.vbox-extpack</code>), aby VirtualBox zintegrował dodatki (m.in. obsługę protokołu RDP, kamery internetowej USB i napędów NVMe).</li>
+                </ol>
+
+                <h3>3.2 Instalacja na systemach Linux (Ubuntu/Debian)</h3>
+                <p>W środowisku Linux preferuję korzystanie z terminala. Pozwala to zachować kontrolę nad zależnościami. Poniżej przedstawiam komendy, których sam używam jako Yaroslav Ostapenko podczas konfiguracji środowiska pod Debianem.</p>
+
+<pre><code># Krok 1: Aktualizacja listy pakietów
+sudo apt update && sudo apt upgrade -y
+
+# Krok 2: Instalacja wymaganych zależności do kompilacji modułów kernela
+sudo apt install linux-headers-$(uname -r) build-essential dkms -y
+
+# Krok 3: Dodanie klucza publicznego repozytorium Oracle
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+
+# Krok 4: Dodanie repozytorium do pliku sources.list
+# (Upewnij się, że używasz odpowiedniej nazwy dystrybucji, np. "jammy" dla Ubuntu 22.04)
+echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+
+# Krok 5: Ponowna aktualizacja i właściwa instalacja VirtualBox w wersji 7.0
+sudo apt update
+sudo apt install virtualbox-7.0 -y
+
+# Krok 6: Dodanie Twojego użytkownika do grupy vboxusers
+# Umożliwi to współdzielenie portów USB oraz dostęp do sieci w trybie bridged
+sudo usermod -aG vboxusers $USER
+</code></pre>
+                <p>Po wykonaniu powyższych kroków, musisz wylogować się z systemu i zalogować ponownie, aby nowe grupy dla Twojego użytkownika zostały załadowane.</p>
+
+
+                <h2 id="konfiguracja-maszyny">4. Pierwsza Maszyna Wirtualna krok po kroku</h2>
+                
+                <p>Tworzenie maszyny wirtualnej (VM) w nowym GUI wersji 7.0 jest niezwykle uproszczone, wprowadzono tam funkcję tzw. <em>Unattended Install</em> (Instalacji nienadzorowanej).</p>
+                <p>Jak to działa? Podajesz obraz ISO systemu, wpisujesz w interfejsie nazwę użytkownika, hasło oraz klucz produktu (jeśli to Windows), a VirtualBox sam w tle przechodzi przez wszystkie kroki instalatora. Ty możesz iść zaparzyć kawę.</p>
+
+                <p>Jeśli jednak wolisz instalację ręczną, wybierz opcję "Skip Unattended Installation". Zwróć szczególną uwagę na ustawienia płyty głównej (Motherboard) w zakładce "System":</p>
+                <ul>
+                    <li>Dla nowych systemów (np. Windows 11) pamiętaj o włączeniu opcji <strong>Enable EFI (special OSes only)</strong>. Klasyczny BIOS powoli odchodzi do lamusa.</li>
+                    <li>Aby obsłużyć Windows 11, VirtualBox posiada moduł emulacji układu <strong>TPM 2.0 (Trusted Platform Module)</strong> oraz wsparcie dla <strong>Secure Boot</strong>. Upewnij się, że są aktywne.</li>
+                </ul>
+
+                <div class="info-box success">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Magia: VirtualBox Guest Additions
+                    </div>
+                    <p style="margin:0;">Zaraz po pomyślnej instalacji systemu operacyjnego (Gościa), Twoim absolutnym priorytetem jest zainstalowanie "Guest Additions" (Dodatków Gościa). Znajdziesz tę opcję w menu okna maszyny wirtualnej: <strong>Devices -> Insert Guest Additions CD image...</strong></p>
+                </div>
+
+                <p>Dlaczego <strong>Guest Additions</strong> to podstawa?</p>
+                <ol>
+                    <li><strong>Rozdzielczość ekranu:</strong> Bez nich system będzie zablokowany w rozdzielczości 800x600 lub 1024x768. Po ich instalacji, zmiana rozmiaru okna dynamicznie zmienia rozdzielczość ekranu maszyny wirtualnej (Seamless scaling).</li>
+                    <li><strong>Współdzielony schowek (Shared Clipboard):</strong> Pozwala na kopiowanie tekstu (Ctrl+C) na komputerze hosta i wklejanie (Ctrl+V) bezpośrednio wewnątrz maszyny wirtualnej (Bidirectional).</li>
+                    <li><strong>Drag and Drop:</strong> Przeciąganie plików bezpośrednio z Twojego pulpitu na pulpit maszyny wirtualnej.</li>
+                    <li><strong>Współdzielone foldery (Shared Folders):</strong> Możliwość podłączenia folderu z dysku fizycznego jako dysku sieciowego (lub zamontowania w /media/ dla Linuxa) wewnątrz wirtualnego środowiska.</li>
+                    <li><strong>Integracja wskaźnika myszy:</strong> Brak uciążliwego "łapania" i zwalniania (Host Key - domyślnie Prawy Ctrl) kursora myszy po wejściu do okna maszyny.</li>
+                </ol>
+
+                <h2 id="tryby-sieciowe">5. Deep Dive: Tryby Sieciowe w VirtualBox</h2>
+                
+                <p>Dla mnie, jako Web Developera konfigurującego często skomplikowane środowiska testowe, zrozumienie działania kart sieciowych w VirtualBox to sprawa fundamentalna. Zła konfiguracja może doprowadzić do wycieku pakietów do firmowej sieci, lub odcięcia maszyny od dostępu do repozytoriów NPM czy Git. Przeanalizujmy najpopularniejsze tryby.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tryb Sieciowy</th>
+                            <th>VM do Internetu?</th>
+                            <th>Host do VM?</th>
+                            <th>VM do innych VM?</th>
+                            <th>Kiedy używać?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>NAT (Domyślny)</strong></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Tylko przez Port Forwarding</td>
+                            <td>NIE</td>
+                            <td>Standardowe przeglądanie sieci, pobieranie paczek. Bezpieczny, bo VM jest niewidoczna.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NAT Network</strong></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Tylko przez Port Forwarding</td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Budowa wewnętrznego klastra maszyn (np. serwer WWW i baza danych), które widzą siebie nawzajem i mają internet.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bridged Adapter</strong></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Gdy chcesz, aby VM dostała IP z Twojego domowego routera DHCP i była widoczna jako fizyczny PC w sieci.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internal Network</strong></td>
+                            <td>NIE</td>
+                            <td>NIE</td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Kluczowe testy penetracyjne, izolacja złośliwego oprogramowania (Malware lab). Całkowite odcięcie.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Host-only Adapter</strong></td>
+                            <td>NIE</td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td><span class="text-primary">TAK</span></td>
+                            <td>Dostęp SSH do serwera testowego ze swojego głównego systemu, bez wypuszczania VM na zewnątrz.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>W moich środowiskach najczęściej korzystam z wirtualnego urządzenia sieciowego z dwiema kartami: <strong>Karta 1 to NAT</strong> (zapewnia mi dostęp do pobierania aktualizacji), a <strong>Karta 2 to Host-only Adapter</strong> (zapewnia mi dedykowany adres IP, pod którym mogę uzyskać dostęp po SSH lub otworzyć testową aplikację w mojej lokalnej przeglądarce <code>http://192.168.56.101:8080</code>).</p>
+
+                <h2 id="vboxmanage-cli">6. Potęga linii komend: VBoxManage (Reference)</h2>
+                
+                <p>Prawdziwa praca inżyniera z VirtualBox nie odbywa się za pomocą klikania myszką, ale za pomocą wszechmocnego narzędzia <code>VBoxManage</code>. Umożliwia ono automatyzację, modyfikowanie parametrów, do których nie ma dostępu z poziomu GUI, oraz uruchamianie maszyn na serwerach, które w ogóle nie posiadają środowiska graficznego (Tryb Headless).</p>
+
+                <p>Oto przewodnik i kilka przydatnych skryptów mojego autorstwa, które znacząco przyspieszą Twoją pracę.</p>
+
+                <h4>Podstawowe polecenia zarządzające stanem maszyn</h4>
+<pre><code># Wylistowanie wszystkich maszyn wirtualnych zarejestrowanych w systemie
+VBoxManage list vms
+
+# Wylistowanie wyłącznie aktualnie URUCHOMIONYCH maszyn
+VBoxManage list runningvms
+
+# Uruchomienie maszyny wirtualnej bez wyświetlania okna GUI (idealne na serwer)
+VBoxManage startvm "Ubuntu_Server_Web" --type headless
+
+# Uruchomienie maszyny z podpięciem "odczepianego" GUI (Detachable)
+VBoxManage startvm "Ubuntu_Server_Web" --type detachable
+
+# Bezpieczne wyłączenie maszyny (wysyła sygnał ACPI power button, wymaga poprawnego ACPI w Gościu)
+VBoxManage controlvm "Ubuntu_Server_Web" acpipowerbutton
+
+# Twardy reset (brutalne odcięcie prądu - używaj z rozwagą, może uszkodzić system plików)
+VBoxManage controlvm "Ubuntu_Server_Web" reset
+VBoxManage controlvm "Ubuntu_Server_Web" poweroff
+</code></pre>
+
+                <h4>Zarządzanie Snapshots (Migawki) z poziomu CLI</h4>
+                <p>Tworzenie skryptu backupu staje się banalnie proste dzięki operacjom na migawkach.</p>
+<pre><code># Tworzenie nowej migawki na żywo
+VBoxManage snapshot "Ubuntu_Server_Web" take "Przed_Aktualizacja_Bazy" --description "Zapis przed zrzutem tabel do MySQL 8.4"
+
+# Wylistowanie dostępnych migawek dla danej maszyny
+VBoxManage snapshot "Ubuntu_Server_Web" list
+
+# Przywrócenie stanu maszyny do konkretnej migawki (Maszyna musi być wyłączona)
+VBoxManage snapshot "Ubuntu_Server_Web" restore "Przed_Aktualizacja_Bazy"
+
+# Usunięcie migawki (scali zmiany do głównego wirtualnego dysku VDI)
+VBoxManage snapshot "Ubuntu_Server_Web" delete "Przed_Aktualizacja_Bazy"
+</code></pre>
+
+                <h4>Modyfikacja zasobów sprzętowych (Hardware Tuning)</h4>
+                <p>Czasami trzeba szybko dodać pamięć RAM bez szukania opcji w panelu.</p>
+<pre><code># Zmiana przypisanej pamięci RAM na 4096 MB (4 GB)
+VBoxManage modifyvm "Ubuntu_Server_Web" --memory 4096
+
+# Zmiana ilości rdzeni procesora wirtualnego (vCPU) na 4
+VBoxManage modifyvm "Ubuntu_Server_Web" --cpus 4
+
+# Aktywacja opcji Nested Paging dla lepszej obsługi pamięci
+VBoxManage modifyvm "Ubuntu_Server_Web" --nestedpaging on
+
+# Ustawienie limitu użycia zasobów procesora fizycznego (Execution Cap) np. na 80%
+VBoxManage modifyvm "Ubuntu_Server_Web" --cpuexecutioncap 80
+</code></pre>
+
+                <h2 id="vagrant-i-automatyzacja">7. Automatyzacja przy pomocy Vagrant</h2>
+                
+                <p>Zamiast ręcznie instalować system operacyjny z obrazu ISO za każdym razem, gdy potrzebujesz środowiska PHP, Node.js czy Pythona, współczesny deweloper korzysta z infrastruktury definiowanej jako kod (Infrastructure as Code - IaC). Najlepszym partnerem dla VirtualBox w tym zakresie jest narzędzie <strong>Vagrant</strong> (od firmy HashiCorp).</p>
+                
+                <p>Vagrant to w uproszczeniu wrapper otaczający wywołania VBoxManage. Pozwala stworzyć mały plik <code>Vagrantfile</code>, który całkowicie opisuje maszynę wirtualną.</p>
+
+                <p>Przykładowy plik <code>Vagrantfile</code>, który automatycznie ściągnie obraz bazowy (tzw. Box) Ubuntu, skonfiguruje VirtualBox z 2 GB RAM i zainstaluje serwer Apache, uruchamia się jednym poleceniem: <code>vagrant up</code>.</p>
+
+<pre><code># Vagrantfile
+Vagrant.configure("2") do |config|
+  # Wykorzystujemy gotowy oficjalny obraz bazowy
+  config.vm.box = "ubuntu/focal64"
+
+  # Konfiguracja sieci (odpowiednik Host-only z Port Forwarding)
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "private_network", ip: "192.168.56.10"
+
+  # Współdzielenie plików - folder projektu na hoście zmapowany na /var/www/html
+  config.vm.synced_folder "./src", "/var/www/html"
+
+  # Konfiguracja specyficzna dla dostawcy (Provider) - czyli VirtualBox
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "My_Dev_Webserver"
+    vb.memory = "2048"
+    vb.cpus = 2
+    # Wyłączenie wsparcia dla dźwięku w serwerze (optymalizacja)
+    vb.customize["modifyvm", :id, "--audio", "none"]
+  end
+
+  # Shell Provisioning - wykonanie kodu podczas pierwszego startu
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y apache2 php libapache2-mod-php
+    systemctl enable apache2
+    systemctl restart apache2
+  SHELL
+end
+</code></pre>
+
+                <p>Jeśli masz ten plik w folderze, wystarczy że otworzysz terminal i wpiszesz <code>vagrant up</code>. Po kilkudziesięciu sekundach wpisujesz <code>vagrant ssh</code> i jesteś w pełni skonfigurowanym, działającym serwerze Linuxowym na swoim VirtualBoxie. A jeśli coś zepsujesz? Wpisujesz <code>vagrant destroy</code> oraz ponownie <code>vagrant up</code>. Masz idealnie świeże środowisko.</p>
+
+                <h2 id="porownanie">8. VirtualBox vs Konkurencja (Hyper-V, VMware)</h2>
+                
+                <p>Każdy specjalista zadaje to pytanie: Czy w 2026 roku VirtualBox jest najlepszym wyborem? Poniższa tabela stanowi moją ekspercką ocenę, porównującą największych graczy na rynku desktopowej wirtualizacji.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cecha</th>
+                            <th>VirtualBox 7.x</th>
+                            <th>VMware Workstation Player</th>
+                            <th>Microsoft Hyper-V (Win Pro)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Licencja</strong></td>
+                            <td>Darmowa (Open Source)</td>
+                            <td>Darmowa (Tylko Non-Commercial)</td>
+                            <td>Wbudowana w Windows Pro/Enterprise</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Typ Architektury</strong></td>
+                            <td>Type-2 (Hosted)</td>
+                            <td>Type-2 (Hosted)</td>
+                            <td>Type-1 (Bare-metal)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wydajność ogólna</strong></td>
+                            <td>Dobra (Wysoki narzut)</td>
+                            <td>Bardzo dobra</td>
+                            <td>Doskonała (Niska utrata wydajności)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Przenośność maszyn</strong></td>
+                            <td>Wybitna (OVA/OVF)</td>
+                            <td>Dobra</td>
+                            <td>Trudna (Formaty Microsoftu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Obsługa Linuxa na ekranie (GUI)</strong></td>
+                            <td>Dobra (Guest Additions)</td>
+                            <td>Wybitna (VMware Tools)</td>
+                            <td>Przeciętna (Wymaga RDP/xRDP)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zarządzanie z linii komend</strong></td>
+                            <td>Doskonałe (VBoxManage, Vagrant)</td>
+                            <td>Ograniczone w darmowej wersji</td>
+                            <td>Doskonałe (PowerShell)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Werdykt jest prosty: <strong>Dla deweloperów używających Vagranta i ceniących przenośność pomiędzy Mac, Windowsem i Linuxem – VirtualBox wygrywa bezapelacyjnie.</strong> Jeśli natomiast interesuje Cię tylko wydajne uruchomienie Ubuntu do nauki na komputerze z Windows 11, WSL2 lub Hyper-V zadziałają znacznie szybciej i płynniej, ponieważ pracują na niższym poziomie systemu.</p>
+
+                <h2 id="podsumowanie">9. Podsumowanie</h2>
+                
+                <p>Niezależnie od rewolucji chmurowej i konteneryzacji, VirtualBox stanowi potężny, niezawodny "szwajcarski scyzoryk" dla każdego inżyniera oprogramowania, sysadmina i fascynata IT. Opanowanie jego interfejsu (zarówno graficznego, jak i tego znakomitego poprzez komendy <code>VBoxManage</code>) to wiedza, która posłuży Ci przez lata.</p>
+                <p>Mam nadzieję, że ten długi artykuł pozwolił Ci dogłębnie zrozumieć nie tylko jak naklikać instalację, ale także jak systemy wirtualizacji komunikują się z warstwą sieciową i sprzętową komputera hosta.</p>
+                <p>Masz pytania dotyczące optymalizacji lub rozwiązywania problemów ze sterownikami? Zostaw komentarz, sprawdź poniższą sekcję FAQ lub złap mnie bezpośrednio poprzez formularz kontaktowy. Trzymajcie kod w czystości, a maszyny... wyizolowane!</p>
+                <p>— <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">10. Często Zadawane Pytania (FAQ)</h2>
+                
+                <div class="info-box">
+                    <h3>Czy VirtualBox jest całkowicie darmowy do zastosowań w firmie?</h3>
+                    <p>Sam silnik VirtualBox (GPLv2) jest w 100% darmowy nawet dla firm. Uważać musisz jednak na paczkę <strong>VirtualBox Extension Pack</strong> (odpowiadającą za zaawansowane USB, NVMe, RDP). Oracle udostępnia ją na licencji PUEL (Personal Use and Evaluation License). Wdrożenie komercyjne Extension Pack na stanowiskach deweloperskich w firmie narusza licencję, a Oracle jest znane z agresywnego dochodzenia praw licencyjnych. Rozwiązaniem jest używanie bazowej wersji bez tego dodatku, która wystarcza w 90% przypadków użycia programistycznego.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>VirtualBox czy Hyper-V - co wybrać w 2026 roku?</h3>
+                    <p>Jeśli posiadasz system operacyjny Windows 10 lub Windows 11 w wersji Pro i planujesz uruchamiać maszyny w tle lub bez interfejsu graficznego, architektura Type-1 z <strong>Hyper-V</strong> zaoferuje nieporównywalnie mniejsze zużycie zasobów i wyższą szybkość działania. Z kolei VirtualBox sprawdzi się idealnie jako multiplatformowe środowisko, integrujące np. macOS, instalacje testowe malware (gdzie środowisko musi być idealnie piaskowane z opcją zrzutów pamięci i migawek) czy przy współpracy z narzędziami IaC takimi jak Vagrant.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Dlaczego VirtualBox wyświetla mi tylko systemy 32-bitowe i ikona wolnego działania (zielony żółw) się pojawia?</h3>
+                    <p>To absolutny klasyk! Są dwie najczęstsze przyczyny tego problemu. Po pierwsze, technologia wirtualizacji procesora (Intel VT-x lub AMD-V) nie została włączona w ustawieniach BIOS/UEFI. Po drugie, jeśli jesteś użytkownikiem Windows, masz włączoną wbudowaną wirtualizację Microsoftu (np. włączone funkcje WSL, Hyper-V, Podsystem zabezpieczeń oparty na wirtualizacji, tzw. VBS, lub Core Isolation / Izolacja Rdzenia). VirtualBox radzi sobie z tym uruchamiając powolny tryb emulacji Native API "Turtle Mode". Musisz wyłączyć komponenty Hyper-V w sekcji "Funkcje systemu Windows" i ewentualnie deaktywować Core Isolation w ustawieniach bezpieczeństwa, jeśli wymagasz pełnej mocy obliczeniowej od VirtualBoxa.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Jakie pliki maszyny wirtualnej muszę skopiować, aby ją przenieść?</h3>
+                    <p>Oprogramowanie trzyma stan w kilku miejscach. Bezpieczną metodą jest zaznaczenie maszyny wirtualnej i użycie opcji <strong>File -> Export Appliance</strong> (Plik -> Eksportuj urządzenie). Tworzy to skompresowany plik typu OVA, który zawiera wszystko: konfigurację (.vbox), wirtualny twardy dysk (.vdi/.vmdk) oraz stan. Przeniesienie ręczne samego pliku <code>.vdi</code> spowoduje, że nie odtworzysz identycznych ustawień karty sieciowej czy alokacji RAMu i mogą pojawić się błędy UUID.</p>
+                </div>
+                
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Web Developer pasjonujący się nowoczesnymi rozwiązaniami Frontendowymi, optymalizacją środowisk testowych oraz automatyzacją procesów DevOps. Tworzę optymalne środowiska developerskie i edukuję na temat technologii systemowych.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#wirtualizacja-podstawy">1. Podstawy wirtualizacji</a></li>
+                    <li><a href="#zalety-wady">2. Główne zalety i wady</a></li>
+                    <li><a href="#instalacja">3. Wymagania sprzętowe i Instalacja</a>
+                        <ul class="toc-sub">
+                            <li><a href="#instalacja">Instalacja na Windows</a></li>
+                            <li><a href="#instalacja">Instalacja na Linux (Ubuntu)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#konfiguracja-maszyny">4. Pierwsza Maszyna Wirtualna</a></li>
+                    <li><a href="#tryby-sieciowe">5. Deep Dive: Tryby Sieciowe</a></li>
+                    <li><a href="#vboxmanage-cli">6. VBoxManage (Wiersz poleceń)</a></li>
+                    <li><a href="#vagrant-i-automatyzacja">7. Automatyzacja przy pomocy Vagrant</a></li>
+                    <li><a href="#porownanie">8. VirtualBox vs Konkurencja</a></li>
+                    <li><a href="#podsumowanie">9. Podsumowanie</a></li>
+                    <li><a href="#faq">10. Często Zadawane Pytania (FAQ)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Oficjalny blog i wizytówka. Tworzę, programuję, optymalizuję. Poznaj świat technologii moimi oczami.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Blog</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Przewiń do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMIC CURRENT YEAR
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 2. MOBILE MENU TOGGLE
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navbarNav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navbarNav.classList.remove('active');
+                });
+            });
+
+            // 3. DARK MODE THEME TOGGLE
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('ostapenkoblog-theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    // Moon
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Sun
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. SCROLL TO TOP
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 5. READING PROGRESS BAR
+            const progressBar = document.getElementById('readingProgressBar');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + "%";
+            });
+
+            // 6. TABLE OF CONTENTS ACTIVE LINK HIGHLIGHTER
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const headings = document.querySelectorAll('.article-content h2');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                // Adjusting threshold due to fixed navbar
+                const scrollPosition = window.scrollY + 120; 
+
+                headings.forEach(heading => {
+                    const top = heading.offsetTop;
+                    if (scrollPosition >= top) {
+                        current = heading.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for TOC anchor links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Offset by navbar height + some padding
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
