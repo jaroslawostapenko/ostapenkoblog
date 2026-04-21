@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Recenzja i Poradnik: Microsoft Excel w 2026 Roku | Yaroslav Ostapenko</title>
+    <meta name="description" content="Czy Microsoft Excel to wciąż król arkuszy kalkulacyjnych w 2026 roku? Poznaj integrację z Pythonem, Copilot AI, zaawansowane funkcje tablicowe, Office Scripts i VBA.">
+    <meta name="keywords" content="yaroslav ostapenko, excel recenzja, poradnik excel, python w excelu, copilot excel, vba, office scripts, power query, xlookup, lambda">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- REQUIRED CANONICAL URL -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/excel.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/excel.html">
+    <meta property="og:title" content="Recenzja i Poradnik: Microsoft Excel w 2026 Roku">
+    <meta property="og:description" content="Kompleksowy poradnik i recenzja Microsoft Excel. Sprawdź, jak Python, sztuczna inteligencja i nowe funkcje rewolucjonizują analizę danych.">
+    <meta property="article:published_time" content="2026-04-25T08:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="Excel">
+    <meta property="article:tag" content="Analiza Danych">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="VBA">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/excel.html">
+    <meta property="twitter:title" content="Recenzja i Poradnik: Microsoft Excel w 2026 Roku">
+    <meta property="twitter:description" content="Kompleksowy poradnik: Jak wykorzystać pełen potencjał Microsoft Excel w 2026 roku? Analiza Copilot, Pythona i Office Scripts.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/excel.html"
+      },
+      "headline": "Recenzja i Poradnik: Microsoft Excel w 2026 Roku",
+      "description": "Dogłębna analiza programu Microsoft Excel z perspektywy analityka danych i programisty. Recenzja funkcji Python in Excel, Copilot, TypeScript oraz VBA.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/excel-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-04-25T08:00:00+02:00",
+      "dateModified": "2026-04-25T09:00:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja Excel",
+        "item": "https://ostapenkoblog.mqttwebs.com/excel.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy VBA umiera w 2026 roku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VBA nie umiera całkowicie ze względu na ogromny dług technologiczny korporacji, ale Microsoft przestał je rozwijać. Obecnym standardem rekomendowanym przez Microsoft do automatyzacji arkuszy w chmurze są Office Scripts oparte na języku TypeScript."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak włączyć język Python w Excelu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Funkcja Python in Excel jest dostępna dla subskrybentów Microsoft 365. Aby rozpocząć pisanie kodu, wystarczy wpisać w komórce =PY i zatwierdzić klawiszem Tab. Kod jest przetwarzany w bezpiecznej chmurze Azure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co to jest funkcja LAMBDA w Excelu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Funkcja LAMBDA pozwala na definiowanie własnych, niestandardowych funkcji bez użycia VBA. Możesz zapisać złożoną logikę matematyczną pod własną nazwą (np. OBLICZ_PODATEK) i wywoływać ją w dowolnym miejscu arkusza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy Excel nadaje się do Big Data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sam arkusz kalkulacyjny posiada limit 1 048 576 wierszy i nie nadaje się do klasycznego Big Data. Jednakże wykorzystując silnik Power Pivot (Data Model) zintegrowany z Excelem, można kompresować i analizować setki milionów rekordów za pomocą języka DAX."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak działa Microsoft Copilot w Excelu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copilot w Excelu wykorzystuje modele LLM do generowania formuł, tworzenia podsumowań tekstowych na podstawie wykresów, formatowania warunkowego oraz budowania modeli przewidywania trendów, wyłącznie na podstawie poleceń wydawanych językiem naturalnym."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES (Zgodne ze stylem optymalizacjaseo.html) -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables */
+            --color-primary: #107c41; /* Microsoft Excel Green */
+            --color-primary-dark: #0c5e31;
+            --color-primary-light: #d8f5e5;
+            --color-secondary: #0f172a;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-background: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            
+            /* Article Specific */
+            --color-code-bg: #1e293b;
+            --color-code-text: #e2e8f0;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #e2e8f0;
+            
+            /* Typography */
+            --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --color-primary: #18a558; /* Lighter green for dark mode */
+            --color-primary-dark: #20c96c;
+            --color-primary-light: #0d3822;
+            --color-secondary: #f8fafc;
+            --color-text-main: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-border: #334155;
+            
+            --color-code-bg: #0f172a;
+            --color-code-text: #f8fafc;
+            --color-toc-bg: #1e293b;
+            --color-toc-border: #334155;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }[data-theme="dark"] .navbar {
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }[data-theme="dark"] .article-category {
+            background-color: rgba(24, 165, 88, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }[data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(24, 165, 88, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code, 
+        .article-content li code,
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+
+        [data-theme="dark"] .article-content p code,
+        [data-theme="dark"] .article-content li code,[data-theme="dark"] .article-content td code {
+            background-color: rgba(24, 165, 88, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-content th {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] .article-content th {
+            background-color: rgba(24, 165, 88, 0.2);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <!-- SEO Keyword implementation -->
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Microsoft Excel w 2026 Roku: Narzędzie, Które Zmieniło Oblicze Analizy Danych</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-04-25">25 Kwietnia 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 28 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                        <path d="M13 13h4v4h-4z"></path>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Nazywam się <strong>Yaroslav Ostapenko</strong> i od kilkunastu lat pracuję z danymi. Jeśli myślisz, że Excel to tylko nudne, zielone okienko księgowej, z którego ucieka się do baz SQL i zaawansowanych systemów BI w momencie powiększania zbioru danych – przygotuj się na ogromne zaskoczenie.</p>
+
+                <p>Microsoft Excel przeszedł w ostatnich latach monumentalną transformację. Od wprowadzenia natywnych, potężnych funkcji tablicowych (Dynamic Arrays), przez genialne środowisko Power Query wbudowane w silnik, aż po niesamowite nowości lat 2024-2026: bezpośrednią integrację ze środowiskiem <strong>Python</strong>, wirtualnego asystenta <strong>Copilot AI</strong> oraz nowy system skryptowy <strong>Office Scripts</strong> (oparty na TypeScript). Dzisiaj rozłożymy na czynniki pierwsze "nowego" Excela.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "W 2026 roku Excel to już nie jest tylko aplikacja. To środowisko programistyczne, baza danych, centrum wizualizacji i maszyna ucząca się (Machine Learning) w jednym. Umiejętność jego mistrzowskiej obsługi otwiera przed Tobą drzwi każdej korporacji." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="rewolucja-python">1. Python w Excelu: Ostateczna Ewolucja</h2>
+                
+                <p>O integracji Pythona z Excelem plotkowało się od dawna. Kiedy w końcu Microsoft podjął współpracę z Anaconda Inc., analitycy wstrzymali oddech. Dziś, w 2026 roku, funkcja ta jest w pełni ustabilizowana, działająca błyskawicznie i dostępna z poziomu standardowej chmury.</p>
+                
+                <p>Jak to działa? Zamiast instalować środowisko lokalnie i walczyć ze ścieżkami środowiskowymi (PATH), wpisujesz w komórce polecenie <code>=PY</code>. Excel wysyła Twoje dane oraz kod do bezpiecznego kontenera Microsoft Cloud (opartego na Azure), wykonuje tam obliczenia przy użyciu popularnych bibliotek (takich jak <em>pandas, numpy, scikit-learn, matplotlib, seaborn</em>) i zwraca wynik prosto do Twojej komórki.</p>
+
+                <div class="info-box success">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Bezpieczeństwo przede wszystkim
+                    </div>
+                    <p style="margin:0;">Z racji faktu, że kod Pythona wykonywany jest w wyizolowanym kontenerze na serwerach Microsoft, nie ma on dostępu do Twojego lokalnego dysku twardego, nie może otwierać innych plików na Twoim pulpicie, ani wysyłać dowolnych zapytań HTTP na zewnątrz. Chroni to firmowe sieci przed atakami typu RCE (Remote Code Execution).</p>
+                </div>
+
+                <h3>Przykład 1: Zaawansowane oczyszczanie danych za pomocą Pandas</h3>
+                <p>Wyobraźmy sobie, że w komórkach <code>A1:D10000</code> mamy zabałaganione dane z systemów CRM. Brakuje w nich wartości, a kolumny z datą to zbiór nieczytelnych łańcuchów znaków. Używając funkcji tablicowych zajęłoby nam to dziesiątki kolumn pomocniczych. Z użyciem Pythona robimy to w jednej komórce.</p>
+
+<pre><code class="language-python"># Wpisujesz =PY w komórce E1, a następnie podajesz ten kod:
+import pandas as pd
+import numpy as np
+
+# Pobranie danych z zakresu arkusza do ramki danych Pandas
+df = xl("A1:D10000", headers=True)
+
+# Krok 1: Usunięcie wierszy, gdzie brakuje krytycznych danych w kolumnie 'ID_Klienta'
+df_clean = df.dropna(subset=['ID_Klienta'])
+
+# Krok 2: Uzupełnienie braków w kolumnie 'Wartosc_Zamowienia' średnią wartością
+mean_val = df_clean['Wartosc_Zamowienia'].mean()
+df_clean['Wartosc_Zamowienia'] = df_clean['Wartosc_Zamowienia'].fillna(mean_val)
+
+# Krok 3: Normalizacja daty do jednolitego formatu YYYY-MM-DD
+df_clean['Data'] = pd.to_datetime(df_clean['Data'], errors='coerce').dt.strftime('%Y-%m-%d')
+
+# Krok 4: Usunięcie ewentualnych duplikatów
+df_clean = df_clean.drop_duplicates()
+
+# Zwrócenie oczyszczonej tabeli bezpośrednio do siatki Excela
+df_clean
+</code></pre>
+
+                <p>Dzięki zastosowaniu parametru <em>Excel Value</em> w wyjściu formuły Pythona, otrzymujemy perfekcyjnie sformatowaną tabelę bezpośrednio w komórkach, ulegającą dynamicznemu rozlaniu (Spill array).</p>
+
+                <h3>Przykład 2: Przewidywanie (Machine Learning) za pomocą Scikit-Learn</h3>
+                <p>Excel w 2026 to w zasadzie IDE do nauki o danych (Data Science). Spójrz na poniższy przykład prostego modelu regresji liniowej, wyliczającego prognozowaną sprzedaż na podstawie wydatków na reklamę.</p>
+
+<pre><code class="language-python">from sklearn.linear_model import LinearRegression
+import pandas as pd
+
+# Pobranie danych wejściowych
+# df_train zawiera historyczne wydatki i zyski
+df_train = xl("DaneHistoryczne!A1:B500", headers=True)
+# df_future zawiera planowany budżet reklamowy na kolejne miesiące
+df_future = xl("Plan!A1:A12", headers=True)
+
+# Inicjalizacja modelu
+X_train = df_train[['Wydatki_Marketingowe']]
+y_train = df_train['Zysk']
+model = LinearRegression()
+
+# Trenowanie modelu na danych historycznych
+model.fit(X_train, y_train)
+
+# Przewidywanie przyszłych zysków na podstawie budżetu
+X_test = df_future[['Planowany_Budzet']]
+predictions = model.predict(X_test)
+
+# Dołączenie wyników do ramki i zwrócenie jako DataFrame
+df_future['Prognozowany_Zysk'] = predictions
+df_future
+</code></pre>
+
+                <h2 id="nowe-funkcje-tablicowe">2. Zaawansowane funkcje i Dynamiczne Tablice (Dynamic Arrays)</h2>
+                
+                <p>Jeśli wciąż używasz legendarnej funkcji <code>WYSZUKAJ.PIONOWO</code> (VLOOKUP), to jako Yaroslav Ostapenko muszę brutalnie przyznać: stoisz w miejscu. Od czasu wdrożenia dynamicznego mechanizmu przeliczania tablic (Calculation Engine), świat funkcji uległ zmianie.</p>
+
+                <h4>XLOOKUP (X.WYSZUKAJ) - Zabójca VLOOKUP</h4>
+                <p>Zamiast żmudnie liczyć numery kolumn, co zawsze psuje się po dodaniu nowej kolumny w środku tabeli, funkcja XLOOKUP używa po prostu macierzy szukanej oraz macierzy wynikowej.</p>
+                <p><code>=XLOOKUP(szukana_wartosc; kolumna_gdzie_szukamy; kolumna_z_wynikiem; "Brak danych"; 0; 1)</code></p>
+                <p>Co więcej, wyszukuje od lewej do prawej, od prawej do lewej, z dołu do góry. Doskonałość w jednym argumencie.</p>
+
+                <h4>Funkcja LET</h4>
+                <p>Zarządzanie wydajnością arkusza polega na nieobliczaniu tego samego wielokrotnie. Z pomocą przychodzi funkcja LET, nadająca nazwy zmiennym wewnątrz komórki. Zobacz tę zoptymalizowaną, potężną formułę:</p>
+
+<pre><code>=LET(
+    Suma_Przychodow; SUMIFS(Transakcje[Kwota]; Transakcje[Status]; "Zakończona");
+    Koszty_Operacyjne; SUM(Koszty[Kwota]);
+    Marza_Brutto; Suma_Przychodow - Koszty_Operacyjne;
+    Podatek; IF(Marza_Brutto > 100000; Marza_Brutto * 0.19; Marza_Brutto * 0.15);
+    Zysk_Netto; Marza_Brutto - Podatek;
+    
+    Zysk_Netto
+)
+</code></pre>
+                <p>To czyni czytanie cudzych (lub własnych sprzed pół roku) formuł tak samo czytelnym, jak czytanie kodu klasycznego języka programowania.</p>
+
+                <h4>Funkcja LAMBDA</h4>
+                <p>To totalny game-changer. Do momentu wprowadzenia funkcji LAMBDA, jeśli chciałeś napisać własną formułę i używać jej w całym zeszycie, musiałeś pisać to w języku VBA jako UDF (User Defined Function). A co z użytkownikami Excela w przeglądarce? Z użytkownikami macOS, u których silnik VBA kuleje? Tam VBA nie zadziała.</p>
+                <p>LAMBDA pozwala zdefiniować potężną funkcję używając tylko natywnego silnika kalkulacyjnego. Możesz ją nawet uczynić funkcją rekurencyjną!</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        Definiowanie w Menadżerze Nazw
+                    </div>
+                    <p style="margin:0;">Aby prawidłowo używać LAMBDY, po napisaniu formuły, kopiujesz ją i wklejasz do Menedżera Nazw, np. nadając jej nazwę <strong>OBLICZ_KARE_UMOWNA</strong>. Od tego momentu w każdej komórce działa formuła: <code>=OBLICZ_KARE_UMOWNA(C2; D2; E2)</code>.</p>
+                </div>
+
+                <h2 id="office-scripts-vs-vba">3. Programowanie: VBA vs Office Scripts (TypeScript)</h2>
+                
+                <p>Jako inżynier musisz wiedzieć, że <strong>Visual Basic for Applications (VBA) to dziś technologia legacy</strong>. Wprawdzie uruchomi się w 2026 roku, posiada miliony linii napisanego kodu w światowych systemach bankowych i Microsoft nie usunie go jeszcze przez dekadę. Niemniej, pisanie nowych rozwiązań korporacyjnych w VBA jest błędem w sztuce.</p>
+
+                <p>Następcą są <strong>Office Scripts</strong>. Używają one potężnego, nowoczesnego i uwielbianego przez programistów języka <strong>TypeScript</strong> (który jest nadzbiorem dla JavaScriptu). Co ważniejsze, Office Scripts działają zarówno w chmurowej wersji przeglądarkowej Excel Online (gdzie VBA jest martwe), jak i w wersji Desktop, oraz łatwo integrują się z Power Automate!</p>
+
+                <h3>Porównanie tego samego zadania w obu językach</h3>
+                <p><em>Zadanie: Pobierz wartość z komórki A1. Jeśli jest większa niż 1000, ustaw tło komórki na zielono, a w komórce B1 wpisz "Akceptacja". Uruchom to w pętli dla wszystkich wierszy do pustego.</em></p>
+
+                <h4>Stare rozwiązanie: Klasyczne VBA (Visual Basic for Applications)</h4>
+<pre><code class="language-vba">Sub SprawdzZatwierdzenieVBA()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    Dim i As Long
+    
+    ' Zdefiniowanie arkusza i wyłączenie odświeżania dla wydajności
+    Set ws = ThisWorkbook.Sheets("Raport")
+    Application.ScreenUpdating = False
+    
+    lastRow = ws.Cells(ws.Rows.Count, "A").End(xlUp).Row
+    
+    For i = 1 To lastRow
+        If IsNumeric(ws.Cells(i, 1).Value) Then
+            If ws.Cells(i, 1).Value > 1000 Then
+                ' Ustawienie tła na zielone (ColorIndex 4)
+                ws.Cells(i, 1).Interior.ColorIndex = 4
+                ws.Cells(i, 2).Value = "Akceptacja"
+            End If
+        End If
+    Next i
+    
+    Application.ScreenUpdating = True
+End Sub
+</code></pre>
+
+                <h4>Nowe rozwiązanie: Office Scripts (TypeScript)</h4>
+<pre><code class="language-typescript">function main(workbook: ExcelScript.Workbook) {
+  // Pobranie konkretnego arkusza
+  let sheet = workbook.getWorksheet("Raport");
+  
+  // Znalezienie używanego zakresu (szybciej niż iterowanie ręczne i liczenie wierszy)
+  let usedRange = sheet.getUsedRange();
+  let rowCount = usedRange.getRowCount();
+  
+  // Zoptymalizowane wyciągnięcie wszystkich wartości jako dwuwymiarowa tablica
+  // Oszczędza I/O na komunikacji z serwerem/interfejsem API
+  let values = usedRange.getValues();
+  
+  // Główna pętla
+  for (let i = 0; i < rowCount; i++) {
+    let currentValue = values[i][0]; // Kolumna A to index 0
+    
+    if (typeof currentValue === "number" && currentValue > 1000) {
+      // Przypisanie tekstu "Akceptacja" w pamięci
+      values[i][1] = "Akceptacja";
+      
+      // Pokolorowanie komórki korzystając z potężnego modelu obiektowego (kolor HEX)
+      sheet.getCell(i, 0).getFormat().getFill().setColor("#00FF00"); // Zielony
+    }
+  }
+  
+  // Jednorazowe zrzucenie przetworzonych wartości z powrotem do arkusza
+  usedRange.setValues(values);
+}
+</code></pre>
+
+                <p>Jak widać, Office Scripts wymusza pisanie lepszego jakościowo, asynchronicznego, zoptymalizowanego kodu (zrzuty i pobieranie całych bloków tablic zamiast iteracji po jednej komórce). Ten kod działa w locie na serwerach OneDrive i może zostać uruchomiony poprzez akcję z Power Automate np. o 3:00 w nocy bez odpalonego komputera z Excelem!</p>
+
+                <h2 id="power-query-i-m">4. Power Query i Język M: Automatyzacja ETL</h2>
+                
+                <p>Zanim dane trafią do analizy czy pod obróbkę Pythona, muszą zostać poprawnie połączone z różnych źródeł zewnętrznych (np. Bazy SQL Server, pliki CSV zrzucane z ERP, zapytania API Rest). Służy do tego proces ETL (Extract, Transform, Load).</p>
+
+                <p>Wbudowane w Excelu <strong>Power Query</strong> to gigant, współdzielący swój silnik z Microsoft Power BI. Kod generowany pod spodem z każdym kliknięciem myszki w edytorze opiera się o język potocznie nazywany "M" (Power Query Formula Language).</p>
+
+                <p>Czasami "wyklikanie" zaawansowanej logiki biznesowej zagnieżdżonych list bywa jednak niemożliwe. Trzeba napisać natywny skrypt M. Oto przykład zaawansowanego łączenia danych:</p>
+
+<pre><code>let
+    // Połączenie z bazą PostgreSQL bezpośrednio z Excela
+    Źródło = PostgreSQL.Database("mojserwer.database.windows.net", "BazaCRM"),
+    TabelaKlientow = Źródło{[Schema="public",Item="Klienci"]}[Data],
+    
+    // Filtrowanie tylko dla aktywnych klientów
+    Aktywni = Table.SelectRows(TabelaKlientow, each ([Status] = "Active")),
+    
+    // Zmiana nazw kolumn na przyjazne i standaryzacja typów danych
+    ZmianaTypow = Table.TransformColumnTypes(Aktywni,{
+        {"CustomerID", Int64.Type}, 
+        {"CustomerName", type text}, 
+        {"RegistrationDate", type datetime}
+    }),
+    
+    // Dodanie dynamicznej kolumny, sprawdzającej wiek klienta na platformie
+    WiekNaPlatformie = Table.AddColumn(ZmianaTypow, "Dni_od_rejestracji", 
+        each Duration.Days(DateTime.LocalNow() - [RegistrationDate]), Int64.Type
+    ),
+    
+    // Klasyfikacja klientów po wieku na platformie
+    Kategoryzacja = Table.AddColumn(WiekNaPlatformie, "KategoriaWiekowa", each 
+        if [Dni_od_rejestracji] < 30 then "Nowy Klient"
+        else if[Dni_od_rejestracji] < 365 then "Zadomowiony"
+        else "Weteran"
+    )
+in
+    Kategoryzacja
+</code></pre>
+                
+                <p>Taki kod ładuje dane natychmiast do tzw. <strong>Data Modelu (Power Pivot)</strong>, dzięki czemu w pliku nie obciążamy standardowego, 1-milionowego limitu wierszy w arkuszu. Data Model używa potężnego kompresora kolumnowego xVelocity, umożliwiając pracę na plikach o wielkości dziesiątek gigabajtów bezpośrednio na domowym PC!</p>
+
+                <h2 id="skroty-klawiszowe">5. Skróty Klawiszowe dla Prawdziwych Analityków</h2>
+                
+                <p>Czy kiedykolwiek obserwowałeś pracę finansistów z wielkich banków inwestycyjnych (tzw. Wall Street Excel Ninjas)? Zauważysz u nich jedną rzecz: <strong>oni w ogóle nie dotykają myszki</strong>. Używanie myszki w Excelu do nawigacji po dużej siatce to potworna strata czasu.</p>
+
+                <p>Przygotowałem dla Ciebie ogromną tabelę najpotężniejszych skrótów klawiszowych, których uczę na swoich szkoleniach w 2026 roku. Wydrukuj ją, powieś nad biurkiem i przyspiesz swoją pracę o 500%.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skrót (Windows)</th>
+                            <th>Skrót (Mac)</th>
+                            <th>Akcja / Funkcja w Excelu</th>
+                            <th>Dlaczego jest tak ważny?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Ctrl + Strzałki</code></td>
+                            <td><code>Cmd + Strzałki</code></td>
+                            <td>Skok na krawędź bloku danych</td>
+                            <td>Błyskawiczne przemieszczanie się po tabelach o długości dziesiątek tysięcy wierszy bez "przewijania" scrollbar'em.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + Shift + Strzałki</code></td>
+                            <td><code>Cmd + Shift + Strzałki</code></td>
+                            <td>Zaznacz do krawędzi bloku</td>
+                            <td>Zaznacza całą ogromną kolumnę pełną danych w ułamku sekundy. Idealne do dodawania wykresów.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + PageUp / PageDown</code></td>
+                            <td><code>Option + Prawo / Lewo</code></td>
+                            <td>Przełączanie między arkuszami</td>
+                            <td>Szybka weryfikacja i wprowadzanie danych bez chwytania za mysz.</td>
+                        </tr>
+                        <tr>
+                            <td><code>F4</code></td>
+                            <td><code>Cmd + T</code></td>
+                            <td>Blokowanie referencji ($A$1)</td>
+                            <td>Podczas pisania formuł zabezpiecza przed ich "przesuwaniem" przy kopiowaniu. Dodatkowo F4 powtarza ostatnią akcję formatowania.</td>
+                        </tr>
+                        <tr>
+                            <td><code>F2</code></td>
+                            <td><code>Ctrl + U</code></td>
+                            <td>Wejście w edycję komórki</td>
+                            <td>Kluczowe. Jeśli naciśniesz F2, nie musisz klikać dwukrotnie myszą w komórkę.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + 1</code></td>
+                            <td><code>Cmd + 1</code></td>
+                            <td>Otwiera okno formatowania komórek</td>
+                            <td>Błyskawiczny dostęp do ukrytych formatów niestandardowych (np. daty i czasu, formatu księgowego czy zabezpieczeń).</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + Shift + L</code></td>
+                            <td><code>Cmd + Shift + F</code></td>
+                            <td>Włącz / Wyłącz Filtry</td>
+                            <td>Zaznacz całą tabelę i natychmiast wrzuć nagłówki filtrowania. Szybciej niż szukanie tego w menu Dane.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + T</code></td>
+                            <td><code>Cmd + T</code></td>
+                            <td>Stwórz oficjalną Tabelę</td>
+                            <td>Formatowanie jako ustrukturyzowana Tabela (ListObject w VBA) pozwala na auto-rozszerzanie formuł i formatowanie wierszy na przemian.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Alt + =</code></td>
+                            <td><code>Cmd + Shift + T</code></td>
+                            <td>Autosumowanie (Autosum)</td>
+                            <td>Zaznacz puste pole pod tabelą z liczbami i wciśnij skrót – Excel od razu wrzuca =SUMA() uwzględniającą całą górną treść.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl + E</code></td>
+                            <td><code>Ctrl + E</code></td>
+                            <td>Szybkie wypełnianie (Flash Fill)</td>
+                            <td>Inteligentna maszyna ucząca się: zaczynasz pisać wzorzec łączenia imienia i nazwiska w jednej komórce, naciskasz Ctrl+E, a Excel uzupełnia resztę tysięcy wierszy bez użycia skomplikowanych funkcji TEKSTOWYCH!</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="copilot-ai">6. Microsoft Copilot: Twój Analityk na Autopilocie</h2>
+                
+                <p>W 2026 roku praca analityka finansowego, controllera czy księgowego wspierana jest potężnymi modelami językowymi wewnątrz aplikacji. <strong>Microsoft Copilot w programie Excel</strong> znajduje się w bocznym panelu i może bezpośrednio czytać zawartość Twoich komórek (oczywiście przestrzegając polityki Data Privacy i RODO Twojej firmy w przypadku środowisk korporacyjnych).</p>
+
+                <p>Jak wykorzystać go najlepiej?</p>
+                <ul>
+                    <li><strong>Zrozumienie dziwnych formuł:</strong> Zaznaczasz potężną formułę kogoś, kto już nie pracuje w firmie (np. pięciokrotnie zagnieżdżone `IF(MATCH(INDEX...)))`) i prosisz: *"Wyjaśnij mi krok po kroku po ludzku, co robi ta formuła"*.</li>
+                    <li><strong>Eksploracja trendów:</strong> Mając tabelę sprzedażową z 12 miesięcy, mówisz: *"Dodaj dla mnie wykres, który pokaże, który produkt sprzedawał się najlepiej w Q3 2025"*. Copilot stworzy odpowiedni PivotChart bez Twojej ingerencji.</li>
+                    <li><strong>Czyszczenie i standaryzacja:</strong> Prompt typu *"Sformatuj kolumnę B jako pogrubioną walutę, jeśli zysk przekracza 5000"* automatycznie utworzy w tle potężne zasady Formatowania Warunkowego (Conditional Formatting).</li>
+                </ul>
+
+                <h2 id="podsumowanie">7. Podsumowanie recenzji</h1>
+                
+                <p>Jeśli kiedykolwiek wydawało Ci się, że Excel zestarzeje się na rzecz nowomodnych aplikacji SaaS-owych - myliłeś się. Ogromne inwestycje firmy z Redmond (w tym integracja silników Pythonowych, wdrażanie TypeScipt i AI) sprawiły, że to najpotężniejszy, najbardziej elastyczny kombajn do obróbki danych dla "zwykłego śmiertelnika", a zarazem doskonały front-end dla zaawansowanego inżyniera danych.</p>
+
+                <p>Na dzisiejszym, brutalnym rynku pracy IT i analityki w 2026 roku, posiadanie w CV pozycji *"Biegła znajomość Microsoft Excel"* przestało oznaczać umiejętność kolorowania wierszy. Oznacza zrozumienie Power Query, Office Scripts, Modelowania Danych DAX i pisania we wbudowanym module Pythona. Inwestuj w siebie i buduj swoją przewagę w arkuszach!</p>
+                <p>— <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">8. Sekcja FAQ - Często Zadawane Pytania</h2>
+                
+                <div class="info-box">
+                    <h3>Czy VBA umiera w 2026 roku?</h3>
+                    <p>Technicznie rzecz biorąc, VBA nie zostało "zabite" i Microsoft zagwarantował wieloletnie wsparcie kompatybilności wstecznej dla makr ze względu na biliony wygenerowanych raportów na świecie, które na tym polegają. Problem polega na tym, że VBA nie otrzymało znaczącej aktualizacji silnika od niemal 15 lat. Nie radzi sobie natywnie w chmurze (Excel Online, wspólnym pliku Sharepoint/Teams) i nie potrafi asynchronicznie odpytywać API REST z taką samą gracją jak robią to Office Scripts i środowiska .NET. Dla nowo tworzonych rozwiązań używamy TypeScripta oraz Power Automate.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Co to jest funkcja LAMBDA w Excelu? Zastępuje ona makra?</h3>
+                    <p>Funkcja LAMBDA jest uznawana za krok milowy do pełnego statusu bycia językiem programowania (Turing Complete) dla natywnych formuł Excela. Pozwala zdefiniować zaawansowane operacje w jednej komórce bez ani jednej linii VBA, a co najlepsze: mogą one ulegać "zapętleniu" same w sobie (rekurencja). Dodajesz LAMBDA do menedżera nazw i odtąd Twoi pracownicy w biurze używają prostej formuły <code>=OBLICZ_MOJ_PROJEKT(dane)</code> nie interesując się logiką, która pod nią ukryto.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy Excel nadaje się do Big Data? 1 048 576 wierszy to za mało!</h3>
+                    <p>Błędne przekonanie wielu początkujących. Tak, siatka arkusza kalkulacyjnego jest twardo limitowana do około miliona rekordów w dół i 16 tysięcy w prawo (XFD). Jednak nikt w dzisiejszych czasach nie wrzuca Big Data na siatkę. Wykorzystujemy mechanizm Power Query do połączenia ze źródłem liczącym setki milionów rekordów (np. Data Lake), a następnie ładujemy te dane wyłącznie do pamięci systemowej za pomocą technologii wbudowanej "Data Model" (Power Pivot). Plik programu potrafi w ten sposób trzymać gigabajty skompresowanych informacji analitycznych bezpośrednio z poziomu pliku <code>.xlsx</code>!</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy Excel w wersji na macOS MacOS jest już "równy" wersji na Windows?</h3>
+                    <p>Niestety wciąż nie w 100%. Mimo ogromnego przeskoku jakościowego (natywna obsługa układów Apple Silicon M-series, integracja Power Query, który na macOS wreszcie zaczął poprawnie funkcjonować), nadal występują poważne rozbieżności. Edytor VBA i biblioteki odwołań zewnętrznych to na systemach Apple katastrofa, a obsługa wtyczek COM, tak lubianych przez biura rachunkowe, w ogóle tam nie istnieje. Jeśli budujesz wieloplatformowe raporty używaj zawsze nowych formuł, Office Scripts i standardowych połączeń bazodanowych.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Jak działają tabele dynamiczne (Dynamic Arrays) a tabele tradycyjne (Ctrl+T)?</h3>
+                    <p>Tradycyjne ustrukturyzowane Tabele świetnie radzą sobie z organizacją i formatowaniem statycznych zestawów informacji. Dynamiczne tablice (Spill Arrays) funkcjonują tam, gdzie tworzysz raport oparty o formułę z wynikiem dającym więcej niż jedną komórkę. Jeśli użyjesz nowej funkcji <code>=FILTRUJ(A1:B10; B1:B10="Tak")</code>, excel automatycznie "rozleje" w dół tyle rekordów, ile znajdzie. Jeśli pod wykresem była jakaś stara zawartość tekstowa, pojawi się błąd <code>#ROZLANIE!</code> chroniący Twoje stare informacje przed nadpisaniem.</p>
+                </div>
+
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Analityk Danych, Inżynier Systemowy, Web Developer. Łączę świat skomplikowanych zestawień danych i pięknego, użytecznego kodu opartego o ekosystem technologii Microsoft. Specjalista w programowaniu Python, TypeScript oraz wybitnie szybkich rozwiązaniach BI.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#rewolucja-python">1. Python w Excelu: Ostateczna Ewolucja</a></li>
+                    <li><a href="#nowe-funkcje-tablicowe">2. Zaawansowane funkcje tablicowe (LET, LAMBDA, XLOOKUP)</a></li>
+                    <li><a href="#office-scripts-vs-vba">3. Programowanie: VBA vs Office Scripts (TypeScript)</a></li>
+                    <li><a href="#power-query-i-m">4. Power Query i Język M: Automatyzacja ETL</a></li>
+                    <li><a href="#skroty-klawiszowe">5. Skróty Klawiszowe dla Analityków (Tabela)</a></li>
+                    <li><a href="#copilot-ai">6. Microsoft Copilot AI: Analiza na autopilocie</a></li>
+                    <li><a href="#podsumowanie">7. Podsumowanie recenzji programu</a></li>
+                    <li><a href="#faq">8. Sekcja FAQ - Najczęściej zadawane pytania</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Oficjalny blog i wizytówka. Tworzę, programuję, optymalizuję. Poznaj świat technologii moimi oczami.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Blog</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Przewiń do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMIC CURRENT YEAR
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 2. MOBILE MENU TOGGLE
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navbarNav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navbarNav.classList.remove('active');
+                });
+            });
+
+            // 3. DARK MODE THEME TOGGLE
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('ostapenkoblog-theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    // Moon
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Sun
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. SCROLL TO TOP
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 5. READING PROGRESS BAR
+            const progressBar = document.getElementById('readingProgressBar');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + "%";
+            });
+
+            // 6. TABLE OF CONTENTS ACTIVE LINK HIGHLIGHTER
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const headings = document.querySelectorAll('.article-content h2');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                // Adjusting threshold due to fixed navbar
+                const scrollPosition = window.scrollY + 120; 
+
+                headings.forEach(heading => {
+                    const top = heading.offsetTop;
+                    if (scrollPosition >= top) {
+                        current = heading.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for TOC anchor links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Offset by navbar height + some padding
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

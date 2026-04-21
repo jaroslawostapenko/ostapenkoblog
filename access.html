@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Recenzja Microsoft Access w 2026 Roku: Relikt czy Ukryta Potęga? | Yaroslav Ostapenko</title>
+    <meta name="description" content="Czy Microsoft Access w 2026 roku ma jeszcze sens? Kompletny poradnik, recenzja, migracja do SQL Server, integracja z Power Apps, Dataverse oraz zaawansowane VBA.">
+    <meta name="keywords" content="yaroslav ostapenko, microsoft access recenzja, bazy danych, vba, sql server, power apps, dataverse, access 2026, poradnik access, frontend backend access">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- CORRECTED CANONICAL URL -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/access.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/access.html">
+    <meta property="og:title" content="Recenzja Microsoft Access w 2026 Roku: Relikt czy Ukryta Potęga?">
+    <meta property="og:description" content="Dogłębna analiza Microsoft Access z perspektywy dewelopera. Dowiedz się, jak łączyć go z SQL Server i Dataverse.">
+    <meta property="article:published_time" content="2026-04-28T09:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="Microsoft Access">
+    <meta property="article:tag" content="Bazy Danych">
+    <meta property="article:tag" content="VBA">
+    <meta property="article:tag" content="SQL Server">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/access.html">
+    <meta property="twitter:title" content="Recenzja Microsoft Access w 2026 Roku">
+    <meta property="twitter:description" content="Czy Microsoft Access ma jeszcze sens w erze chmury? Przewodnik po optymalizacji, migracji i integracji z Power Platform.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/access.html"
+      },
+      "headline": "Recenzja Microsoft Access w 2026 Roku: Relikt czy Ukryta Potęga?",
+      "description": "Poradnik dotyczący Microsoft Access w 2026 roku. Architektura Front-End/Back-End, ograniczenia silnika ACE, integracja z Dataverse i programowanie w VBA.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/access-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-04-28T09:00:00+02:00",
+      "dateModified": "2026-04-28T10:00:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja Microsoft Access",
+        "item": "https://ostapenkoblog.mqttwebs.com/access.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy Microsoft wycofuje program Access w 2026 roku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Mimo plotek powtarzanych od kilkunastu lat, Microsoft Access nadal jest częścią pakietu Microsoft 365 w wyższych planach biznesowych i jest w pełni wspierany, chociaż rozwój nowych funkcji jest znikomy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jaki jest maksymalny rozmiar bazy danych w Accessie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fizyczny limit jednego pliku bazy danych Access (.accdb) wynosi 2 GB. Dotyczy to wszystkich obiektów (tabel, formularzy, kwerend, raportów) oraz ukrytych danych systemowych."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co to znaczy podzielić bazę Access (Split Database)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Podział bazy polega na przeniesieniu samych tabel do osobnego pliku (Back-End) trzymanego na serwerze, podczas gdy formularze, kwerendy i raporty (Front-End) znajdują się w drugim pliku na dyskach użytkowników."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym zastąpić Microsoft Access w firmie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Microsoft zaleca migrację danych do Microsoft Dataverse, a interfejsu do usługi Power Apps. Profesjonalne alternatywy to aplikacje webowe oparte na C# (.NET) i SQL Server, lub no-code typu Airtable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak zabezpieczyć bazę przed kopiowaniem kodu VBA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aby ochronić kod przed użytkownikami, należy skompilować plik .accdb do formatu wykonywalnego .accde. Usuwa to całkowicie czytelny kod źródłowy z pliku, pozwalając jedynie na jego wykonywanie."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES (Zoptymalizowane, kolor "Access Red") -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables - Access Red / Maroon Theme */
+            --color-primary: #a4373a;
+            --color-primary-dark: #7a282a;
+            --color-primary-light: #fbeae9;
+            --color-secondary: #0f172a;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-background: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            
+            /* Article Specific */
+            --color-code-bg: #1e293b;
+            --color-code-text: #e2e8f0;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #e2e8f0;
+            
+            /* Typography */
+            --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */[data-theme="dark"] {
+            --color-primary: #d9534f;
+            --color-primary-dark: #e27c79;
+            --color-primary-light: #3a1617;
+            --color-secondary: #f8fafc;
+            --color-text-main: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-border: #334155;
+            
+            --color-code-bg: #0f172a;
+            --color-code-text: #f8fafc;
+            --color-toc-bg: #1e293b;
+            --color-toc-border: #334155;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary); }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }[data-theme="dark"] .navbar {
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after,
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }[data-theme="dark"] .article-category {
+            background-color: rgba(217, 83, 79, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }[data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(217, 83, 79, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code, 
+        .article-content li code,
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+
+        [data-theme="dark"] .article-content p code,[data-theme="dark"] .article-content li code,[data-theme="dark"] .article-content td code {
+            background-color: rgba(217, 83, 79, 0.2);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-content th {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }[data-theme="dark"] .article-content th {
+            background-color: rgba(217, 83, 79, 0.2);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Microsoft Access w 2026 Roku: Relikt Przeszłości czy Ukryta Potęga Korporacji?</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-04-28">28 Kwietnia 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 25 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image matching the Access Database theme -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        <line x1="12" y1="12" x2="12" y2="12.01"></line>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Z tej strony <strong>Yaroslav Ostapenko</strong>. O śmierci programu <strong>Microsoft Access</strong> mówi się nieprzerwanie od kilkunastu lat. Gdy na rynek wchodziły potężne webowe frameworki, Access miał odejść. Gdy upowszechniły się systemy chmurowe SaaS, Access miał ostatecznie zniknąć. Tymczasem mamy rok 2026, a tysiące małych i średnich firm oraz całe działy wielkich korporacji wciąż trzymają swoje kluczowe procesy w plikach <code>.accdb</code>.</p>
+
+                <p>Dlaczego tak jest? Ponieważ Access oferuje coś, czego do niedawna nie potrafiło zapewnić żadne inne narzędzie w tej cenie: platformę <strong>RAD (Rapid Application Development)</strong>. W ciągu jednego popołudnia wprawny analityk może zbudować w pełni funkcjonalny system relacyjny z tabelami, kwerendami, formularzami do wprowadzania danych (GUI) i gotowymi do druku raportami.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "Microsoft Access to jak stary, zaufany scyzoryk w arsenale inżyniera danych. Nie zbudujesz nim wieżowca ani globalnego systemu bankowego, ale naprawisz każdy krytyczny proces w dziale logistyki, zanim korporacyjny zespół IT w ogóle skończy pisać specyfikację wymagań." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="architektura-i-ograniczenia">1. Architektura i Poważne Ograniczenia Silnika ACE</h2>
+                
+                <p>Zanim zaczniemy chwalić to oprogramowanie, musimy brutalnie rozprawić się z jego największą słabością. Tradycyjny plik Accessa opiera się na silniku bazodanowym <strong>Microsoft Access Database Engine (ACE)</strong> (wcześniej nazywanym JET).</p>
+                
+                <p>W przeciwieństwie do prawdziwych serwerów bazodanowych (jak SQL Server czy PostgreSQL), ACE jest bazą plikową. Oznacza to, że gdy wielu użytkowników otwiera ten sam plik przez współdzielony dysk sieciowy, silnik musi przesyłać gigabajty danych przez sieć (LAN) tylko po to, by przefiltrować kilka rekordów na lokalnym komputerze.</p>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Korupcja pliku .accdb
+                    </div>
+                    <p style="margin:0;">Największym koszmarem Accessa w sieci lokalnej jest przerwane połączenie Wi-Fi lub kabel sieciowy wyciągnięty podczas operacji zapisu (tzw. DROP). Doprowadza to natychmiast do korupcji całego pliku bazy, komunikatu "Nierozpoznany format bazy danych" i często trwałej utraty informacji. Wokół bazy tworzony jest plik blokady <code>.laccdb</code>, który w razie awarii sieci staje się osierocony i blokuje dostęp pozostałym użytkownikom.</p>
+                </div>
+
+                <h3>Fizyczne Limity Microsoft Access w 2026 roku</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zasób / Funkcjonalność</th>
+                            <th>Maksymalny Limit</th>
+                            <th>Uwagi Yaroslava</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rozmiar pliku bazy danych</td>
+                            <td><strong>2 GB</strong></td>
+                            <td>Obejmuje to wszystkie tabele i obiekty ukryte (systemowe). Jeśli zbliżasz się do 1.5 GB, to najwyższy czas na migrację do SQL. Pamiętaj o regularnym wykonywaniu "Kompaktuj i Napraw".</td>
+                        </tr>
+                        <tr>
+                            <td>Jednoczesna liczba użytkowników</td>
+                            <td><strong>255</strong></td>
+                            <td>Teoretyczny wymysł Microsoftu. W praktyce, powyżej 10-15 użytkowników symultanicznie modyfikujących dane, baza drastycznie zwalnia i ryzyko blokad martwych (Deadlocks) rośnie.</td>
+                        </tr>
+                        <tr>
+                            <td>Liczba znaków w nazwie obiektu</td>
+                            <td><strong>64 znaki</strong></td>
+                            <td>Dotyczy nazw tabel, kwerend, formularzy. Dobrą praktyką jest stosowanie prefiksów (tbl_, frm_, qry_).</td>
+                        </tr>
+                        <tr>
+                            <td>Liczba rekordów (wierszy)</td>
+                            <td><strong>Brak oficjalnego limitu</strong></td>
+                            <td>Limitowane przez zasobność pliku do 2 GB. Zwykle daje to kilka-kilkanaście milionów rekordów tekstu, ale bardzo zwalnia wyszukiwanie bez odpowiednich Indeksów.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="split-database">2. Split Database: Obowiązkowa Architektura Front-End / Back-End</h2>
+                
+                <p>Jeśli już decydujesz się na budowanie aplikacji w czystym Accessie (bez użycia zewnętrznego serwera), <strong>nigdy</strong> nie trzymaj interfejsu graficznego i danych w jednym pliku na dysku sieciowym. Profesjonalne rozwiązanie polega na podzieleniu bazy, tzw. <em>Split Database Architecture</em>.</p>
+
+                <p><strong>Back-End:</strong> Zawiera wyłącznie Tabele i Relacje. Zapisywany jako np. <code>Dane_BE.accdb</code> na bezpiecznym serwerze współdzielonym, bez żadnego kodu logiki.<br>
+                <strong>Front-End:</strong> Zawiera Kwerendy, Formularze, Raporty, Moduły klasy VBA oraz <em>Połączone Tabele (Linked Tables)</em> wskazujące na lokalizację Back-Endu. Ten plik kopiujesz fizycznie na dysk twardy (Pulpit/Dokumenty) <strong>każdego</strong> użytkownika.</p>
+
+                <p>Taka separacja drastycznie zmniejsza ruch sieciowy, ponieważ silnik nie musi przesyłać przez sieć układu graficznego formularzy. Chroni to również interfejs (VBA) przed uszkodzeniem. Możesz też łatwo aktualizować Front-End (rozesłać nową wersję użytkownikom) bez dotykania produkcyjnych danych klientów.</p>
+
+                <h2 id="programowanie-vba">3. Programowanie w VBA: Potęga Klas, DAO i ADO</h2>
+                
+                <p>Początkujący użytkownicy wpadają w pułapkę tzw. Makr (Macros) w Accessie. Makra to narzędzie <em>No-Code</em> dla laików, absolutnie nienadające się do budowy systemów korporacyjnych. Brak w nich pełnej kontroli nad błędami (Error Handling). Prawdziwy deweloper zawsze używa języka <strong>VBA (Visual Basic for Applications)</strong>.</p>
+                
+                <p>W nowoczesnym środowisku w 2026 roku nie piszemy "spaghetti code" w każdym przycisku. Używamy <strong>Modułów Klas (Class Modules)</strong>, tworząc obiekty biznesowe.</p>
+
+                <h3>Przykład 1: Klasa reprezentująca Klienta (clsKlient)</h3>
+<pre><code class="language-vba">' Moduł Klasy: clsKlient
+Private p_ID As Long
+Private p_Nazwa As String
+Private p_NIP As String
+
+' Właściwości (Getters / Setters)
+Public Property Get ID() As Long
+    ID = p_ID
+End Property
+
+Public Property Let ID(Value As Long)
+    p_ID = Value
+End Property
+
+Public Property Get Nazwa() As String
+    Nazwa = p_Nazwa
+End Property
+
+Public Property Let Nazwa(Value As String)
+    p_Nazwa = Value
+End Property
+
+' Metoda ładująca klienta z bazy używając DAO
+Public Sub ZaladujZBD(KlientID As Long)
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    strSQL = "SELECT ID, Nazwa_Firmy, NIP FROM tblKlienci WHERE ID = " & KlientID
+    Set rs = CurrentDb.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    If Not rs.EOF Then
+        p_ID = rs!ID
+        p_Nazwa = Nz(rs!Nazwa_Firmy, "")
+        p_NIP = Nz(rs!NIP, "")
+    End If
+    
+    rs.Close
+    Set rs = Nothing
+End Sub
+</code></pre>
+
+                <h3>Biblioteka DAO vs ADO</h3>
+                <p>Gdy chcemy pracować na rekordach z poziomu kodu, mamy do wyboru dwie główne biblioteki komunikacyjne.</p>
+                <ul>
+                    <li><strong>DAO (Data Access Objects):</strong> Najszybsza i natywna biblioteka dla silnika ACE/JET. Używaj jej, dopóki Twój Back-End to plik `.accdb`.</li>
+                    <li><strong>ADO (ActiveX Data Objects):</strong> Biblioteka starsza koncepcyjnie, ale znacznie wydajniejsza przy komunikacji z zewnętrznymi serwerami poprzez ODBC/OLEDB. Wymagana przy asynchronicznych zapytaniach do SQL Servera.</li>
+                </ul>
+
+<pre><code class="language-vba">' Kod: Łączenie się do Azure SQL Server z poziomu Accessa używając ADO
+Public Sub PobierzDaneSQLServer()
+    Dim conn As Object
+    Dim rs As Object
+    Dim connectionString As String
+    Dim sqlQuery As String
+    
+    On Error GoTo ErrorHandler
+    
+    ' Pamiętaj, aby dla ADO dodać referencję: Microsoft ActiveX Data Objects Library
+    Set conn = CreateObject("ADODB.Connection")
+    Set rs = CreateObject("ADODB.Recordset")
+    
+    ' Przykładowy ciąg połączenia z bazą w chmurze Azure
+    connectionString = "Provider=MSOLEDBSQL;" & _
+                       "Server=tcp:mojserwer.database.windows.net,1433;" & _
+                       "Database=FirmaDB;" & _
+                       "Uid=admin_user;" & _
+                       "Pwd=MojeHaslo123;" & _
+                       "Encrypt=yes;"
+                       
+    ' Otwarcie połączenia
+    conn.Open connectionString
+    
+    ' Przekazanie natywnego zapytania T-SQL
+    sqlQuery = "SELECT TOP 10 Imie, Nazwisko FROM dbo.Klienci WHERE Status = 1"
+    rs.Open sqlQuery, conn
+    
+    ' Wyświetlenie wyników
+    Do While Not rs.EOF
+        Debug.Print rs.Fields("Imie").Value & " " & rs.Fields("Nazwisko").Value
+        rs.MoveNext
+    Loop
+    
+Cleanup:
+    If rs.State = 1 Then rs.Close
+    If conn.State = 1 Then conn.Close
+    Set rs = Nothing
+    Set conn = Nothing
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Wystąpił błąd: " & Err.Description, vbCritical, "Błąd ADO"
+    Resume Cleanup
+End Sub
+</code></pre>
+
+                <h2 id="migracja-sql-server">4. Przewodnik Migracji: Z Accessa do SQL Server (SSMA i Zapytania Przekazujące)</h2>
+                
+                <p>Najlepsze, co możesz zrobić dla firmowego Accessa, to pozostawić piękny, zbudowany Front-End użytkownikom, ale podmienić pod spodem silnik bazy danych na <strong>Microsoft SQL Server</strong>. Taki proces nazywa się Upsizingiem.</p>
+                
+                <p>W 2026 roku migrację realizujemy darmowym narzędziem Microsoftu: <strong>SQL Server Migration Assistant (SSMA) for Access</strong>.</p>
+
+                <ol>
+                    <li>Instalujesz SSMA i wskazujesz plik `.accdb` (Twój Back-End).</li>
+                    <li>SSMA generuje raport mapowania typów. Przykładowo, Accessowy <code>Krótki Tekst</code> (Short Text) staje się SQL-owym <code>NVARCHAR(255)</code>. Wartości logiczne Yes/No stają się typem <code>BIT</code>.</li>
+                    <li>Narzędzie buduje tabele na SQL Server i migruje tam fizyczne dane.</li>
+                    <li>W Twoim Front-Endzie usuwasz stare tabele (lokalne) i konfigurujesz tzw. <strong>DSN-less ODBC Linked Tables</strong> z użyciem kodu VBA.</li>
+                </ol>
+
+                <div class="info-box success">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Optymalizacja: Zapytania Przekazujące (Pass-Through Queries)
+                    </div>
+                    <p style="margin:0;">Kiedy połączysz Accessa z SQL Serverem, domyślna kwerenda napisana w Accessie pobierze ogrom danych przez sieć i przefiltruje je u Klienta. Aby tego uniknąć, tworzysz w Accessie zapytanie typu <strong>Pass-Through</strong>. Pozwala to wpisać natywny kod T-SQL (np. używający funkcji nieznanych Accessowi jak <code>ROW_NUMBER() OVER...</code>) i wysłać go wprost na serwer. SQL Server mieli dane u siebie i zwraca do Accessa tylko wynik (np. 5 rekordów). Drastycznie odciąża to sieć!</p>
+                </div>
+
+                <h2 id="access-a-python">5. Ekstrakcja Danych przez Modern Data Stack (Python)</h2>
+                
+                <p>Często w 2026 roku stajemy przed wyzwaniem wydobycia danych ze starej, zamkniętej architektury do nowoczesnego Data Lake. Używając Pythona i biblioteki <code>pyodbc</code> lub silnika SQLAlchemy, możemy wyciągnąć informacje ze starych baz bez uruchamiania ciężkiego GUI Accessa.</p>
+
+<pre><code class="language-python">import pyodbc
+import pandas as pd
+
+# Upewnij się, że masz zainstalowany Microsoft Access Database Engine Redistributable (ACE OLEDB)
+file_path = r"C:\BazyDanych\Finanse2026.accdb"
+conn_str = (
+    r"DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};"
+    rf"DBQ={file_path};"
+)
+
+try:
+    # Nawiązanie połączenia z silnikiem ACE
+    connection = pyodbc.connect(conn_str)
+    
+    # Zapytanie SQL ekstahujące pełne dane faktur
+    sql_query = "SELECT[Faktura_ID],[Data_Wystawienia], [Kwota_Netto] FROM tblFaktury WHERE [Status] = 'Opłacona'"
+    
+    # Załadowanie wyników prosto do potężnej ramki danych PANDAS
+    df_faktury = pd.read_sql(sql_query, connection)
+    
+    print("Dane załadowane poprawnie. Liczba wierszy:", len(df_faktury))
+    # Tutaj możemy eksportować je do chmury (Snowflake, BigQuery, AWS S3)
+    
+except Exception as e:
+    print(f"Krytyczny błąd łączenia z plikiem Access: {e}")
+finally:
+    if 'connection' in locals():
+        connection.close()
+</code></pre>
+
+                <h2 id="zabezpieczenia-accde">6. Zabezpieczenia: Format ACCDE i Runtime</h2>
+                
+                <p>Nigdy nie udostępniaj użytkownikowi końcowemu pliku z rozszerzeniem <code>.accdb</code>. Zawsze istnieje ryzyko, że ktoś wejdzie w projekt VBA i przez przypadek zmodyfikuje krytyczny kod biznesowy, albo usunie zapytanie. Poprawnym formatem dla warstwy Front-End do wdrażania u klientów jest <strong>ACCDE</strong>.</p>
+                
+                <p>Utworzenie pliku ACCDE powoduje kompilację całego kodu VBA w nieczytelny strumień bajtów i całkowicie usuwa oryginalny, czytelny kod źródłowy z pliku. Blokuje także możliwość modyfikacji formularzy i raportów w trybie projektowania (Design View). Pamiętaj tylko, by samemu zostawić sobie bazowy plik ACCDB w bezpiecznym miejscu jako "kod źródłowy"!</p>
+                
+                <p>Dla stacji roboczych, które w ogóle nie posiadają wykupionego pakietu Office/Microsoft 365, można darmowo zainstalować środowisko <strong>Access Runtime</strong>. Pozwala ono na uruchamianie skompilowanych aplikacji bazy danych bez opłacania licencji za pełen program Microsoft Access.</p>
+
+                <h2 id="powerapps-i-dataverse">7. Przyszłość: Integracja z Power Apps i Dataverse</h2>
+                
+                <p>Największym zarzutem wobec Accessa w świecie RWD jest brak mobilności. Nie otworzysz formularza z Accessa na smartfonie. Rozwiązaniem Microsoftu na to jest chmurowa usługa <strong>Microsoft Dataverse</strong> połączona z <strong>Power Apps</strong>.</p>
+
+                <p>Możesz użyć natywnego kreatora w Accessie, aby zmigrować tabele do usługi Dataverse. Co uzyskujesz dzięki architekturze hybrydowej?</p>
+                <ul>
+                    <li>Księgowa i analitycy w biurze na komputerach Windows nadal pracują na szybkim, wielkim monitorze używając okienek aplikacji Access (który teraz służy jako bogaty klient chmury).</li>
+                    <li>Pracownicy na magazynie i handlowcy skanują kody kreskowe swoimi smartfonami używając lekkiej, mobilnej aplikacji napisanej w chmurowym środowisku Power Apps, która ładuje dane dokładnie do tej samej, wspólnej bazy.</li>
+                </ul>
+
+                <h2 id="alternatywy">8. Podsumowanie i Werdykt Yaroslava</h2>
+                
+                <p>Większość "nowoczesnych" programistów gardzi Accessem, nazywając go anachronizmem. To wynika z niezrozumienia jego prawdziwego celu. Access nie ma zastępować aplikacji w React.js postawionych na potężnych chmurach AWS z tysiącami transakcji na sekundę. Access służy do tego, aby w firmie wyciągnąć dane z 50 niechlujnych arkuszy Excela w jeden spójny, relacyjny system z rygorystycznymi formularzami, i to w czasie zaledwie kilkunastu godzin dewelopmentu.</p>
+                
+                <p>Microsoft Access w 2026 roku pozostaje potężnym narzędziem klasy Rapid Application Development (RAD). A jeśli dodasz do niego znajomość VBA, potężny Back-End w postaci SQL Servera i architekturę Split-Database, otrzymasz niezwykle tanie, szybkie i wydajne środowisko biznesowe.</p>
+
+                <p>Dzięki za lekturę! Pamiętajcie o kopii zapasowej i optymalizacji indeksów. Niech bazy Waszych klientów zawsze mają powiązania relacyjne i włączone więzy integralności (Referential Integrity).</p>
+                <p>— <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">9. FAQ - Często Zadawane Pytania</h2>
+                
+                <div class="info-box">
+                    <h3>Czy Microsoft wycofuje program Access w 2026 roku?</h3>
+                    <p>Nie. Program Microsoft Access jest nadal aktywnie utrzymywany i znajduje się w większości profesjonalnych subskrypcji pakietu Microsoft 365 (dawniej Office 365). Z racji istnienia milionów legacy systemów na świecie, wygaszenie go trwałoby dziesięciolecia. Zwróć jednak uwagę, że nie otrzymuje on tak częstych, potężnych aktualizacji innowacyjnych jak bratni Excel czy nowa platforma Power Apps.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Jaki jest maksymalny rozmiar bazy danych w Accessie?</h3>
+                    <p>Fizyczny limit to twarde 2 GB (dwa gigabajty). Co ważne, do tego limitu wlicza się również pamięć podręczną zapytań i ukryte systemowe metadane. Dlatego przy projektach rosnących w czasie niezbędne jest stworzenie mechanizmu automatycznego Kompaktowania i Naprawy bazy po każdym jej zamknięciu przez użytkownika, inaczej baza wybuchnie błędem "Database too large".</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Co to znaczy podzielić bazę Access (Split Database)?</h3>
+                    <p>To fundamentalny proces polegający na separacji danych od interfejsu użytkownika (UI). W pliku tzw. Back-End trzymasz wyłącznie struktury tabel oraz relacje. Plik Front-End trzyma formularze, kwerendy, kod VBA i jedynie wskaźniki sieciowe (Linked Tables) wskazujące na Back-End. Jest to kluczowe dla uniknięcia błędów odczytu przy pracy wieloosobowej.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy Access zadziała na komputerach Mac (Apple)?</h3>
+                    <p>Nie. W przeciwieństwie do Excela czy Worda, Microsoft Access nigdy nie doczekał się natywnej wersji na systemy operacyjne macOS (dawniej OS X). Rozwiązaniem dla użytkowników Maców jest korzystanie z oprogramowania do wirtualizacji (takiego jak Parallels Desktop) lub łączenie się zdalnie do serwerów Windows z uruchomionym środowiskiem Remote Desktop.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czym zastąpić Microsoft Access w firmie?</h3>
+                    <p>Jeśli zależy Ci na przejściu w chmurę, naturalną ewolucją w ekosystemie Microsoft jest <strong>Power Apps</strong> (jako interfejs formularzy) połączony z bazą danych <strong>Microsoft Dataverse</strong> (lub Azure SQL). Jeśli szukasz szybkich rozwiązań z niższym progiem wejścia typu No-Code dla młodszego zespołu, popularnymi opcjami są <strong>Airtable</strong>, <strong>Coda</strong> oraz <strong>Notion</strong>, choć brakuje im potęgi relacyjności rodem z SQL Servera.</p>
+                </div>
+
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Ekspert ds. baz danych, programista VBA / Python i Inżynier Systemowy. Pomagam firmom w transformacji technologicznej, ratowaniu uszkodzonych struktur w środowiskach Microsoft Access oraz płynnej migracji złożonych procesów do Azure SQL oraz Power Platform.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#architektura-i-ograniczenia">1. Limity i problemy z silnikiem ACE</a></li>
+                    <li><a href="#split-database">2. Baza Podzielona: Front/Back End</a></li>
+                    <li><a href="#programowanie-vba">3. Programowanie w VBA: Klasy, DAO i ADO</a></li>
+                    <li><a href="#migracja-sql-server">4. Skalowanie do SQL Server (Upsizing)</a></li>
+                    <li><a href="#access-a-python">5. Ekstrakcja danych w Pythonie</a></li>
+                    <li><a href="#zabezpieczenia-accde">6. Zabezpieczenia: Pliki ACCDE i Runtime</a></li>
+                    <li><a href="#powerapps-i-dataverse">7. Przyszłość i Chmura: Power Apps / Dataverse</a></li>
+                    <li><a href="#alternatywy">8. Alternatywy i Werdykt Yaroslava</a></li>
+                    <li><a href="#faq">9. Sekcja FAQ - Często Zadawane Pytania</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Oficjalny blog i wizytówka. Tworzę, programuję, optymalizuję. Poznaj świat technologii moimi oczami.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Blog</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Przewiń do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMIC CURRENT YEAR
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 2. MOBILE MENU TOGGLE
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navbarNav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navbarNav.classList.remove('active');
+                });
+            });
+
+            // 3. DARK MODE THEME TOGGLE
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('ostapenkoblog-theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    // Moon
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Sun
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. SCROLL TO TOP
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 5. READING PROGRESS BAR
+            const progressBar = document.getElementById('readingProgressBar');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + "%";
+            });
+
+            // 6. TABLE OF CONTENTS ACTIVE LINK HIGHLIGHTER
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const headings = document.querySelectorAll('.article-content h2');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                // Adjusting threshold due to fixed navbar
+                const scrollPosition = window.scrollY + 120; 
+
+                headings.forEach(heading => {
+                    const top = heading.offsetTop;
+                    if (scrollPosition >= top) {
+                        current = heading.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for TOC anchor links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Offset by navbar height + some padding
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

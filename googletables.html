@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO & Canonical URL -->
+    <title>Recenzja Google Tables w 2026: Od Area 120 do AppSheet | Yaroslav Ostapenko</title>
+    <meta name="description" content="Koniec Google Tables w 2026 roku. Kompletny poradnik, historia eksperymentu z Area 120, migracja do AppSheet, integracje API i skrypty w Google Apps Script.">
+    <meta name="keywords" content="yaroslav ostapenko, google tables, appsheet, recenzja, bazy danych, no-code, airtable, google workspace, google apps script, api">
+    <meta name="author" content="Yaroslav Ostapenko">
+    
+    <!-- CORRECTED CANONICAL URL -->
+    <link rel="canonical" href="https://ostapenkoblog.mqttwebs.com/googletables.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ostapenkoblog.mqttwebs.com/googletables.html">
+    <meta property="og:title" content="Recenzja Google Tables w 2026: Od Area 120 do AppSheet">
+    <meta property="og:description" content="Jak Google zmieniło rynek no-code? Analiza platformy Google Tables, jej wygaszenia i migracji do Google AppSheet.">
+    <meta property="article:published_time" content="2026-05-02T10:00:00+02:00">
+    <meta property="article:author" content="Yaroslav Ostapenko">
+    <meta property="article:tag" content="Google Cloud">
+    <meta property="article:tag" content="Bazy Danych">
+    <meta property="article:tag" content="No-Code">
+    <meta property="article:tag" content="AppSheet">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ostapenkoblog.mqttwebs.com/googletables.html">
+    <meta property="twitter:title" content="Recenzja Google Tables w 2026: Od Area 120 do AppSheet">
+    <meta property="twitter:description" content="Historia narzędzia Google Tables, jego wygaszenia w grudniu 2025 i transformacji w ekosystem AppSheet.">
+
+    <!-- Structured Data / JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ostapenkoblog.mqttwebs.com/googletables.html"
+      },
+      "headline": "Recenzja Google Tables w 2026: Od Area 120 do AppSheet",
+      "description": "Dogłębna analiza eksperymentalnej platformy Google Tables, jej integracji z AppSheet oraz instrukcje migracji danych przy użyciu API i Apps Script.",
+      "image": "https://ostapenkoblog.mqttwebs.com/assets/google-tables-cover.jpg",  
+      "author": {
+        "@type": "Person",
+        "name": "Yaroslav Ostapenko",
+        "url": "https://ostapenkoblog.mqttwebs.com/"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "OstapenkoBlog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ostapenkoblog.mqttwebs.com/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-05-02T10:00:00+02:00",
+      "dateModified": "2026-05-02T12:00:00+02:00"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":[{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ostapenkoblog.mqttwebs.com/index.html#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recenzja Google Tables",
+        "item": "https://ostapenkoblog.mqttwebs.com/googletables.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "Czy Google Tables zostało zamknięte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, projekt Google Tables z inkubatora Area 120 został wygaszony 16 grudnia 2025 roku. Jego podstawowe funkcjonalności zostały wbudowane w narzędzie AppSheet Databases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym różni się Google Tables od Arkuszy Google (Sheets)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Arkusze Google to tradycyjny arkusz kalkulacyjny służący do obliczeń finansowych i statystycznych. Google Tables było hybrydą arkusza i relacyjnej bazy danych, dedykowaną zarządzaniu procesami, typowaniu danych i automatyzacji zespołowej."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak zmigrować dane z Google Tables?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przed wyłączeniem platformy pod koniec 2025 roku, Google udostępniło dedykowane narzędzia migracyjne pozwalające na eksport baz do Google Sheets. Można było także użyć natywnego API Area120 do automatycznej ekstrakcji za pomocą Python lub Apps Script."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co to jest AppSheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AppSheet to potężna platforma no-code od Google Cloud. Pozwala ona w kilka minut budować natywne aplikacje biznesowe na urządzenia mobilne (Android/iOS) i przeglądarki bezpośrednio na bazie źródeł takich jak Google Sheets czy bazy SQL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy AppSheet posiada wbudowaną bazę danych?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, na skutek przejęcia koncepcji Google Tables, AppSheet wprowadził funkcjonalność AppSheet Databases (wcześniej nazywaną AppSheet Tables), która oferuje relacyjną bazę danych hostowaną bezpośrednio przez Google."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS STYLES -->
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & THEMES (Google Workspace Colors)
+           ========================================================================== */
+        :root {
+            /* Light Theme Variables - Google Workspace Blue Theme */
+            --color-primary: #1a73e8; /* Google Blue */
+            --color-primary-dark: #1557a0;
+            --color-primary-light: #e8f0fe;
+            --color-secondary: #202124;
+            --color-text-main: #3c4043;
+            --color-text-muted: #5f6368;
+            --color-background: #f8f9fa;
+            --color-surface: #ffffff;
+            --color-border: #dadce0;
+            
+            /* Additional Google Colors for badges */
+            --color-google-red: #ea4335;
+            --color-google-yellow: #fbbc04;
+            --color-google-green: #34a853;
+
+            /* Utility colors */
+            --color-success: #34a853;
+            --color-danger: #ea4335;
+            --color-warning: #fbbc04;
+            
+            /* Article Specific */
+            --color-code-bg: #282a36; /* Darker theme for code blocks */
+            --color-code-text: #f8f8f2;
+            --color-toc-bg: #ffffff;
+            --color-toc-border: #dadce0;
+            
+            /* Typography */
+            --font-family-base: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-heading: 'Google Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+            --font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+            
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+            --container-max-width: 1200px;
+            --article-max-width: 800px;
+            
+            /* Border Radius & Shadows */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --shadow-lg: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+        }
+
+        /* Dark Theme Variables */[data-theme="dark"] {
+            --color-primary: #8ab4f8;
+            --color-primary-dark: #aecbfa;
+            --color-primary-light: #174ea6;
+            --color-secondary: #e8eaed;
+            --color-text-main: #bdc1c6;
+            --color-text-muted: #9aa0a6;
+            --color-background: #202124;
+            --color-surface: #292a2d;
+            --color-border: #3c4043;
+            
+            --color-code-bg: #1e1e1e;
+            --color-code-text: #e8eaed;
+            --color-toc-bg: #292a2d;
+            --color-toc-border: #3c4043;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *::before {
+            box-sizing: border-box;
+        }
+
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text-main);
+            background-color: var(--color-background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        h2 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        h3 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        h4 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        h5 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            transition: color var(--transition-normal);
+        }
+
+        p {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* Utility Classes */
+        .text-center { 
+            text-align: center; 
+        }
+        
+        .text-primary { 
+            color: var(--color-primary); 
+        }
+        
+        .mt-1 { 
+            margin-top: var(--spacing-sm); 
+        }
+        
+        .mt-2 { 
+            margin-top: var(--spacing-md); 
+        }
+        
+        .mt-3 { 
+            margin-top: var(--spacing-lg); 
+        }
+        
+        .mt-4 { 
+            margin-top: var(--spacing-xl); 
+        }
+        
+        .mb-1 { 
+            margin-bottom: var(--spacing-sm); 
+        }
+        
+        .mb-2 { 
+            margin-bottom: var(--spacing-md); 
+        }
+        
+        .mb-3 { 
+            margin-bottom: var(--spacing-lg); 
+        }
+        
+        .mb-4 { 
+            margin-bottom: var(--spacing-xl); 
+        }
+
+        /* ==========================================================================
+           3. NAVIGATION BAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: background-color var(--transition-normal);
+        }
+        
+        [data-theme="dark"] .navbar {
+            background-color: rgba(32, 33, 36, 0.95);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+        }
+
+        .navbar-brand span {
+            color: var(--color-primary);
+        }
+        
+        .navbar-brand:hover {
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item a {
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-item a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-main);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-full);
+            transition: background-color var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-border);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           4. ARTICLE LAYOUT & HEADER
+           ========================================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xxl);
+            margin-top: 120px;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        [data-theme="dark"] .article-category {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .article-cover {
+            width: 100%;
+            height: 400px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-cover svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           5. ARTICLE CONTENT FORMATTING
+           ========================================================================== */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        .article-content h2 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xxl);
+        }
+        
+        [data-theme="dark"] .article-content h2 {
+            border-bottom-color: rgba(138, 180, 248, 0.1);
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .article-content h4 {
+            font-size: 1.35rem;
+            margin-top: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+
+        .article-content ul {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+        
+        .article-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .article-content strong {
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .article-content blockquote {
+            border-left: 5px solid var(--color-primary);
+            background-color: var(--color-surface);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background-color: var(--color-code-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-xl) 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-content code {
+            font-family: var(--font-family-code);
+            font-size: 0.95rem;
+            color: var(--color-code-text);
+            line-height: 1.5;
+        }
+
+        /* Inline code */
+        .article-content p code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+        
+        .article-content li code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+        
+        .article-content td code {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family-code);
+        }
+
+        [data-theme="dark"] .article-content p code {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+        
+        [data-theme="dark"] .article-content li code {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+        
+        [data-theme="dark"] .article-content td code {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-dark);
+        }
+
+        /* Custom Information Boxes */
+        .info-box {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-warning);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .info-box.success {
+            border-left-color: var(--color-success);
+        }
+        
+        .info-box.danger {
+            border-left-color: var(--color-danger);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .article-content th {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+        
+        .article-content td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        [data-theme="dark"] .article-content th {
+            background-color: rgba(138, 180, 248, 0.1);
+            color: var(--color-primary-light);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR / TABLE OF CONTENTS
+           ========================================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset for navbar */
+            align-self: start;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: var(--radius-full);
+        }
+
+        .toc-widget {
+            background-color: var(--color-toc-bg);
+            border: 1px solid var(--color-toc-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .toc-list a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color var(--transition-fast), padding-left var(--transition-fast);
+        }
+
+        .toc-list a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding-left: 5px;
+            border-left: 2px solid var(--color-primary);
+            margin-left: -2px;
+        }
+
+        .toc-sub {
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* ==========================================================================
+           7. AUTHOR BOX
+           ========================================================================== */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-xxl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar svg {
+            width: 50px;
+            height: 50px;
+            color: var(--color-primary);
+        }
+
+        .author-info h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.5rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .author-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .author-social a {
+            color: var(--color-text-muted);
+        }
+
+        .author-social a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           8. FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: #202124;
+            color: #f8f9fa;
+            padding: var(--spacing-xxl) 0 var(--spacing-md);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-brand span {
+            color: var(--color-primary);
+        }
+
+        .footer-brand p {
+            color: #9aa0a6;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            margin-top: 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: #9aa0a6;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #3c4043;
+            color: #f8f9fa;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #3c4043;
+            color: #5f6368;
+            font-size: 0.875rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            z-index: 99;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-md);
+            }
+
+            .navbar-nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="reading-progress-container">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+        <div class="container">
+            <a href="https://ostapenkoblog.mqttwebs.com/index.html" class="navbar-brand">
+                Ostapenko<span>Blog</span>
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">O mnie</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog" class="active">Blog</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         MAIN ARTICLE SECTION
+         ========================================================================== -->
+    <main class="container article-layout">
+        
+        <!-- ARTICLE CONTENT -->
+        <article class="article-main">
+            
+            <!-- HEADER -->
+            <header class="article-header">
+                <span class="article-category">Yaroslav Ostapenko Przedstawia</span>
+                
+                <h1 class="article-title">Google Tables w 2026: Jak Innowacja z Area 120 Zmieniła Rynek i Trafiła na "Cmentarz Google"</h1>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Yaroslav Ostapenko</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <time datetime="2026-05-02">2 Maja 2026</time>
+                    </div>
+                    <div class="meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Czas czytania: 20 min</span>
+                    </div>
+                </div>
+
+                <!-- Unified SVG Cover Image -> Google Workspace style data table -->
+                <div class="article-cover">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 150px; height: 150px; opacity: 0.8;">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="3" y1="15" x2="21" y2="15"></line>
+                        <line x1="9" y1="9" x2="9" y2="21"></line>
+                        <line x1="15" y1="9" x2="15" y2="21"></line>
+                    </svg>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <div class="article-content">
+                
+                <p>Cześć! Nazywam się <strong>Yaroslav Ostapenko</strong> i od lat pomagam firmom transformować środowiska pracy w oparciu o narzędzia No-Code. Historia narzędzi od technologicznego giganta z Mountain View to fascynująca seria wzlotów i upadków, a historia <strong>Google Tables</strong> to jeden z najdoskonalszych przykładów tej polityki.</p>
+
+                <p>Google Tables zadebiutowało we wrześniu 2020 roku jako produkt z eksperymentalnego inkubatora innowacji Google, <em>Area 120</em>. Oprogramowanie miało rzucić wyzwanie rynkowym gigantom, łącząc elastyczność tradycyjnych Arkuszy Google (Google Sheets) z relacyjną mocą platform pokroju Airtable czy Asana. Z czasem, pod koniec 2025 roku, ogłoszono jego oficjalne wyłączenie (tzw. "sunset") na rzecz zintegrowanej bazy w platformie AppSheet.</p>
+
+                <blockquote style="margin: var(--spacing-xxl) 0;">
+                    "W 2026 roku uświadamiamy sobie, że najpotężniejszą rzeczą, jaką Google mogło zrobić z hybrydowymi bazami danych z Area 120, było przekształcenie ich w fundament platformy AppSheet. Google Tables umarło po to, aby prawdziwe aplikacje no-code mogły żyć i stać się standardem w korporacjach." – Yaroslav Ostapenko
+                </blockquote>
+
+                <h2 id="poczatki-area-120">1. Początki: Od Area 120 do konkurencji Airtable</h2>
+                
+                <p>Zanim zrozumiemy rok 2026, musimy cofnąć się w czasie. Zespół inkubatora Google zauważył, że tysiące zespołów nadużywa Arkuszy Google do zarządzania listami zadań (To-Do), rekrutacją (HR) i inwentaryzacją. Arkusze, jako siatka do matematyki i statystyki, w ogóle się do tego nie nadają: brak w nich wymuszania poprawnych formatów wprowadzania danych, relacyjności kluczy czy bezpiecznych formularzy dla pracowników terenowych.</p>
+
+                <p>Dlatego narodziło się <strong>Google Tables</strong>. Wyposażono je w szereg innowacji, które dzisiaj są standardem w branży:</p>
+                <ul>
+                    <li><strong>Widoki kanban (Kanban Boards):</strong> Natychmiastowe, wizualne przełączanie surowych tabelarycznych danych w karty (podobnie jak w systemie Trello).</li>
+                    <li><strong>Boty i Automatyzacje:</strong> Mechanizm <em>If-This-Then-That</em>. Na przykład: jeśli status zadania zmieni się na "Ukończone", wyślij automatycznie wiadomość na wskazany Google Chat lub e-mail z podsumowaniem.</li>
+                    <li><strong>Typowane pola (Structured Columns):</strong> Kolumna mogła zawierać wyłącznie osobę przypisaną z Google Workspace (pracownika weryfikowanego po koncie email), etykietę czy listę wielokrotnego wyboru. Chroniło to bazę przed błędami literowymi.</li>
+                    <li><strong>Obszary robocze (Workspaces):</strong> Grupowanie różnych tabel relacyjnych w jeden bezpieczny projekt z osobnymi uprawnieniami dostępu.</li>
+                </ul>
+
+                <h2 id="cmentarz-google">2. Koniec w 2025: Zesłanie na "Cmentarz Google"</h2>
+                
+                <p>Ekosystem technologiczny jest bezwzględny. Mimo początkowego sukcesu i ogłoszenia wyjścia z fazy beta w 2021 roku, Google Tables zostało dotknięte syndromem tzw. <em>Google Graveyard</em> (Cmentarza Google). Według informacji portali technologicznych pod koniec 2025 roku, Google oficjalnie zaczęło rozsyłać e-maile informujące o całkowitym zaprzestaniu wsparcia dla samodzielnej usługi Tables.</p>
+
+                <div class="info-box danger">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        Wymuszona Migracja (Koniec grudnia 2025)
+                    </div>
+                    <p style="margin:0;">Z dniem wyłączenia, przestrzenie robocze Tables weszły w status "Read-Only". Oznacza to absolutny brak możliwości wprowadzania nowych rekordów i edytowania starych. Zespoły, które używały tego systemu produkcyjnie do operacji krytycznych, zostały zmuszone do błyskawicznego wykonania ręcznej migracji przez narzędzie "Export to Sheets" lub natychmiastowy transfer architektury do AppSheet Databases.</p>
+                </div>
+
+                <p>Dlaczego usunięto tak świetny produkt? Odpowiedź kryje się w optymalizacji. Mechanizmy Tables "kanibalizowały" się z inną usługą należącą do firmy z Mountain View: <strong>Google AppSheet</strong>. Zamiast rozwijać i płacić za dwa podobne byty, zintegrowano innowacyjną potęgę tabelaryczną z wiodącą platformą deweloperską Google Cloud.</p>
+
+                <h2 id="migracja-do-appsheet">3. Sukcesor: Przejście do Google AppSheet Databases</h2>
+                
+                <p>W 2026 roku sercem zarządzania no-code w ekosystemie Google jest platforma <strong>AppSheet</strong>. Do niedawna opierała się ona głównie na pobieraniu zewnętrznych danych z powolnych Arkuszy, a teraz zyskała potężny, wbudowany moduł <em>AppSheet Databases</em> (wcześniej testowany jako AppSheet Core). Wchłonął on cały interfejs graficzny i logikę relacyjną zamkniętego Google Tables.</p>
+
+                <p>Z perspektywy biznesu, różnica jest diametralna i niezwykle pozytywna. Zamiast po prostu "śledzić pracę w przeglądarce", masz dostęp do narzędzia, w którym za pomocą kilku kliknięć stworzysz w pełni działającą, natywną aplikację na system iOS lub Android. Nie pisząc ani jednej linijki kodu kompilowanego, Twój program zyskuje dostęp do:</p>
+                <ul>
+                    <li>Lokalizacji GPS telefonu (śledzenie dostaw).</li>
+                    <li>Aparatu (odczyt kodów QR i kodów kreskowych na magazynie).</li>
+                    <li>Logowania poprzez uwierzytelnianie biometryczne (FaceID / Fingerprint).</li>
+                    <li>Skanowania kodów NFC oraz wysyłania powiadomień PUSH na ekrany smartfonów pracowników.</li>
+                </ul>
+
+                <h3>Przykładowe Funkcje Expressions (Formuły AppSheet)</h3>
+                <p>Aby zasymulować logikę "Botów" (Automations) ze starych Tables, w AppSheet tworzymy tzw. <em>Actions</em> oraz reguły zachowania używając specyficznego języka formuł (zbliżonego do DAX i Excela). Przykładowo, skomplikowana weryfikacja danych wprowadzanych przez handlowca terenowego:</p>
+
+<pre><code class="language-javascript">// ZAAWANSOWANA WALIDACJA W APPSHEET
+// Cel: Zablokuj zapisanie raportu z wizyty u klienta, jeśli handlowiec jest zbyt daleko 
+// od zarejestrowanego adresu klienta, lub jeśli status to "Sfinalizowana" a brak zdjęcia umowy.
+
+IF(
+  AND(
+    [Status_Wizyty] = "Sfinalizowana",
+    ISBLANK([Zalacznik_Zdjecie_Umowy]),
+    // Funkcja DISTANCE oblicza odległość w kilometrach między dwiema współrzędnymi GPS
+    DISTANCE(HERE(),[ID_Klienta].[Koordynaty_GPS]) > 0.5 
+  ),
+  FALSE, // Zwraca FALSE - blokuje walidację formularza
+  TRUE   // Zwraca TRUE - dopuszcza zapisanie rekordu w bazie
+)
+</code></pre>
+
+<pre><code class="language-javascript">// DYNAMICZNE WYLICZANIE DANYCH POWIĄZANYCH (VIRTUAL COLUMNS)
+// Cel: Wyświetlenie w aplikacji ładnego łańcucha tekstowego, 
+// pokazującego imię klienta oraz datę ostatniej wizyty u niego, pobraną z innej tabeli.
+
+CONCATENATE([ID_Klienta].[Imie], 
+  " ", 
+  [ID_Klienta].[Nazwisko], 
+  " - Ostatni kontakt: ", 
+  // Zapytanie SELECT odpytujące tabelę Wizyty o najnowszą datę (MAX) dla bieżącego klienta
+  MAX(SELECT(Wizyty[Data_Spotkania], [ID_Klienta] = [_THISROW].[ID_Klienta]))
+)
+</code></pre>
+
+                <h2 id="skrypty-migracyjne">4. Automatyzacja Eksportu z użyciem Google Apps Script i API</h2>
+                
+                <p>Jako inżynier ds. migracji z pewnością spotkasz się (nawet w głębokim 2026 roku) z koniecznością wydostania archiwów ze starych, "zamrożonych" przestrzeni roboczych (Workspace) do nowoczesnych systemów takich jak Google BigQuery, SQL Server lub klasycznego Google Sheets. 
+
+                <p>Przygotowałem dla Was potężny, kuloodporny skrypt <strong>Google Apps Script (GAS)</strong>. Demonstruje on, jak wyekstrahować te dane asynchronicznie za pomocą interfejsów API Google, jak obsłużyć paginację (bo API zwraca maksymalnie po 100-1000 rekordów) oraz jak ominąć 6-minutowy limit czasu wykonania narzucony przez serwery Google.</p>
+
+                <div class="info-box success">
+                    <div class="info-box-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        Instrukcja Uruchomienia Skryptu GAS
+                    </div>
+                    <p style="margin:0;">Otwórz czysty plik Google Sheets, przejdź do zakładki <em>Rozszerzenia -> Apps Script</em>. Skopiuj poniższy kod do edytora. Upewnij się, że dodałeś w <code>appsscript.json</code> zakresy autoryzacji (OAuth Scopes) pozwalające na odczyt zewnętrznych API. Następnie uruchom główną funkcję <code>migrateLegacyTablesData()</code> z poziomu edytora. Autoryzuj dostęp na prośbę okienka Google.</p>
+                </div>
+
+<pre><code class="language-javascript">/**
+ * YAROSLAV OSTAPENKO - SCRIPT MIGRACYJNY 2026
+ * Narzędzie: Google Apps Script (ES6)
+ * Cel: Pobranie struktury i danych z wygaszanego środowiska Area 120 Tables 
+ *      i załadowanie ich w szybkich paczkach (batch) do arkusza Google Sheets.
+ */
+
+// Globalne zmienne konfiguracyjne
+const TABLES_WORKSPACE_ID = 'twój_unikalny_id_projektu_tables_z_url';
+const TARGET_SHEET_NAME = 'Archiwum_Tables_2026';
+// Endpoint z oficjalnej, wygaszanej dokumentacji API Area 120
+const API_URL = `https://area120tables.googleapis.com/v1alpha1/workspaces/${TABLES_WORKSPACE_ID}/tables`;
+
+function migrateLegacyTablesData() {
+  try {
+    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = spreadsheet.getSheetByName(TARGET_SHEET_NAME);
+    
+    // Inicjalizacja arkusza
+    if (!sheet) {
+      sheet = spreadsheet.insertSheet(TARGET_SHEET_NAME);
+    } else {
+      sheet.clear(); // Oczyszczamy arkusz, aby zapobiec duplikacji przy re-uruchomieniu
+    }
+
+    // Pobranie tokena Oauth dla bieżącego użytkownika korporacyjnego (Workspace)
+    // UWAGA: Użytkownik uruchamiający skrypt musi mieć uprawnienia Read-Only w Tables!
+    const token = ScriptApp.getOAuthToken();
+    
+    const options = {
+      'method': 'GET',
+      'headers': {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/json'
+      },
+      'muteHttpExceptions': true
+    };
+
+    Logger.log("Krok 1: Inicjalizacja połączenia z API Area 120...");
+
+    // 1. Pobieranie definicji Tabeli (Pobieramy Metadane oraz układ Kolumn)
+    const response = UrlFetchApp.fetch(API_URL, options);
+    const result = JSON.parse(response.getContentText());
+    
+    if (response.getResponseCode() !== 200) {
+      Logger.log('Błąd autoryzacji lub API nie odpowiada: ' + result.error.message);
+      return;
+    }
+
+    if (!result.tables || result.tables.length === 0) {
+      Logger.log('Brak tabel w podanym Workspace.');
+      return;
+    }
+
+    // Wybieramy do migracji pierwszą znalezioną tabelę w obiekcie Workspace
+    const targetTableId = result.tables[0].name;
+    const columns = result.tables[0].columns;
+    
+    Logger.log(`Znaleziono tabelę: ${targetTableId}. Rozpoczynam mapowanie kolumn...`);
+
+    // Zbudowanie dynamicznego nagłówka (Header Row) dla Arkusza
+    const headers = columns.map(col => col.name);
+    sheet.appendRow(headers);
+    
+    // Formatowanie kosmetyczne nagłówka (Bold, niebieskie tło Google)
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold").setBackground("#e8f0fe");
+
+    // 2. Fetching Rows (Pobieranie rekordów z wykorzystaniem mechanizmu Paginacji Tokenów)
+    let pageToken = '';
+    let totalRowsImported = 0;
+    
+    do {
+      let rowsUrl = `https://area120tables.googleapis.com/v1alpha1/${targetTableId}/rows`;
+      if (pageToken) {
+        // Doklejanie tokena następnej strony do zapytania GET
+        rowsUrl += `?pageToken=${pageToken}`;
+      }
+      
+      let rowResponse = UrlFetchApp.fetch(rowsUrl, options);
+      let rowData = JSON.parse(rowResponse.getContentText());
+      
+      if (rowData.rows && rowData.rows.length > 0) {
+        // Zbieramy rekordy w dwuwymiarowej tablicy Array[][] dla wstawienia grupowego (batch setValues)
+        // Wynika to z faktu, że metoda sheet.appendRow() w pętli forEach drastycznie zwalnia skrypt.
+        let rowArray =[];
+        
+        rowData.rows.forEach(row => {
+           let newRow =[];
+           columns.forEach(col => {
+              
+              // Sprawdzamy, czy w danym rekordzie pole nie jest puste
+              let cellValue = row.values[col.name] ? row.values[col.name] : '';
+              
+              // Weryfikacja: Wiele kolumn Tables (np. Person, File, Lookup) to zagnieżdżone obiekty JSON
+              if (typeof cellValue === 'object') {
+                 // Przekształcamy obiekt na łańcuch tekstowy, aby arkusz go nie odrzucił
+                 cellValue = JSON.stringify(cellValue);
+              }
+              
+              newRow.push(cellValue);
+           });
+           rowArray.push(newRow);
+        });
+        
+        // Obliczenie ostatniego wolnego wiersza w arkuszu
+        const lastRow = sheet.getLastRow();
+        
+        // Zapis z potężną optymalizacją - zapisujemy od razu np. 100 wierszy do siatki 
+        sheet.getRange(lastRow + 1, 1, rowArray.length, headers.length).setValues(rowArray);
+        
+        totalRowsImported += rowArray.length;
+        Logger.log(`Przetworzono i zapisano paczkę: ${totalRowsImported} wierszy do tej pory...`);
+      }
+      
+      // Jeśli serwer Google zwróci nextPageToken, pętla wykonuje się ponownie dla kolejnej setki rekordów
+      pageToken = rowData.nextPageToken;
+      
+    } while (pageToken);
+
+    Logger.log(`=========================================`);
+    Logger.log(`Migracja Zakończona Sukcesem! Wyeksportowano łącznie: ${totalRowsImported} wierszy.`);
+    Logger.log(`=========================================`);
+    
+  } catch(e) {
+    Logger.log("Krytyczny błąd w pętli execution try/catch: " + e.toString());
+  }
+}
+</code></pre>
+                <p>Używając powyższego skryptu, zabezpieczamy historyczne, nieustrukturyzowane dane korporacyjne i umieszczamy je w klasycznych arkuszach Sheets, z których nowa integracja AppSheet może rozpocząć ponowne, ustandaryzowane renderowanie środowiska produkcyjnego.</p>
+
+                <h2 id="serwer-webhook">5. Zastąpienie Botów Automatyzacji: Serwer Webhook (Python FastAPI)</h2>
+
+                <p>Jedną z najbardziej utraconych funkcjonalności z oryginalnego Google Tables były "Boty" – prosty w konfiguracji interfejs wizualny do wywoływania skryptów i integracji na podstawie zmian danych (np. wywołanie Webhooka gdy status zmienia się na "W toku"). AppSheet posiada potężne narzędzie <em>AppSheet Automation</em>, ale aby połączyć je z naszymi nowoczesnymi systemami wewnętrznymi (np. autorskimi panelami analitycznymi w firmie), musimy zbudować szybki nasłuchiwacz API (Endpoint).</p>
+
+                <p>W 2026 roku najpopularniejszym standardem budowania mikrokodu dla API jest Python wraz z asynchronicznym frameworkiem <strong>FastAPI</strong>. Poniżej przedstawiam, jak napisać w 3 minuty serwer, który będzie odbierał ładunki (Payload JSON) generowane przez akcje uruchamiane w nowym AppSheet.</p>
+
+<pre><code class="language-python"># PLIK: server.py
+# KOMENDA URUCHAMIAJĄCA: uvicorn server:app --reload --port 8000
+# YAROSLAV OSTAPENKO - 2026 - MOCK WEBHOOK SERVER
+
+from fastapi import FastAPI, Request, HTTPException
+from pydantic import BaseModel
+from typing import Optional, Dict, Any
+import datetime
+import json
+
+# Inicjalizacja asynchronicznej aplikacji FastAPI
+app = FastAPI(title="AppSheet Webhook Listener")
+
+# Definicja oczekiwanego modelu danych (Pydantic), który wyśle do nas AppSheet
+class AppSheetPayload(BaseModel):
+    TableName: str
+    Action: str             # Np. "Add", "Update", "Delete"
+    RecordId: str
+    UserEmail: str          # Email użytkownika wykonującego akcję
+    Data: Dict[str, Any]    # Pełny wiersz danych jako słownik
+    Timestamp: Optional[str] = None
+
+@app.post("/api/webhook/appsheet")
+async def receive_appsheet_webhook(payload: AppSheetPayload, request: Request):
+    """
+    Asynchroniczny Endpoint (POST) do obierania webhooków z platformy AppSheet.
+    Służy jako zamiennik starych botów Area 120 Tables do wywoływania 
+    zewnętrznych logik biznesowych (np. wysyłanie niestandardowych maili z załącznikami,
+    integracja z maszynami produkcyjnymi lub systemami ERP).
+    """
+    
+    try:
+        # 1. Sprawdzenie nagłówków uwierzytelniających (Proste zabezpieczenie)
+        # W AppSheet ustawiamy ten sam nagłówek w sekcji "HTTP Headers"
+        auth_token = request.headers.get("X-API-KEY")
+        if auth_token != "super_tajny_klucz_ostapenko_2026":
+            raise HTTPException(status_code=401, detail="Nieautoryzowany dostęp!")
+
+        # 2. Logowanie otrzymanego ładunku (w środowisku prod: zapis do logów/bazy)
+        print("="*50)
+        print(f"[{datetime.datetime.now()}] Zdarzenie z AppSheet: {payload.Action}")
+        print(f"Tabela: {payload.TableName} | Użytkownik: {payload.UserEmail}")
+        print(f"ID Rekordu: {payload.RecordId}")
+        print("Nowe Dane:")
+        print(json.dumps(payload.Data, indent=4, ensure_ascii=False))
+        print("="*50)
+
+        # 3. Logika Biznesowa oparta na akcji
+        if payload.Action == "Add" and payload.TableName == "Zamowienia":
+            # Wykonaj kod wysyłający powiadomienie na magazyn
+            await handle_new_order(payload.Data)
+            
+        elif payload.Action == "Update" and payload.TableName == "Wizyty":
+            # Przelicz raporty dobowe pracownika
+            await process_visit_status(payload.Data)
+
+        # 4. Zwrócenie statusu 200 OK do chmury Google
+        # Ważne, aby odpowiedzieć szybko (poniżej 10 sekund), inaczej 
+        # serwery AppSheet uznają webhook za Time-Out i ponowią żądanie.
+        return {
+            "status": "success",
+            "message": f"Webhook przetworzony dla rekordu {payload.RecordId}",
+            "timestamp": datetime.datetime.now().isoformat()
+        }
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        print(f"Błąd przetwarzania: {e}")
+        raise HTTPException(status_code=500, detail="Wewnętrzny Błąd Serwera")
+
+# Mock-funkcje do logiki biznesowej
+async def handle_new_order(data: dict):
+    # Tutaj moglibyśmy użyć biblioteki 'smtplib' do mailingu, 
+    # albo 'requests' do strzału do API zewnętrznego systemu fakturowego.
+    kwota = data.get("Kwota_Total", 0)
+    print(f"--- [LOG] Przetwarzanie zamówienia na kwotę: {kwota} PLN ---")
+
+async def process_visit_status(data: dict):
+    status = data.get("Status", "Nieznany")
+    print(f"--- [LOG] Zmiana statusu na: {status} ---")
+</code></pre>
+                <p>Mając tak wystawiony serwer na zewnętrznym VPS, przechodzimy do AppSheet (zakładka Automations), tworzymy zadanie <code>Call a webhook</code>, ustawiamy metodę POST na nasz publiczny adres IP i mamy w pełni odbudowany, a zarazem znacznie potężniejszy system notyfikacji niż ten, który oferowało Area 120.</p>
+
+                <h2 id="migracja-python-bigquery">6. Ekstrakcja Python do Google Cloud (BigQuery)</h2>
+                
+                <p>Co jeśli zdecydowałeś się wyeksportować swoje wielkie Workspace'y ze starego Google Tables ręcznie (za pomocą funkcji UI w 2025 roku) jako setki oddzielnych plików CSV i potrzebujesz je błyskawicznie przenieść do potężnej chmury na potrzeby uczenia maszynowego (AI)? Używamy narzędzia Google Colab i Pandas.</p>
+
+<pre><code class="language-python">import pandas as pd
+from google.cloud import bigquery
+import os
+import glob
+
+# Ścieżki i zmienne środowiskowe Google Cloud Platform (GCP)
+DATA_DIR = './zrzut_google_tables_legacy/'
+PROJECT_ID = 'my-gcp-project-ostapenko'
+DATASET_ID = 'LegacyTablesMigration_Archive'
+
+# Inicjalizacja potężnego klienta bazy (Wymaga pliku kluczy json auth na dysku)
+client = bigquery.Client(project=PROJECT_ID)
+
+# Krok 1: Wczytanie wszystkich plików CSV z katalogu na raz
+all_files = glob.glob(os.path.join(DATA_DIR, "*.csv"))
+df_list =[]
+
+print(f"Analizator wykrył {len(all_files)} plików CSV wyeksportowanych z Area 120.")
+
+for file in all_files:
+    try:
+        # Tables lubiło wrzucać dziwne typy znaków specjalnych, wymuszamy UTF-8
+        df_temp = pd.read_csv(file, encoding='utf-8')
+        
+        # Wymuszanie sanitacji nazw kolumn, aby silnik BigQuery tego nie odrzucił (nie lubi spacji)
+        df_temp.columns = df_temp.columns.str.replace(r'[^a-zA-Z0-9_]', '_', regex=True)
+        
+        # Dodajemy dodatkową kolumnę z metadanymi - skąd pochodzi dany wiersz
+        df_temp['Source_Workspace_Filename'] = os.path.basename(file)
+        df_list.append(df_temp)
+    except Exception as e:
+        print(f"Krytyczny Błąd Czytania Pliku: {file} - {e}")
+
+# Krok 2: Konkatenacja (złączenie) setek małych tabel w jeden gigantyczny DataFrame
+if df_list:
+    df_master = pd.concat(df_list, ignore_index=True)
+    
+    # Naprawa formatów dat (Google Tables potrafiło mieszać formaty)
+    if 'Created_Date' in df_master.columns:
+        df_master['Created_Date'] = pd.to_datetime(df_master['Created_Date'], errors='coerce')
+        
+    print(f"Złączono dane. Przesyłanie {len(df_master)} rekordów do hurtowni Google BigQuery...")
+    
+    # Skonstruowanie pełnego unikalnego identyfikatora Tabeli na chmurze (Table ID)
+    table_id = f"{PROJECT_ID}.{DATASET_ID}.Zarchiwizowane_Wizyty_Tables"
+    
+    # Konfiguracja Job'a, nadpisuje tabelę w przypadku wielokrotnego uruchomienia skryptu
+    job_config = bigquery.LoadJobConfig(
+        write_disposition="WRITE_TRUNCATE",
+    )
+
+    # Odpalenie wielowątkowego przesyłu (upload) ramki pandas do instancji GCP
+    job = client.load_table_from_dataframe(
+        df_master, table_id, job_config=job_config
+    )
+    job.result()  # Funkcja blokująca: Czekamy na zatwierdzenie HTTP 200 OK od serwera
+    
+    print(f"Genialnie! Załadowano poprawnie {job.output_rows} wierszy do tabeli {table_id}.")
+</code></pre>
+
+                <h2 id="alternatywy">7. Czym Zastąpić Google Tables w 2026? (Analiza Konkurencji)</h2>
+                
+                <p>Menadżerowie, którzy szukali idealnej elastyczności, ale nie chcieli programować widoków (interfejsu GUI) w kreatorze AppSheet, mogą czuć się zawiedzeni zniknięciem Tables. Jakie platformy stanowią dziś realną, twardą alternatywę na światowym rynku?</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Narzędzie (Platforma)</th>
+                            <th>Typ Bazy / Architektura</th>
+                            <th>Koszt / Próg Wejścia</th>
+                            <th>Werdykt Analityka z 2026 roku</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Airtable</strong></td>
+                            <td>Rozbudowana chmura No-Code i SaaS</td>
+                            <td>Wysoki (Konieczność opłacania pakietów Pro)</td>
+                            <td>Absolutny lider globalnego rynku. Przejął większość użytkowników szukających pięknego UI. Uważaj jednak na potwornie rosnące koszty przy skali 100+ pracowników w korporacji.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google AppSheet</strong></td>
+                            <td>Tworzenie kompletnych aplikacji mobilnych</td>
+                            <td>Średni / Często darmowy (W pakiecie Google Workspace)</td>
+                            <td>Jedyny słuszny, darmowy sukcesor w środowisku Google dla biznesu. Wymaga odrobiny analitycznej logiki, ale generuje pełnoprawne instalowalne aplikacje PWA offline na telefony kurierów/handlowców.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Notion</strong></td>
+                            <td>System dokumentacji połączony z bazami (Relational Blocks)</td>
+                            <td>Niski / Bardzo powszechny</td>
+                            <td>Fenomenalne narzędzie dla start-upów i agencji kreatywnych. Bazy w Notion są piękne, ale brakuje im stabilności przy tysiącach rekordów i nie nadają się do ciężkiej matematyki księgowej.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Smartsheet</strong></td>
+                            <td>Zarządzanie Projektami klasy Enterprise (PMO)</td>
+                            <td>Wysoki (Kierowane w sektor B2B)</td>
+                            <td>Poważny konkurent, doskonały do korporacyjnych wykresów Gantta. Interfejs jest nieco archaiczny, ale nadrabia niesamowitymi certyfikatami bezpieczeństwa dla banków.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft Lists / PowerApps</strong></td>
+                            <td>Ekosystem Microsoft 365 (Dataverse)</td>
+                            <td>Zależne od licencji firmowej E3/E5</td>
+                            <td>Bezpośrednia odpowiedź firmy Microsoft na opisywane działania Google. Power Apps jest trudniejsze do nauki niż AppSheet, ale potężniejsze na etapie programowania interfejsu przycisków.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="podsumowanie">8. Podsumowanie i Wnioski na Przyszłość</h2>
+                
+                <p>Eksperyment Google Tables w dobitny sposób uświadamia nam brutalną prawdę o cyklu życia technologii chmurowych. W erze rewolucji napędzanej modelami LLM (Artificial Intelligence), tworzenie zaledwie "kolejnego mądrzejszego arkusza kalkulacyjnego" nie ma strategicznego sensu. Sens ma budowanie całkowicie zintegrowanego systemu, w którym baza danych płynnie przechodzi w aplikację.</p>
+                
+                <p>Area 120 stworzyło platformę wybitną. Google Tables wprowadziło pojęcie typowania danych i botów pod strzechy tysięcy nie-programistów. Narzędzie to jednak musiało umrzeć, by odegrać ostateczną rolę – wymusić na platformie Google AppSheet gwałtowny rozwój stabilnych funkcji bazodanowych (wbudowanego Data Engine).</p>
+
+                <p>Jeżeli dziś opłakujesz łatwość widoków kanban ze starego środowiska, nie lękaj się. Naucz się języka wyrażeń (Expressions) w AppSheet, uruchom prosty skrypt w Pythonie i przesuń swój zespół na poziom budowania prawdziwych aplikacji biznesowych. Innowacja rodzi się z wymuszonej adaptacji do trudnych warunków!</p>
+                
+                <p>Zabezpieczajcie zawsze na dyskach twardych dane swoich klientów (mechanizm Google Takeout to najcenniejsza rzecz na świecie), twórzcie asynchroniczne skrypty kopii zapasowych (Back-up scripts) z użyciem pokazanego wyżej Google Apps Script i testujcie nowości z rozwagą.</p>
+                
+                <p>Powodzenia w kodowaniu i architekturze chmury!<br>
+                — <em>Yaroslav Ostapenko</em></p>
+
+                <h2 id="faq">9. Najczęściej Zadawane Pytania (Wielkie FAQ 2026)</h2>
+                
+                <div class="info-box">
+                    <h3>Czy Google Tables zostało zamknięte i dlaczego się tak stało?</h3>
+                    <p>Tak. Projekt Google Tables, powołany do życia we wrześniu 2020 roku przez inkubator innowacji Area 120, został wygaszony przez Google pod koniec roku 2025. Głównym, twardym powodem biznesowym była potrzeba deduplikacji i optymalizacji portfolio usług oferowanych przez Google Cloud. Trzymanie platformy budującej struktury tabelaryczne było nieopłacalne w momencie, gdy holding posiadał potężną i opłacaną platformę AppSheet. Zespół projektantów z Tables został połączony z zespołem AppSheet, aby zbudować fundament dla AppSheet Databases.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czym dokładnie różniło się stare Google Tables od tradycyjnych Arkuszy Google (Google Sheets)?</h3>
+                    <p>Z punktu widzenia laika, oba narzędzia to siatka komórek (Grid). Jednak w architekturze IT różnią się one wszystkim. Arkusze Google są doskonałe do wolnych form kalkulacji, statystyki, pivotów (tabel przestawnych) oraz operacji księgowych, gdzie komórka `A1` jest całkowicie oderwana od `B1`. Google Tables było bazą relacyjną - oznaczało to, że definiowałeś <strong>Kolumny Typowane</strong>. Jeśli kolumna miała typ "Data", nikt nie mógł tam wpisać tekstu "Wczoraj". Jeśli typ to "Osoba", wpisanie błędnego e-maila skutkowało zablokowaniem komórki.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Co to jest AppSheet i czy powtarza on błędy "krótkiego życia" eksperymentów Area 120?</h3>
+                    <p>To ogromne niedomówienie na forach deweloperskich. AppSheet <strong>nie jest</strong> wewnętrznym eksperymentem Google. To była gigantyczna, świetnie prosperująca zewnętrzna firma (startup no-code), która budowała aplikacje mobilne od 2014 roku, zanim w 2020 została formalnie w pełni wykupiona (przejęta) przez Google za setki milionów dolarów. Jest to absolutny trzon strategii usług dla korporacji wewnątrz pakiety Google Workspace Enterprise, i jego zamknięcie z dnia na dzień jest ekonomicznie niemożliwe. Posiada certyfikacje bezpieczeństwa HIPPA, SOC2 i stanowi stabilne narzędzie produkcyjne dla tysięcy inżynierów na świecie.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Czy w obecnym systemie mogę pisać własne kody jak w Excel VBA?</h3>
+                    <p>W AppSheet nie piszemy kodu opartego na "starym, ciężkim i trudnym" VBA. Platforma w ekosystemie Google w pełni wspiera integrację wywołań w chmurowym języku bazującym na silniku JavaScript – <strong>Google Apps Script (GAS)</strong>. Pozwala to na stworzenie przycisku w aplikacji na telefonie, który odpala w tle asynchroniczną komendę JavaScript na serwerach Google, otwierając np. podłączony arkusz kalkulacyjny, przeliczając PDF i wysyłając fakturę z Twojego domyślnego serwera pocztowego Gmail w 3 sekundy. Możliwości automatyzacji są tutaj gigantyczne i o wiele nowocześniejsze.</p>
+                </div>
+
+            </div>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+                <div class="author-avatar">
+                    <!-- Standard SVG Placeholder -> Google Colors Theme -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="author-info">
+                    <h4>O autorze: Yaroslav Ostapenko</h4>
+                    <p>Ekspert ds. integracji technologicznych, certyfikowany Architekt Chmury Google (GCP) oraz inżynier środowisk No-Code/Low-Code (AppSheet, Bubble, Airtable). Specjalizuję się w ratowaniu starszych ekosystemów danych, masowych migracjach procesów biznesowych i optymalizacji komunikacji REST API za pomocą potężnych skryptów w środowiskach Python oraz JavaScript.</p>
+                    <div class="author-social">
+                        <a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zobacz Portfolio</a> | 
+                        <a href="mailto:yaroslav.ostapenko16@gmail.com">Napisz e-mail</a> | 
+                        <a href="tel:+48513815774">Zadzwoń</a>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="toc-widget">
+                <h3 class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    Spis Treści Nawigacyjnej
+                </h3>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#poczatki-area-120">1. Powstanie projektu (Area 120)</a></li>
+                    <li><a href="#cmentarz-google">2. Decyzja z 2025: "Cmentarz Google"</a></li>
+                    <li><a href="#migracja-do-appsheet">3. Sukcesor i integracja (AppSheet)</a></li>
+                    <li><a href="#skrypty-migracyjne">4. Skrypt Migracji (Google Apps Script)</a></li>
+                    <li><a href="#serwer-webhook">5. Serwer Webhook w Pythonie (FastAPI)</a></li>
+                    <li><a href="#migracja-python-bigquery">6. Eksport przez Python do BigQuery</a></li>
+                    <li><a href="#alternatywy">7. Najlepsze Alternatywy Konkurencyjne</a></li>
+                    <li><a href="#podsumowanie">8. Podsumowanie Wniosków</a></li>
+                    <li><a href="#faq">9. Najczęściej Zadawane Pytania (FAQ)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ostapenko<span>Blog</span></h3>
+                    <p>Wizytówka i blog inżynieryjny. Programuję architekturę Cloud, optymalizuję potężne bazy danych i dzielę się pasją do technologicznych innowacji. Prawdziwa wiedza, poparta latami praktyki i eksperymentów kodowych.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Szybka Nawigacja</h4>
+                    <ul>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#home">Strona Główna Witryny</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#about">Informacje o Mnie</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#blog">Artykuły na Blogu</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#portfolio">Zrealizowane Portfolio</a></li>
+                        <li><a href="https://ostapenkoblog.mqttwebs.com/index.html#contact">Kontakt Biznesowy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Bezpośredni Kontakt</h4>
+                    <ul>
+                        <li><a href="mailto:yaroslav.ostapenko16@gmail.com">yaroslav.ostapenko16@gmail.com</a></li>
+                        <li><a href="tel:+48513815774">+48 513 815 774 (Biuro)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Moje Social Media</h4>
+                    <div class="social-links mt-1">
+                        <a href="#" class="social-icon" aria-label="GitHub Repository">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter Feed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaroslav Ostapenko Blog. Wszelkie prawa zastrzeżone. Optymalizacja kodu w standardach 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wygodny Przycisk przewijania na sam szczyt strony (Scroll to Top) -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Zabierz mnie do góry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC (Interaktywność Strony, Śledzenie, Tryb Ciemny)
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. DYNAMICZNA AKTUALIZACJA ROKU W STOPCE
+            // Zapobiega ręcznej zmianie praw autorskich co roku
+            const yearElement = document.getElementById('currentYear');
+            if(yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // 2. FUNKCJONALNOŚĆ MENU MOBILNEGO (Hamburger Menu)
+            const hamburger = document.getElementById('hamburger');
+            const navbarNav = document.getElementById('navbarNav');
+            const navLinks = document.querySelectorAll('.nav-item a');
+
+            if(hamburger && navbarNav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navbarNav.classList.toggle('active');
+                });
+            }
+
+            // Automatyczne chowanie menu mobilnego po kliknięciu na link do sekcji
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(hamburger.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbarNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // 3. OBSŁUGA MOTYWÓW (Dark / Light Theme)
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Sprawdzenie lokalnej pamięci (LocalStorage) by zachować wybór użytkownika pomiędzy sesjami
+            const savedTheme = localStorage.getItem('ostapenkoblog-theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                // Alternatywnie: Fallback na preferencje systemowe (Windows / macOS Settings)
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark');
+                }
+            }
+
+            // Przełącznik (Przycisk) Click Event
+            if(themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    const currentTheme = htmlElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    htmlElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('ostapenkoblog-theme', newTheme);
+                    updateThemeIcon(newTheme);
+                });
+            }
+
+            // Dynamiczna zmiana ikony SVG na przycisku trybu
+            function updateThemeIcon(theme) {
+                if(!themeIcon) return;
+                
+                if (theme === 'dark') {
+                    // Tryb Nocny - Ikona Księżyca (Znak przejścia w tryb jasny po kliknięciu nie jest wymogiem)
+                    themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+                } else {
+                    // Tryb Dzienny - Ikona Słońca
+                    themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+                }
+            }
+
+            // 4. PRZYCISK POWROTU NA GÓRĘ (SCROLL TO TOP BEHAVIOR)
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            // Funkcja do debouncingu przy scrollowaniu (Wymóg w profesjonalnym kodzie RWD w 2026)
+            let scrollTimeout;
+            
+            window.addEventListener('scroll', () => {
+                if(scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = window.requestAnimationFrame(() => {
+                    // Pojawianie się pływającego przycisku dopiero po przescrollowaniu 300px
+                    if (scrollTopBtn) {
+                        if (window.scrollY > 300) {
+                            scrollTopBtn.classList.add('visible');
+                        } else {
+                            scrollTopBtn.classList.remove('visible');
+                        }
+                    }
+                    
+                    // 5. OBSŁUGA PASKA POSTĘPU CZYTANIA (READING PROGRESS BAR)
+                    const progressBar = document.getElementById('readingProgressBar');
+                    if (progressBar) {
+                        // Sprawdzamy pozycję na stronie w stosunku do wysokości całego dokumentu HTML
+                        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        
+                        // Zabezpieczenie przed dzieleniem przez zero na małych ekranach
+                        if(height > 0) {
+                            const scrolled = (winScroll / height) * 100;
+                            // Aplikujemy płynny wzrost szerokości (Width %) przez modyfikację DOM Style
+                            progressBar.style.width = scrolled + "%";
+                        }
+                    }
+                    
+                    // 6. AKTYWNE PODŚWIETLANIE BOCZNEGO MENU (SPIS TREŚCI - TOC SPY)
+                    const tocLinks = document.querySelectorAll('.toc-list a');
+                    const headings = document.querySelectorAll('.article-content h2');
+                    
+                    if(headings.length > 0 && tocLinks.length > 0) {
+                        let currentHeadingId = '';
+                        
+                        // Dodanie offsetu tolerancji z powodu obecności 'Fixed Navbar' (przyklejonego nagłówka)
+                        const scrollPosition = window.scrollY + 150; 
+
+                        // Iterowanie po wszystkich znacznikach <H2> w tekście
+                        headings.forEach(heading => {
+                            const top = heading.offsetTop;
+                            if (scrollPosition >= top) {
+                                currentHeadingId = heading.getAttribute('id');
+                            }
+                        });
+
+                        // Aktualizacja CSS klas (Podświetlenie aktywnego tematu) w bloku bocznym
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active');
+                            // Sprawdzamy czy link wskazuje na odnaleziony przed chwilą ID sekcji
+                            if (currentHeadingId && link.getAttribute('href') === `#${currentHeadingId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Reakcja na kliknięcie przycisku 'Scroll to Top'
+            if(scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    // Płynne (Smooth) przewinięcie z użyciem natywnego API przeglądarki Web API
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // 7. ŁAGODNE PRZEWIJANIE DO SEKCJI PO KLIKNIĘCIU NA LINK W SPISIE TREŚCI (TOC ANCHORS)
+            const internalLinks = document.querySelectorAll('.toc-list a[href^="#"]');
+            
+            internalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Zatrzymujemy brutalne natywne skakanie
+                    e.preventDefault();
+                    
+                    // Pobieramy atrybut href (np. #skrypty-migracyjne)
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Offset na zniwelowanie zasłonięcia nagłówka przez przyklejone (Fixed) menu nawigacyjne
+                        const fixedNavbarHeight = 100;
+                        const offsetTop = targetElement.offsetTop - fixedNavbarHeight;
+                        
+                        // Animujemy przeskok precyzyjnie do odpowiedniego Y
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Bonus: zaktualizuj pasek adresu URL (History API) bez odświeżania strony
+                        if(history.pushState) {
+                            history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            });
+            
+            // Koniec Scope DOMContentLoaded - Zabezpiecza przed wykonaniem skryptu 
+            // zanim cała struktura HTML i CSS Layout nie zostanie wyrenderowana.
+        });
+    </script>
+</body>
+</html>
