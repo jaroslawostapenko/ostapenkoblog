@@ -1,18 +1,4 @@
-# ===================================================================
-# robots.txt for ostapenkoblog.mqttwebs.com
-# ===================================================================
-
-# Allow all user agents (search engine robots) to crawl the entire site.
-# We want Google, Bing, and other search engines to index everything.
 User-agent: *
 Allow: /
 
-# Disallow access to any potential admin or temporary directories.
-# This is a good practice, even if these directories don't exist yet.
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
-
-# Specify the location of the XML sitemap.
-# This helps search engines find all the important pages on your site.
 Sitemap: https://ostapenkoblog.mqttwebs.com/sitemap.xml
